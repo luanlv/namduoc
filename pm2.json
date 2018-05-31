@@ -1,14 +1,14 @@
 {
   "apps": [
     {
-      "name": "comhoavang",
+      "name": "namduoc",
       "script": "build/server.js",
       "exec_interpreter": "node",
       "exec_mode": "fork",
       "env": {
         "NODE_ENV": "production",
-        "WEBSITE_HOSTNAME": "comhoavang.com",
-        "PORT": 3998
+        "WEBSITE_HOSTNAME": "namduocquany.com",
+        "PORT": 3969
       },
     }
   ]
