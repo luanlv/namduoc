@@ -8,7 +8,7 @@
       "env": {
         "NODE_ENV": "production",
         "WEBSITE_HOSTNAME": "namduocquany.com",
-        "PORT": 3969
+        "PORT": 3909
       },
     }
   ]
