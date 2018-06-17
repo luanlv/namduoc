@@ -4,7 +4,9 @@ import FacebookProvider, { Page } from 'react-facebook';
 
 class Aside extends React.Component {
   render() {
-    let info = ((this.props.data || {}).info || {}).value
+    let info = ((this.props.data || {}).info || {}).value || {}
+    console.log(this.props.data)
+    console.log(info)
     return (
       <div id="colAside">
         <div className="row">

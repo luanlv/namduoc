@@ -495,12 +495,14 @@ var _jsxFileName = '/Users/mac/Workspace/namduocquany/src/components/Partials/As
 
 class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   render() {
-    let info = ((this.props.data || {}).info || {}).value;
+    let info = ((this.props.data || {}).info || {}).value || {};
+    console.log(this.props.data);
+    console.log(info);
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { id: 'colAside', __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 11
         },
         __self: this
       },
@@ -508,13 +510,13 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         'div',
         { className: 'row', __source: {
             fileName: _jsxFileName,
-            lineNumber: 10
+            lineNumber: 12
           },
           __self: this
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-12 col-xs-6', __source: {
             fileName: _jsxFileName,
-            lineNumber: 11
+            lineNumber: 13
           },
           __self: this
         }),
@@ -522,7 +524,7 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           'div',
           { className: 'col-md-12 col-xs-6', __source: {
               fileName: _jsxFileName,
-              lineNumber: 13
+              lineNumber: 15
             },
             __self: this
           },
@@ -530,7 +532,7 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             'div',
             { className: 'adv', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 14
+                lineNumber: 16
               },
               __self: this
             },
@@ -538,13 +540,13 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
               __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
               { to: '/', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 15
+                  lineNumber: 17
                 },
                 __self: this
               },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/hotline.jpg', alt: 'Hotline', __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 16
+                  lineNumber: 18
                 },
                 __self: this
               })
@@ -556,13 +558,13 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         'div',
         { className: 'row', __source: {
             fileName: _jsxFileName,
-            lineNumber: 25
+            lineNumber: 27
           },
           __self: this
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-12 col-xs-6', __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 28
           },
           __self: this
         }),
@@ -570,13 +572,13 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           'div',
           { className: 'col-md-12 col-xs-6', __source: {
               fileName: _jsxFileName,
-              lineNumber: 28
+              lineNumber: 30
             },
             __self: this
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'wrap-video', __source: {
               fileName: _jsxFileName,
-              lineNumber: 29
+              lineNumber: 31
             },
             __self: this
           })
@@ -586,13 +588,13 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         __WEBPACK_IMPORTED_MODULE_2_react_facebook___default.a,
         { appID: '123093138237586', __source: {
             fileName: _jsxFileName,
-            lineNumber: 56
+            lineNumber: 58
           },
           __self: this
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_facebook__["Page"], { href: info.fanpage, 'data-numposts': '5', __source: {
             fileName: _jsxFileName,
-            lineNumber: 57
+            lineNumber: 59
           },
           __self: this
         })
@@ -7652,7 +7654,7 @@ var schema = new mongoose.Schema({
   name: String,
   // public: {type: Boolean, default: false},
   coverUrl: String,
-  price: Number,
+  price: { type: Number, default: 0 },
   body: String,
   description: String,
   view: { type: Number, default: 0 },
@@ -19171,6 +19173,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
       let seo = {};
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
+        let info = 'info{ menu, phone, fanpage }';
         const resp = yield __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__core_fetch__["a" /* default */])('/graphql', {
           method: 'post',
           headers: {
@@ -19178,7 +19181,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            query: '{ seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, description, saleOff, body, created_at},getOneProduct(slug: "' + params.slug + '"){name, slug, price, coverUrl, description, saleOff, body, created_at} }'
+            query: '{' + info + ' seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, description, saleOff, body, created_at},getOneProduct(slug: "' + params.slug + '"){name, slug, price, coverUrl, description, saleOff, body, created_at} }'
           }),
           credentials: 'include'
         });
@@ -19194,16 +19197,15 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         seo: seo,
         component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_4__components_Layout__["a" /* default */],
-          {
-            __source: {
+          { data: store.getState().data, __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 37
             },
             __self: _this
           },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Home__["a" /* default */], { product: store.getState().data.product.value, products: store.getState().data.products.value, __source: {
               fileName: _jsxFileName,
-              lineNumber: 36
+              lineNumber: 37
             },
             __self: _this
           })

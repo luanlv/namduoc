@@ -12,6 +12,7 @@ export default {
     let seo = {}
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())){
       store.dispatch(showLoading())
+      let info = 'info{ menu, phone, fanpage }'
       const resp = await fetch('/graphql', {
         method: 'post',
         headers: {
@@ -19,7 +20,7 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{ seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, description, saleOff, body, created_at},getOneProduct(slug: "'+ params.slug +'"){name, slug, price, coverUrl, description, saleOff, body, created_at} }',
+          query: '{' + info +' seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, description, saleOff, body, created_at},getOneProduct(slug: "'+ params.slug +'"){name, slug, price, coverUrl, description, saleOff, body, created_at} }',
         }),
         credentials: 'include',
       });
@@ -33,7 +34,7 @@ export default {
       title: seo.title || store.getState().data.product.value.name,
       description: seo.description || store.getState().data.product.value.description,
       seo: seo,
-      component: <Layout><Home product={store.getState().data.product.value} products={store.getState().data.products.value} /></Layout>,
+      component: <Layout data={store.getState().data}><Home product={store.getState().data.product.value} products={store.getState().data.products.value} /></Layout>,
     };
   },
 

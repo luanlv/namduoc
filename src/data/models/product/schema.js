@@ -7,7 +7,7 @@ var schema = new mongoose.Schema({
   name: String,
   // public: {type: Boolean, default: false},
   coverUrl: String,
-  price: Number,
+  price: {type: Number, default: 0},
   body: String,
   description: String,
   view: {type: Number, default: 0},
