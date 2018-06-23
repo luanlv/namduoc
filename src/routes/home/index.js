@@ -14,7 +14,7 @@ export default {
 
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())) {
       store.dispatch(showLoading())
-      let info = 'info{ menu, phone }'
+      let info = 'info{ menu, phone, fanpage, diachi, thanhtoan }'
       const resp = await fetch('/graphql', {
         method: 'post',
         headers: {

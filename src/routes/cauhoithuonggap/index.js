@@ -10,6 +10,7 @@ export default {
   async action({ store, query, path }) {
     let seo = {}
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())){
+      let info = 'info{ menu, phone, fanpage, diachi, thanhtoan }'
       const resp = await fetch('/graphql', {
         method: 'post',
         headers: {
@@ -17,7 +18,7 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description}}',
+          query: '{' + info + 'seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description}}',
         }),
         credentials: 'include',
       });
@@ -30,7 +31,7 @@ export default {
       title: seo.title || 'Câu hỏi thuờng gặp',
       description: seo.description || '',
       seo: seo,
-      component: <Layout><Home selectProduct={query.sp} /></Layout>,
+      component: <Layout data={store.getState().data} ><Home selectProduct={query.sp} /></Layout>,
     };
   },
 

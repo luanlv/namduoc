@@ -162,161 +162,161 @@ class EditNewsComponent extends React.Component {
         </Row>
         <Row>
           <Tabs type="card">
-            <TabPane tab="Thông tin bài viết" key="1">
-              <Row>
-                <Col sm={12} className="padding-5" >
-                  <div style={{ marginBottom: 16 }}>
-                    <label><b>Tựa đề:</b></label>
-                    <Input
-                      placeholder="Tựa đề"
-                      defaultValue={this.state.data.title}
-                      onChange={(e) => {
-                        let that = this
-                        let value = e.target.value
-                        let newSlug = function(){
-                          if(that.props.isEdit)
-                            return that.state.data.slug
-                          else {
-                            return slugify(value)
-                          }
-                        }
-                        this.setState(prev => {
-                          return {
-                            ...prev,
-                            data: {
-                              ...prev.data,
-                              title: value,
-                              slug: newSlug()
-                            }
-                          }
-                        })
-                      }}
-                    />
-                  </div>
-                  <div style={{ marginBottom: 16 }}>
-                    <label><b>slug:</b></label>
-                    <Input
-                      placeholder="Slug"
-                      disabled={this.props.isEdit}
-                      value={this.state.data.slug}
-                      onChange={(e) => {
-                        let value = e.target.value
-                        this.setState(prev => {
-                          return {
-                            ...prev,
-                            data: {
-                              ...prev.data,
-                              slug: value
-                            }
-                          }
-                        })
-                      }}
-                    />
-                  </div>
-                  <div style={{ marginBottom: 16 }}>
-                    <label><b>Danh mục:</b></label>
-                    <Select
-                      defaultValue={this.state.data.category}
-                      style={{ width: '100%' }}
-                      onChange={(value) => {
-                        this.setState(prev => {
-                          return {
-                            ...prev,
-                            data: {
-                            ...prev.data,
-                            category: value
-                          }
-                        }
-                        })
-                      }}
-                    >
-                      <Option value="su-kien">Sự kiện</Option>
-                      <Option value="tin-tuc-tong-hop">Tin tức tổng hợp</Option>
-                    </Select>
-                  </div>
-                  <div style={{ marginBottom: 16 }}>
-                    <label><b>Tags:</b></label>
-                    <CustomTag defaultValue={this.state.data.tags}
-                               handleChange={(tags) => {
-                                 this.setState(prev => {
-                                   return {
-                                     ...prev,
-                                     data: {
-                                       ...prev.data,
-                                       tags: tags
-                                     }
-                                   }
-                                 })
-                               }}
-                    />
-                  </div>
-                  <div style={{ marginBottom: 16 }}>
-                    <label><b>Mô tả ( {(this.state.data.description.length >= 140 && this.state.data.description.length <= 150) ? <span style={{color: 'blue'}}>{this.state.data.description.length}</span> : <span style={{color: 'red'}}>{this.state.data.description.length}</span>} /150) :</b></label>
-                    <Input type="textarea"
-                           autosize={{ minRows: 2, maxRows: 10 }}
-                           defaultValue={this.state.data.description}
-                           onChange={(e) => {
-                             let value = e.target.value
-                             this.setState(prev => {
-                               return {
-                                 ...prev,
-                                 data: {
-                                   ...prev.data,
-                                   description: value
-                                 }
-                               }
-                             })
-                           }}
-                    />
-                  </div>
-                </Col>
-                <Col sm={12} className="padding-5">
-                  <div style={{ marginBottom: 16 }}>
-                    <b>Public: </b>
-                    <Switch checked={this.state.data.public || false} onChange={(value) => {
-                      this.setState(prev => {
-                        return {
-                          ...prev,
-                          data: {
-                            ...prev.data,
-                            public:value
-                          }
-                        }
-                      })
-                    }} />
-                  </div>
-                  <div style={{ marginBottom: 16 }}>
-                    <label><b>Ảnh đại diện:</b></label>
-                    {!this.state.data.coverUrl && <ImageUpload
-                      isMultiple={false}
-                      handleUpload={(img) => this.handleCoverUpload(img)}
-                    />}
-                    {this.state.data.coverUrl && <Card bordered={false} className="imgWr"
-                                                       onClick={() => this.showModalSelectImage('cover')}
-                    >
-                      <img src={this.state.data.coverUrl} />
-                    </Card>}
-                  </div>
-                  <Button style={{marginRight: 10}}
-                          onClick={() => this.showModalSelectImage('cover')}
-                  >Chọn ảnh từ thư viện</Button>
-                  {this.state.data.coverUrl && <Button
-                    onClick={() => {
-                      this.setState(prevState => {
-                        return {
-                          ...prevState,
-                          data: {
-                            ...prevState.data,
-                            coverUrl: null
-                          }
-                        }
-                      })
-                    }
-                    }
-                  >Xóa ảnh </Button>}
-                </Col>
-              </Row>
-            </TabPane>
+            {/*<TabPane tab="Thông tin bài viết" key="1">*/}
+              {/*<Row>*/}
+                {/*<Col sm={12} className="padding-5" >*/}
+                  {/*<div style={{ marginBottom: 16 }}>*/}
+                    {/*<label><b>Tựa đề:</b></label>*/}
+                    {/*<Input*/}
+                      {/*placeholder="Tựa đề"*/}
+                      {/*defaultValue={this.state.data.title}*/}
+                      {/*onChange={(e) => {*/}
+                        {/*let that = this*/}
+                        {/*let value = e.target.value*/}
+                        {/*let newSlug = function(){*/}
+                          {/*if(that.props.isEdit)*/}
+                            {/*return that.state.data.slug*/}
+                          {/*else {*/}
+                            {/*return slugify(value)*/}
+                          {/*}*/}
+                        {/*}*/}
+                        {/*this.setState(prev => {*/}
+                          {/*return {*/}
+                            {/*...prev,*/}
+                            {/*data: {*/}
+                              {/*...prev.data,*/}
+                              {/*title: value,*/}
+                              {/*slug: newSlug()*/}
+                            {/*}*/}
+                          {/*}*/}
+                        {/*})*/}
+                      {/*}}*/}
+                    {/*/>*/}
+                  {/*</div>*/}
+                  {/*<div style={{ marginBottom: 16 }}>*/}
+                    {/*<label><b>slug:</b></label>*/}
+                    {/*<Input*/}
+                      {/*placeholder="Slug"*/}
+                      {/*disabled={this.props.isEdit}*/}
+                      {/*value={this.state.data.slug}*/}
+                      {/*onChange={(e) => {*/}
+                        {/*let value = e.target.value*/}
+                        {/*this.setState(prev => {*/}
+                          {/*return {*/}
+                            {/*...prev,*/}
+                            {/*data: {*/}
+                              {/*...prev.data,*/}
+                              {/*slug: value*/}
+                            {/*}*/}
+                          {/*}*/}
+                        {/*})*/}
+                      {/*}}*/}
+                    {/*/>*/}
+                  {/*</div>*/}
+                  {/*<div style={{ marginBottom: 16 }}>*/}
+                    {/*<label><b>Danh mục:</b></label>*/}
+                    {/*<Select*/}
+                      {/*defaultValue={this.state.data.category}*/}
+                      {/*style={{ width: '100%' }}*/}
+                      {/*onChange={(value) => {*/}
+                        {/*this.setState(prev => {*/}
+                          {/*return {*/}
+                            {/*...prev,*/}
+                            {/*data: {*/}
+                            {/*...prev.data,*/}
+                            {/*category: value*/}
+                          {/*}*/}
+                        {/*}*/}
+                        {/*})*/}
+                      {/*}}*/}
+                    {/*>*/}
+                      {/*<Option value="su-kien">Sự kiện</Option>*/}
+                      {/*<Option value="tin-tuc-tong-hop">Tin tức tổng hợp</Option>*/}
+                    {/*</Select>*/}
+                  {/*</div>*/}
+                  {/*<div style={{ marginBottom: 16 }}>*/}
+                    {/*<label><b>Tags:</b></label>*/}
+                    {/*<CustomTag defaultValue={this.state.data.tags}*/}
+                               {/*handleChange={(tags) => {*/}
+                                 {/*this.setState(prev => {*/}
+                                   {/*return {*/}
+                                     {/*...prev,*/}
+                                     {/*data: {*/}
+                                       {/*...prev.data,*/}
+                                       {/*tags: tags*/}
+                                     {/*}*/}
+                                   {/*}*/}
+                                 {/*})*/}
+                               {/*}}*/}
+                    {/*/>*/}
+                  {/*</div>*/}
+                  {/*<div style={{ marginBottom: 16 }}>*/}
+                    {/*<label><b>Mô tả ( {(this.state.data.description.length >= 140 && this.state.data.description.length <= 150) ? <span style={{color: 'blue'}}>{this.state.data.description.length}</span> : <span style={{color: 'red'}}>{this.state.data.description.length}</span>} /150) :</b></label>*/}
+                    {/*<Input type="textarea"*/}
+                           {/*autosize={{ minRows: 2, maxRows: 10 }}*/}
+                           {/*defaultValue={this.state.data.description}*/}
+                           {/*onChange={(e) => {*/}
+                             {/*let value = e.target.value*/}
+                             {/*this.setState(prev => {*/}
+                               {/*return {*/}
+                                 {/*...prev,*/}
+                                 {/*data: {*/}
+                                   {/*...prev.data,*/}
+                                   {/*description: value*/}
+                                 {/*}*/}
+                               {/*}*/}
+                             {/*})*/}
+                           {/*}}*/}
+                    {/*/>*/}
+                  {/*</div>*/}
+                {/*</Col>*/}
+                {/*<Col sm={12} className="padding-5">*/}
+                  {/*<div style={{ marginBottom: 16 }}>*/}
+                    {/*<b>Public: </b>*/}
+                    {/*<Switch checked={this.state.data.public || false} onChange={(value) => {*/}
+                      {/*this.setState(prev => {*/}
+                        {/*return {*/}
+                          {/*...prev,*/}
+                          {/*data: {*/}
+                            {/*...prev.data,*/}
+                            {/*public:value*/}
+                          {/*}*/}
+                        {/*}*/}
+                      {/*})*/}
+                    {/*}} />*/}
+                  {/*</div>*/}
+                  {/*<div style={{ marginBottom: 16 }}>*/}
+                    {/*<label><b>Ảnh đại diện:</b></label>*/}
+                    {/*{!this.state.data.coverUrl && <ImageUpload*/}
+                      {/*isMultiple={false}*/}
+                      {/*handleUpload={(img) => this.handleCoverUpload(img)}*/}
+                    {/*/>}*/}
+                    {/*{this.state.data.coverUrl && <Card bordered={false} className="imgWr"*/}
+                                                       {/*onClick={() => this.showModalSelectImage('cover')}*/}
+                    {/*>*/}
+                      {/*<img src={this.state.data.coverUrl} />*/}
+                    {/*</Card>}*/}
+                  {/*</div>*/}
+                  {/*<Button style={{marginRight: 10}}*/}
+                          {/*onClick={() => this.showModalSelectImage('cover')}*/}
+                  {/*>Chọn ảnh từ thư viện</Button>*/}
+                  {/*{this.state.data.coverUrl && <Button*/}
+                    {/*onClick={() => {*/}
+                      {/*this.setState(prevState => {*/}
+                        {/*return {*/}
+                          {/*...prevState,*/}
+                          {/*data: {*/}
+                            {/*...prevState.data,*/}
+                            {/*coverUrl: null*/}
+                          {/*}*/}
+                        {/*}*/}
+                      {/*})*/}
+                    {/*}*/}
+                    {/*}*/}
+                  {/*>Xóa ảnh </Button>}*/}
+                {/*</Col>*/}
+              {/*</Row>*/}
+            {/*</TabPane>*/}
             <TabPane tab="Nội dung" key="2">
               <Row >
                 <div style={{maxWidth: 800, padding: 5, border: '1px solid #ddd', margin: '0 auto'}}>

@@ -4,6 +4,7 @@ import {Modal, Form, Input, Icon, Tooltip, Button, Switch, DatePicker, Select, R
 import ReactResizeDetector from 'react-resize-detector';
 import VisibilitySensor from 'react-visibility-sensor'
 import ImageSelect from '../ImageSelect'
+import Coupon from '../Coupon'
 class CKEditor extends React.Component {
   constructor(props) {
     super(props);
@@ -11,10 +12,12 @@ class CKEditor extends React.Component {
       oldEditorSize: 0,
       isEndEditor: false,
       showModalSelectImage: false,
+      modalCoupon: false,
       selectImageType: '',
     }
     this.elementName = "editor_" + this.props.id;
     this.componentDidMount = this.componentDidMount.bind(this);
+    this.handleCoupon = this.handleCoupon.bind(this);
   }
 
   showModalSelectImage = (type) => {
@@ -26,15 +29,26 @@ class CKEditor extends React.Component {
       }
     });
   }
+  showModalCoupon = () => {
+    this.setState(prev => {
+      return {
+        ...prev,
+        modalCoupon: true,
+      }
+    });
+  }
   handleOk = (e) => {
     console.log(e);
     this.setState({
       modalSelectImage: false,
     });
   }
+
+
   handleCancel = (e) => {
     this.setState({
       modalSelectImage: false,
+      modalCoupon: false,
     });
   }
 
@@ -47,6 +61,19 @@ class CKEditor extends React.Component {
     })
     this.editor.insertHtml( '<p style="text-align:center"><img alt="eS9cTTQzZT-3.jpg" src="' + '/image/' + img.name + '" /></p><br/>' );
   }
+  handleCoupon(coupon){
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        modalCoupon: false,
+      }
+    })
+    this.editor.setMode('wysiwyg');
+    this.editor.insertHtml( '' +
+      '<div class="modalmock"> <div class="subscription-plan"> <div class="subscription-plan--price second">6 months<br /> 44 USD</div> <div class="subscription-plan--description">Subscribe today and get<br /> <strong>30</strong> days free trial</div> <div class="subscription-plan--button"><a href="#">Chi tiết</a></div> </div> </>' +
+      '<br/>' );
+  }
+
 
   render() {
     return (
@@ -57,6 +84,11 @@ class CKEditor extends React.Component {
               id="addImage"
               style={{marginRight: 10}}
               onClick={() => this.showModalSelectImage('editor')}
+            />
+            <span
+              id="addCoupon"
+              style={{marginRight: 10}}
+              onClick={() => this.showModalCoupon()}
             />
           </Col>
 
@@ -89,6 +121,15 @@ class CKEditor extends React.Component {
               onOk={this.handleOk} onCancel={this.handleCancel}
             >
               <ImageSelect handleSelect={(img) => this.handleSelectImage(img)} />
+            </Modal>
+            <Modal
+              style={{top: 30}}
+              width="90%"
+              title="Basic Modal" visible={this.state.modalCoupon}
+              onOk={this.handleCoupon} onCancel={this.handleCancel}
+            >
+              {/*<ImageSelect handleSelect={(img) => this.handleSelectImage(img)} />*/}
+              <Coupon />
             </Modal>
           </Col>
         </Row>
@@ -123,13 +164,32 @@ class CKEditor extends React.Component {
       }
     });
 
+
+    this.editor.addCommand("coupon", { // create named command
+      exec: function(edt) {
+        $( "#addCoupon" ).trigger( "click" )
+      }
+    });
+
     this.editor.ui.addButton('SuperButton', { // add new button and bind our command
       label: "Click me",
       command: 'mySimpleCommand',
       toolbar: 'insert',
       icon: '/assets/add-image.png'
     });
-
+   this.editor.ui.addButton('coupon', { // add new button and bind our command
+      label: "Click me",
+      command: 'coupon',
+      toolbar: 'insert',
+      icon: '/assets/add-image.png'
+    });
+   let that = this
+   setTimeout(function(){
+     that.editor.setMode('wysiwyg');
+     that.editor.insertHtml( '' +
+       '<div class="modalmock"> <div class="subscription-plan"> <div class="subscription-plan--price second">6 months<br /> 44 USD</div> <div class="subscription-plan--description">Subscribe today and get<br /> <strong>30</strong> days free trial</div> <div class="subscription-plan--button"><a href="#">Chi tiết</a></div> </div> </>' +
+       '<br/>' );
+   }, 1000)
   }
 
   componentWillUnmount() {
