@@ -314,7 +314,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             source.start();
           };
 
-          audioCtx.decodeAudioData(xhr.response).then(playsound);
+          // audioCtx.decodeAudioData(xhr.response).then(playsound);
         });
         xhr.send();
       });
@@ -6307,6 +6307,60 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
+              { key: 'Library' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                { to: '/admin/menu' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'span',
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], { type: 'appstore-o' }),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    { className: 'nav-text' },
+                    'Menu Ph\xEDa tr\xEAm'
+                  )
+                )
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
+              { key: 'Library' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                { to: '/admin/menuBottom' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'span',
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], { type: 'appstore-o' }),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    { className: 'nav-text' },
+                    'Menu Ph\xEDa d\u01B0\u1EDBi'
+                  )
+                )
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
+              { key: 'Library' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                { to: '/admin/thongtin' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'span',
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], { type: 'appstore-o' }),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    { className: 'nav-text' },
+                    'Th\xF4ng tin chung'
+                  )
+                )
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
               { key: 'Setting' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
@@ -9854,7 +9908,9 @@ class EditNewsComponent extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
       showModalSelectImage: false,
       data: {
         description: '',
-        tags: []
+        tags: [],
+        coverUrl2: [],
+        coverUrl3: []
       }
     };
     if (this.props.isEdit) this.init(this.props.slug);

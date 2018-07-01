@@ -30,7 +30,9 @@ class EditNewsComponent extends React.Component {
       showModalSelectImage: false,
       data: {
         description: '',
-        tags: []
+        tags: [],
+        coverUrl2: [],
+        coverUrl3: []
       }
     }
     if(this.props.isEdit) this.init(this.props.slug)

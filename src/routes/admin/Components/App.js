@@ -109,6 +109,30 @@ class App extends React.Component {
                   </span>
                 </Link>
               </Menu.Item>
+              <Menu.Item key="Library">
+                <Link to="/admin/menu">
+                  <span>
+                    <Icon type="appstore-o" />
+                    <span className="nav-text">Menu Phía trêm</span>
+                  </span>
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="Library">
+                <Link to="/admin/menuBottom">
+                  <span>
+                    <Icon type="appstore-o" />
+                    <span className="nav-text">Menu Phía dưới</span>
+                  </span>
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="Library">
+                <Link to="/admin/thongtin">
+                  <span>
+                    <Icon type="appstore-o" />
+                    <span className="nav-text">Thông tin chung</span>
+                  </span>
+                </Link>
+              </Menu.Item>
 
               <Menu.Item key="Setting">
                 <Link to="/admin/setting">
@@ -118,6 +142,7 @@ class App extends React.Component {
                   </span>
                 </Link>
               </Menu.Item>
+              
               <Menu.Item key="Logout">
                 <a href="/auth/logout">
                   <span>
