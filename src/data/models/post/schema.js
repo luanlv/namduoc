@@ -23,7 +23,8 @@ module.exports = model;
 module.exports.getNews = (root, {page}) => {
   let listCategoryInNews = [
     'su-kien',
-    'tin-tuc-tong-hop'
+    'tin-tuc-tong-hop',
+    'khuyen-mai'
   ]
 
   return new Promise((resolve, reject) => {

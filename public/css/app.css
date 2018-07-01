@@ -275,3 +275,87 @@
 
 .hasSubMenu:hover ul {
   display: block !important; }
+
+.modalmock {
+  max-width: 650px;
+  margin: 0 auto;
+  font-family: Helvetica;
+  background: #ffffff;
+  padding: 20px; }
+
+.subscription-plan {
+  display: flex;
+  align-items: stretch;
+  align-self: center;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  background: #f0f0f0;
+  transition: all 0.75s;
+  border: rgba(0, 0, 0, 0.1) solid 1px; }
+
+.subscription-plan:hover {
+  background: #e0e0e0;
+  border: rgba(0, 0, 0, 0.2) solid 1px; }
+
+.subscription-plan--price {
+  order: 1;
+  flex-grow: 1;
+  border-radius: 10px 0px 0px 10px;
+  font-size: 28px;
+  color: #ffffff;
+  padding: 5px 0px 5px 15px;
+  margin-right: 20px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  background: #0288d0;
+  background: -moz-linear-gradient(-45deg, #0288d0 0%, #0058a0 100%);
+  position: relative;
+  transition: all 0.75s; }
+
+.subscription-plan .interval {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: normal; }
+
+.subscription-plan:hover .subscription-plan--price {
+  padding-right: 15px; }
+
+.subscription-plan--description {
+  order: 2;
+  flex-grow: 2;
+  align-self: center;
+  color: #999999;
+  transition: all 0.75s; }
+
+.subscription-plan--description strong {
+  transition: all 0.75s; }
+
+.subscription-plan:hover .subscription-plan--description {
+  color: #777777; }
+
+.subscription-plan:hover .subscription-plan--description strong {
+  color: #cc0000; }
+
+.subscription-plan--button {
+  order: 3;
+  flex-grow: 1;
+  align-self: center;
+  width: 75px; }
+
+.second {
+  background: #0077c0 !important; }
+
+.coupon-input {
+  width: 40px;
+  display: inline-block;
+  margin: 0 10px;
+  transition: all 0.75s; }
+
+.coupon-input:focus {
+  width: 180px; }
+
+.coupon-input:focus + .verify-button {
+  opacity: 1; }
+
+.verify-button {
+  opacity: 0;
+  transition: all 0.75s 0.75s; }

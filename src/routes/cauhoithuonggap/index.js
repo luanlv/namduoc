@@ -10,7 +10,7 @@ export default {
   async action({ store, query, path }) {
     let seo = {}
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())){
-      let info = 'info{ menu, phone, fanpage, diachi, thanhtoan }'
+      let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }'
       const resp = await fetch('/graphql', {
         method: 'post',
         headers: {

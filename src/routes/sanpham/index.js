@@ -10,9 +10,10 @@ export default {
   path: '/san-pham/:slug',
   async action({ store, params, path }) {
     let seo = {}
+
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())){
       store.dispatch(showLoading())
-      let info = 'info{ menu, phone, fanpage, diachi, thanhtoan }'
+      let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }'
       const resp = await fetch('/graphql', {
         method: 'post',
         headers: {
@@ -20,7 +21,7 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{' + info + ' seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, description, saleOff, body, created_at},getOneProduct(slug: "'+ params.slug +'"){name, slug, price, coverUrl, description, saleOff, body, created_at} }',
+          query: '{' + info + ' seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, coverUrl2, coverUrl3, newPrice, description, saleOff, body, created_at},getOneProduct(slug: "'+ params.slug +'"){name, slug, price, coverUrl, coverUrl2, coverUrl3, newPrice, description, saleOff, body, created_at} }',
         }),
         credentials: 'include',
       });

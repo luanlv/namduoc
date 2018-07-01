@@ -21,6 +21,7 @@ export default new GraphQLObjectType({
       type: new GraphQLNonNull(GraphQLString)
     },
     menu: {type: GraphQLString},
+    menuBottom: {type: GraphQLString},
     fanpage: {type: GraphQLString},
     phone: {type: GraphQLString},
     diachi: {type: GraphQLString},

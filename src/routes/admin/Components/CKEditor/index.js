@@ -62,6 +62,7 @@ class CKEditor extends React.Component {
     this.editor.insertHtml( '<p style="text-align:center"><img alt="eS9cTTQzZT-3.jpg" src="' + '/image/' + img.name + '" /></p><br/>' );
   }
   handleCoupon(coupon){
+    console.log(coupon)
     this.setState(prevState => {
       return {
         ...prevState,
@@ -70,7 +71,7 @@ class CKEditor extends React.Component {
     })
     this.editor.setMode('wysiwyg');
     this.editor.insertHtml( '' +
-      '<div class="modalmock"> <div class="subscription-plan"> <div class="subscription-plan--price second">6 months<br /> 44 USD</div> <div class="subscription-plan--description">Subscribe today and get<br /> <strong>30</strong> days free trial</div> <div class="subscription-plan--button"><a href="#">Chi tiết</a></div> </div> </>' +
+      '<div class="modalmock"> <div class="subscription-plan"> <div class="subscription-plan--price second" style="text-align: center">GIẢM<br /> 50%</div> <div class="subscription-plan--description">Hạn dùng:<br /> Ngành hàng: <br /> Lưu ý: </div> <div class="subscription-plan--button"><a href="' + coupon.url + '" target="_blank">Chi tiết</a></div> </div> </>' +
       '<br/>' );
   }
 
@@ -126,10 +127,10 @@ class CKEditor extends React.Component {
               style={{top: 30}}
               width="90%"
               title="Basic Modal" visible={this.state.modalCoupon}
-              onOk={this.handleCoupon} onCancel={this.handleCancel}
+              onOk={this.handleOk} onCancel={this.handleCancel}
             >
               {/*<ImageSelect handleSelect={(img) => this.handleSelectImage(img)} />*/}
-              <Coupon />
+              <Coupon handleSelect={(url) => this.handleCoupon(url)} />
             </Modal>
           </Col>
         </Row>
@@ -183,13 +184,13 @@ class CKEditor extends React.Component {
       toolbar: 'insert',
       icon: '/assets/add-image.png'
     });
-   let that = this
-   setTimeout(function(){
-     that.editor.setMode('wysiwyg');
-     that.editor.insertHtml( '' +
-       '<div class="modalmock"> <div class="subscription-plan"> <div class="subscription-plan--price second">6 months<br /> 44 USD</div> <div class="subscription-plan--description">Subscribe today and get<br /> <strong>30</strong> days free trial</div> <div class="subscription-plan--button"><a href="#">Chi tiết</a></div> </div> </>' +
-       '<br/>' );
-   }, 1000)
+   // let that = this
+   // setTimeout(function(){
+   //   that.editor.setMode('wysiwyg');
+   //   that.editor.insertHtml( '' +
+   //     '<div class="modalmock"> <div class="subscription-plan"> <div class="subscription-plan--price second" style="text-align: center">GIẢM<br /> 50%</div> <div class="subscription-plan--description">Hạn dùng:<br /> Ngành hàng: <br /> Lưu ý: </div> <div class="subscription-plan--button"><a href="https://www.google.com.vn/" target="_blank">Chi tiết</a></div> </div> </>' +
+   //     '<br/>' );
+   // }, 1000)
   }
 
   componentWillUnmount() {

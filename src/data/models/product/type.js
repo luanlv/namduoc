@@ -31,10 +31,19 @@ export default new GraphQLObjectType({
     coverUrl: {
       type: new GraphQLNonNull(GraphQLString)
     },
+    coverUrl2: {
+      type: new GraphQLList(GraphQLString)
+    },
+    coverUrl3: {
+      type: new GraphQLList(GraphQLString)
+    },
     name: {
       type: new GraphQLNonNull(GraphQLString)
     },
     price: {
+      type: new GraphQLNonNull(GraphQLInt)
+    },
+    newPrice: {
       type: new GraphQLNonNull(GraphQLInt)
     },
     description: {

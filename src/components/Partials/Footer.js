@@ -5,7 +5,7 @@ class Footer extends React.Component {
   render () {
 
     let info = (((this.props.data || {}).info) || {}).value
-
+    let menuBottom = JSON.parse(info.menuBottom)
     return (
       <div id="footer">
         <div className="footer-wrapper">
@@ -22,21 +22,14 @@ class Footer extends React.Component {
                   <div className="botHeading">
                     Menu </div>
                   <ul className="list-footer">
-                    <li><Link to={'/'}>
-                      Menu 1
-                        <span className="icona-left icon-chevron-right" /></Link></li>
-                    <li><Link to={'/'}>
-                      Menu 2
-                        <span className="icona-left icon-chevron-right" /></Link></li>
-                    <li><Link to={'/'}>
-                      Menu 3
-                        <span className="icona-left icon-chevron-right" /></Link></li>
-                    <li><Link to={'/'}>
-                      Menu 4
-                        <span className="icona-left icon-chevron-right" /></Link></li>
-                    <li><Link to={'/'}>
-                      Menu 5
-                      <span className="icona-left icon-chevron-right" /></Link></li>
+                    {menuBottom.map((el, idx) => {
+                      return (
+                        <li key={idx}><Link to={el.url}>
+                          {el.title}
+                          <span className="icona-left icon-chevron-right" /></Link></li>
+                      )
+                    })}
+
                   </ul>
                 </div>
                 <div className="col-md-4 col-sm-6 col-xs-12">

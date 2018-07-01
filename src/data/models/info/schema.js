@@ -3,7 +3,8 @@ var uniqueValidator = require('mongoose-unique-validator');
 var crypto = require('crypto');
 
 var Schema = new mongoose.Schema({
-  menu: {type: mongoose.Schema.Types.Mixed},
+  menu: {type: mongoose.Schema.Types.Mixed, default: '[]'},
+  menuBottom: {type: mongoose.Schema.Types.Mixed, default: '[]'},
   fanpage: {type: mongoose.Schema.Types.Mixed},
   phone: {type: mongoose.Schema.Types.Mixed},
   diachi: {type: mongoose.Schema.Types.Mixed},

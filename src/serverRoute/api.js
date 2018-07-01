@@ -15,6 +15,25 @@ let axios = require('axios')
 // FB.options({version: 'v2.9'});
 // var comhoavangApp = FB.extend({appId: '1968072516812373', appSecret: '4e2c8135946ac8e7b7cd8cd48492d648'}),
 
+router.post('/menuBottom/new', bodyParser.json() ,(req, res) => {
+  console.log(req.body)
+  Info.update({key: "info"}, {$set: { menuBottom: req.body.menuBottom }}, {upsert: true}, function(err){
+    if(err) {
+      console.log(err)
+      return res.status(400).end();
+    }
+    return res.send('ok')
+  })
+})
+
+router.get('/menuBottom/get', (req, res) => {
+  Info.findOne({key: "info"}, (err, data) => {
+    if(err) return res.json({})
+    if(!data.menu) return res.json({})
+    return res.json(data.menuBottom)
+  })
+})
+
 router.post('/menu/new', bodyParser.json() ,(req, res) => {
   console.log(req.body)
   Info.update({key: "info"}, {$set: { menu: req.body.menu }}, {upsert: true}, function(err){

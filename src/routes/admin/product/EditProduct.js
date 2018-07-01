@@ -44,11 +44,12 @@ class EditNewsComponent extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        query: '{ getOneProduct(slug: "'+ slug +'"){name, slug, price, coverUrl, description, saleOff, body, created_at} }',
+        query: '{ getOneProduct(slug: "'+ slug +'"){name, slug, price, newPrice, coverUrl, coverUrl2, coverUrl3, description, saleOff, body, created_at} }',
       }),
       credentials: 'include',
     })
     const {data} = await resp.json();
+    console.log(data)
     this.setState(prev => {
       return {
         ...prev,
@@ -69,6 +70,34 @@ class EditNewsComponent extends React.Component {
       }
     })
   }
+
+  handleCoverUpload2 (img) {
+    let coverUrl2 = this.state.data.coverUrl2
+    coverUrl2.push('/image/' + img.name)
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        data: {
+          ...prevState.data,
+          coverUrl2: coverUrl2
+        }
+      }
+    })
+  }
+  handleCoverUpload3 (img) {
+    let coverUrl3 = this.state.data.coverUrl3
+    coverUrl3.push('/image/' + img.name)
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        data: {
+          ...prevState.data,
+          coverUrl3: coverUrl3
+        }
+      }
+    })
+  }
+
   showModalSelectImage = (type) => {
     this.setState(prev => {
       return {
@@ -98,6 +127,32 @@ class EditNewsComponent extends React.Component {
           data: {
             ...prevState.data,
             coverUrl: '/image/' + img.name
+          }
+        }
+      })
+    } else if (this.state.selectImageType === 'cover2') {
+      let coverUrl2 = this.state.data.coverUrl2
+      coverUrl2.push('/image/' + img.name)
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          modalSelectImage: false,
+          data: {
+            ...prevState.data,
+            coverUrl2: coverUrl2
+          }
+        }
+      })
+    } else if (this.state.selectImageType === 'cover3') {
+      let coverUrl3 = this.state.data.coverUrl3
+      coverUrl3.push('/image/' + img.name)
+      this.setState(prevState => {
+        return {
+          ...prevState,
+          modalSelectImage: false,
+          data: {
+            ...prevState.data,
+            coverUrl3: coverUrl3
           }
         }
       })
@@ -218,7 +273,7 @@ class EditNewsComponent extends React.Component {
                   </div>
 
                   <div style={{ marginBottom: 16 }}>
-                    <label><b>Giá sản phẩm:</b></label>
+                    <label><b>Giá cũ:</b></label>
                     <br/>
                     <InputNumber
                       defaultValue={this.state.data.price || 0}
@@ -240,6 +295,29 @@ class EditNewsComponent extends React.Component {
                     />
                   </div>
                   <div style={{ marginBottom: 16 }}>
+                    <label><b>Giá mới:</b></label>
+                    <br/>
+                    <InputNumber
+                      defaultValue={this.state.data.newPrice || 0}
+                      min={0}
+                      formatter={value => `${value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`}
+                      parser={value => value.replace(/(,*)/g, '')}
+                      style={{minWidth: 200}}
+                      onChange={(value) => {
+                        this.setState(prev => {
+                          return {
+                            ...prev,
+                            data: {
+                              ...prev.data,
+                              newPrice: parseInt(value)
+                            }
+                          }
+                        })
+                      }}
+                    />
+                  </div>
+
+                  <div style={{ marginBottom: 16 }}>
                     <label><b>Mô tả ( {(this.state.data.description.length >= 140 && this.state.data.description.length <= 150) ? <span style={{color: 'blue'}}>{this.state.data.description.length}</span> : <span style={{color: 'red'}}>{this.state.data.description.length}</span>} /150) :</b></label>
                     <Input type="textarea"
                            autosize={{ minRows: 2, maxRows: 10 }}
@@ -257,6 +335,46 @@ class EditNewsComponent extends React.Component {
                              })
                            }}
                     />
+                  </div>
+                  <div style={{ marginBottom: 16 }}>
+                    <Col sm={12} className="padding-5">
+                      <label><b>Ảnh khách hàng:</b></label>
+                      <ImageUpload
+                        isMultiple={false}
+                        handleUpload={(img) => this.handleCoverUpload3(img)}
+                      />
+                      <br/>
+                      <Button style={{marginRight: 10}}
+                              onClick={() => this.showModalSelectImage('cover3')}
+                      >Chọn ảnh từ thư viện</Button>
+                    </Col>
+
+                    <Col sm={12} className="padding-5">
+                      <div style={{ marginBottom: 16 }}>
+                        <div>
+                          {(this.state.data.coverUrl3 || []).map((el,idx) => {
+                            return (
+                              <img key={idx} src={el} style={{height: 70, width: 'auto', margin: 5}}
+                                   onClick={() => {
+
+                                     let coverUrl3 = this.state.data.coverUrl3
+                                     coverUrl3.splice(idx, 1);
+                                     this.setState(prevState => {
+                                       return {
+                                         ...prevState,
+                                         data: {
+                                           ...prevState.data,
+                                           coverUrl3: coverUrl3
+                                         }
+                                       }
+                                     })
+                                   }}
+                              />
+                            )
+                          })}
+                        </div>
+                      </div>
+                    </Col>
                   </div>
 
                 </Col>
@@ -290,6 +408,49 @@ class EditNewsComponent extends React.Component {
                     }
                     }
                   >Xóa ảnh </Button>}
+
+                  <br/>
+
+
+                  <Col sm={12} className="padding-5">
+                    <label><b>Ảnh khác:</b></label>
+                    <ImageUpload
+                      isMultiple={false}
+                      handleUpload={(img) => this.handleCoverUpload2(img)}
+                    />
+                    <br/>
+                    <Button style={{marginRight: 10}}
+                            onClick={() => this.showModalSelectImage('cover2')}
+                    >Chọn ảnh từ thư viện</Button>
+                  </Col>
+
+                  <Col sm={12} className="padding-5">
+                    <div style={{ marginBottom: 16 }}>
+                      <div>
+                        {(this.state.data.coverUrl2 || []).map((el,idx) => {
+                          return (
+                            <img key={idx} src={el} style={{height: 70, width: 'auto', margin: 5}}
+                              onClick={() => {
+
+                                let coverUrl2 = this.state.data.coverUrl2
+                                coverUrl2.splice(idx, 1);
+                                this.setState(prevState => {
+                                  return {
+                                    ...prevState,
+                                    data: {
+                                      ...prevState.data,
+                                      coverUrl2: coverUrl2
+                                    }
+                                  }
+                                })
+                              }}
+                            />
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </Col>
+
                 </Col>
               </Row>
             </TabPane>

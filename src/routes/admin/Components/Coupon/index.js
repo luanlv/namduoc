@@ -32,7 +32,8 @@ class Coupon extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      visible: false
+      visible: false,
+      url: '#'
     }
   }
 
@@ -67,14 +68,14 @@ class Coupon extends React.Component {
             <Input size="large" placeholder="Search by name"
                    onChange={(e) => {
                      let newInput = e.target.value
-
+                     this.setState({url: newInput})
                     }
                    }
             />
+            <br/>
+            <Button type="primary" onClick={() => this.props.handleSelect(this.state)}>Thêm link</Button>
           </Col>
-
         </Row>
-
       </div>
     );
   }

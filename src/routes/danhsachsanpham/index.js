@@ -12,6 +12,7 @@ export default {
     let seo = {}
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())){
       store.dispatch(showLoading())
+      let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }'
       const resp = await fetch('/graphql', {
         method: 'post',
         headers: {
@@ -19,7 +20,7 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{ seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, price, slug, coverUrl, description, saleOff, body, created_at} }',
+          query: '{'+ info + 'seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, price, slug, coverUrl, description, saleOff, body, created_at} }',
         }),
         credentials: 'include',
       });

@@ -21,6 +21,7 @@ export default {
     require('./library').default,
     require('./setting').default,
     require('./menu').default,
+    require('./menuBottom').default,
     require('./thongtin').default,
     // require('./editor').default,
     require('./news').default,

@@ -77,17 +77,17 @@ class App extends React.Component {
                 </Menu.Item>
               </SubMenu>
 
-              <SubMenu
-                key="sub1"
-                title={<span><Icon type="idcard" /><span className="nav-text">Món ngon</span></span>}
-              >
-                <Menu.Item key="monngon1">
-                  <Link to="/admin/monngon?v=list" >Danh sách</Link>
-                </Menu.Item>
-                <Menu.Item key="monngon2">
-                  <Link to="/admin/monngon?v=add" >Thêm mới</Link>
-                </Menu.Item>
-              </SubMenu>
+              {/*<SubMenu*/}
+                {/*key="sub1"*/}
+                {/*title={<span><Icon type="idcard" /><span className="nav-text">Món ngon</span></span>}*/}
+              {/*>*/}
+                {/*<Menu.Item key="monngon1">*/}
+                  {/*<Link to="/admin/monngon?v=list" >Danh sách</Link>*/}
+                {/*</Menu.Item>*/}
+                {/*<Menu.Item key="monngon2">*/}
+                  {/*<Link to="/admin/monngon?v=add" >Thêm mới</Link>*/}
+                {/*</Menu.Item>*/}
+              {/*</SubMenu>*/}
 
               <SubMenu
                 key="sub2"

@@ -60,7 +60,8 @@ class Html extends React.Component {
           <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css" async />
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css" async />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
+          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
           <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
           <link href={"/assets/styles/style.min.css?v=" + v} rel="stylesheet" />
           <link rel="stylesheet" type="text/css"  href={"/css/app.css?v=" +v }/>
@@ -109,7 +110,6 @@ class Html extends React.Component {
           <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async' />
 
           <script dangerouslySetInnerHTML={{ __html: this.props.scriptBottom }} />
-
 
 
         </body>
