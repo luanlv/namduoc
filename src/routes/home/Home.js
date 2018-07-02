@@ -13,14 +13,14 @@ class Home extends React.Component {
       <div >
         <div id="mainContent">
           <div className="container">
-            <div id="banner-top" className="row">
-              <div className="left col-md-3">
-                <img src="/assets/images/banner_left.jpg" alt="banner 1"/>
-              </div>
-              <div className="right col-md-9">
-                <img src="/assets/images/banner_right.jpg" alt="banner 2"/>
-              </div>
-            </div>
+            {/*<div id="banner-top" className="row">*/}
+              {/*<div className="left col-md-3">*/}
+                {/*<img src="/assets/images/banner_left.jpg" alt="banner 1"/>*/}
+              {/*</div>*/}
+              {/*<div className="right col-md-9">*/}
+                {/*<img src="/assets/images/banner_right.jpg" alt="banner 2"/>*/}
+              {/*</div>*/}
+            {/*</div>*/}
             <Main data={this.props.data} />
             <Aside data={this.props.data} />
           </div>

@@ -4199,7 +4199,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 'div',
                 null,
                 product.coverUrl2.map((img, idx) => {
-                  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { key: 'sub' + idx, src: img, style: { height: 60, width: 'auto !important', maxWidth: 100, margin: '5px 5px 0 0', padding: 3, borderRadius: 3, border: "2px solid " + (this.state.image === idx ? "#005aa8" : "transparent") },
+                  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { key: 'sub' + idx, src: img, style: { height: 60, width: 'auto', maxWidth: 80, margin: '5px 5px 0 0', padding: 3, borderRadius: 3, border: "2px solid " + (this.state.image === idx ? "#005aa8" : "transparent") },
                     onClick: () => {
                       this.setState({ image: idx });
                     }
@@ -12447,20 +12447,6 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'container' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { id: 'banner-top', className: 'row' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'left col-md-3' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/banner_left.jpg', alt: 'banner 1' })
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'right col-md-9' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/banner_right.jpg', alt: 'banner 2' })
-            )
-          ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Partials_Main__["a" /* default */], { data: this.props.data }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Partials_Aside__["a" /* default */], { data: this.props.data })
         )

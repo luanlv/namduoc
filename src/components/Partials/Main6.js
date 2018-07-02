@@ -63,7 +63,7 @@ class Main extends React.Component {
                     <div>
                       {product.coverUrl2.map((img, idx) => {
                         return (
-                          <img key={'sub' + idx} src={img} style={{height: 60, width: 'auto !important', maxWidth: 100, margin: '5px 5px 0 0', padding: 3, borderRadius: 3, border: "2px solid " + (this.state.image === idx ? "#005aa8" : "transparent")}}
+                          <img key={'sub' + idx} src={img} style={{height: 60, width: 'auto', maxWidth: 80, margin: '5px 5px 0 0', padding: 3, borderRadius: 3, border: "2px solid " + (this.state.image === idx ? "#005aa8" : "transparent")}}
                                  onClick={() => {
                                    this.setState({image: idx})
                                  }}
