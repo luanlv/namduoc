@@ -52,7 +52,7 @@ class Layout extends React.Component {
             source.start();
           };
 
-          // audioCtx.decodeAudioData(xhr.response).then(playsound);
+          audioCtx.decodeAudioData(xhr.response).then(playsound);
         });
         xhr.send();
       });

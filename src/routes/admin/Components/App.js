@@ -142,7 +142,7 @@ class App extends React.Component {
                   </span>
                 </Link>
               </Menu.Item>
-              
+
               <Menu.Item key="Logout">
                 <a href="/auth/logout">
                   <span>

@@ -67,9 +67,7 @@ class Footer extends React.Component {
         <div className="copyright">
           <div className="container">
             <div className="col-md-6">
-              © 2017 COMHOAVANG. All rights reserved | <a href="http://vnguy.com/" target="_blank">
-                Thiet Ke Web</a> <a href="http://vnguy.com/" target="_blank">VnGuy.Com</a>
-            </div>
+              © 2017 NAMDUOCQUANY. All rights reserved</div>
           </div>
         </div>
       </div>

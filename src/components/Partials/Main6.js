@@ -40,8 +40,6 @@ class Main extends React.Component {
       product.coverUrl2.forEach(el => {
         imgs.push(el)
       })
-      console.log("===========")
-      console.log(imgs)
       return (
         <div id="colContent">
               <div className="wrapper-details">
@@ -56,15 +54,16 @@ class Main extends React.Component {
                   <div className="details-img" style={{paddingRight: 5}}>
                     {imgs.map((img, idx) => {
                       return (
-                        <div style={{display: this.state.image === idx ? 'block': 'none'}}>
+                        <div key={'zoom' + idx} style={{display: this.state.image === idx ? 'block': 'none'}}>
                           <ReactImageZoom {...{width: 345, zoomWidth: 345, offset: {"vertical":0,"horizontal":10}, img: img}}/>
                         </div>
                       )
                     })}
+
                     <div>
-                      {imgs.map((img, idx) => {
+                      {product.coverUrl2.map((img, idx) => {
                         return (
-                          <image src={img} style={{height: 60, width: 'auto !important', margin: '5px 5px 0 0', padding: 3, borderRadius: 3, border: "2px solid " + (this.state.image === idx ? "#005aa8" : "transparent")}}
+                          <img key={'sub' + idx} src={img} style={{height: 60, width: 'auto !important', maxWidth: 100, margin: '5px 5px 0 0', padding: 3, borderRadius: 3, border: "2px solid " + (this.state.image === idx ? "#005aa8" : "transparent")}}
                                  onClick={() => {
                                    this.setState({image: idx})
                                  }}
@@ -72,9 +71,10 @@ class Main extends React.Component {
                         )
                       })
                       }
-
                     </div>
+
                   </div>
+
                   <div className="details-content details-content2">
                     <h4 className="title-2" style={{textAlign: 'center'}}>Thông tin sản phẩm</h4>
                     {product.price === product.newPrice && <div className="price-product" style={{textAlign: 'center'}}>

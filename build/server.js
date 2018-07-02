@@ -314,7 +314,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             source.start();
           };
 
-          // audioCtx.decodeAudioData(xhr.response).then(playsound);
+          audioCtx.decodeAudioData(xhr.response).then(playsound);
         });
         xhr.send();
       });
@@ -706,18 +706,7 @@ class Footer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'col-md-6' },
-            '\xA9 2017 COMHOAVANG. All rights reserved | ',
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { href: 'http://vnguy.com/', target: '_blank' },
-              'Thiet Ke Web'
-            ),
-            ' ',
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { href: 'http://vnguy.com/', target: '_blank' },
-              'VnGuy.Com'
-            )
+            '\xA9 2017 NAMDUOCQUANY. All rights reserved'
           )
         )
       )
@@ -4174,8 +4163,6 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       product.coverUrl2.forEach(el => {
         imgs.push(el);
       });
-      console.log("===========");
-      console.log(imgs);
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { id: 'colContent' },
@@ -4204,15 +4191,15 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
               imgs.map((img, idx) => {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
-                  { style: { display: this.state.image === idx ? 'block' : 'none' } },
+                  { key: 'zoom' + idx, style: { display: this.state.image === idx ? 'block' : 'none' } },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_image_zoom___default.a, { width: 345, zoomWidth: 345, offset: { "vertical": 0, "horizontal": 10 }, img: img })
                 );
               }),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                imgs.map((img, idx) => {
-                  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('image', { src: img, style: { height: 60, width: 'auto !important', margin: '5px 5px 0 0', padding: 3, borderRadius: 3, border: "2px solid " + (this.state.image === idx ? "#005aa8" : "transparent") },
+                product.coverUrl2.map((img, idx) => {
+                  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { key: 'sub' + idx, src: img, style: { height: 60, width: 'auto !important', maxWidth: 100, margin: '5px 5px 0 0', padding: 3, borderRadius: 3, border: "2px solid " + (this.state.image === idx ? "#005aa8" : "transparent") },
                     onClick: () => {
                       this.setState({ image: idx });
                     }
