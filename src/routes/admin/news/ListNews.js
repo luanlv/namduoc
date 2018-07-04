@@ -13,6 +13,7 @@ import history from '../../../core/history'
 import Link from '../../../components/Link'
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { Button, DatePicker, Table, Icon} from 'antd';
+import axios from 'axios';
 
 class ListNews extends React.Component {
   constructor(props){
@@ -79,7 +80,19 @@ const columns = [{
   key: 'action',
   render: (text, record) => (
     <span>
-      <Link to={"/admin/news?v=edit&slug=" + record.slug }>Sửa</Link>
+      <Link to={"/admin/news?v=edit&slug=" + record.slug }><Button type="primary">Sửa</Button></Link>
+      - | -
+      <span><Button type="primary"
+                    onClick={() => {
+                      axios.post('/api/post/delete', {slug: record.slug})
+                        .then(function (response) {
+                          location.reload();
+                        })
+                        .catch(function (error) {
+
+                        })
+                    }}
+      >Xóa</Button></span>
     </span>
   ),
 }];

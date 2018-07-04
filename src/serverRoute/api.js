@@ -101,6 +101,20 @@ router.post('/setting/update', bodyParser.json() ,(req, res) => {
   });
 })
 
+router.post('/product/delete', bodyParser.json() ,(req, res) => {
+  Product.remove({slug: req.body.slug}, () => {
+    res.send('ok')
+  })
+})
+
+
+
+router.post('/post/delete', bodyParser.json() ,(req, res) => {
+  Post.remove({slug: req.body.slug}, () => {
+    res.send('ok')
+  })
+})
+
 router.post('/product/new', bodyParser.json() ,(req, res) => {
   Product.create(req.body, (err, resData) => {
     if(err) res.sendStatus(400)
