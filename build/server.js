@@ -314,7 +314,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             source.start();
           };
 
-          audioCtx.decodeAudioData(xhr.response).then(playsound);
+          // audioCtx.decodeAudioData(xhr.response).then(playsound);
         });
         xhr.send();
       });
@@ -735,19 +735,12 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     let menu = JSON.parse(info.menu);
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
-      { id: 'header' },
+      { id: 'header',
+        style: { backgroundColor: '#5CB247' }
+      },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'container' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { id: 'logo' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-            { to: '/' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/main_logo.png', alt: 'logo' })
-          )
-        ),
+        { className: 'container2' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'header-right' },
@@ -782,8 +775,17 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             'search'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { id: 'logo' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'a',
+              { href: '/' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/logo.png', alt: '' })
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'ul',
-            { id: 'menu', className: 'desktop-showhide sf-js-enabled', style: { touchAction: 'pan-y' } },
+            { id: 'menu', className: 'desktop-showhide sf-js-enabled', style: { touchAction: 'pan-y', float: 'right' } },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'li',
               { className: 'home' },
@@ -836,48 +838,55 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'header-bottom' },
+            {
+              style: { borderBottom: '1px solid white' }
+            },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { id: 'searchbox', className: 'search-form' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', name: 'ctl00$ctl00$ctl00$btnSearch', value: '', id: 'ctl00_ctl00_ctl00_btnSearch',
-                className: 'search-btn' }),
+              { className: 'container' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'search-input' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'ctl00$ctl00$ctl00$txtSearch', type: 'text', id: 'ctl00_ctl00_ctl00_txtSearch',
-                  className: 'search-text' }),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'ctl00$ctl00$ctl00$txtSearch_TextBoxWatermarkExtender_ClientState',
-                  id: 'ctl00_ctl00_ctl00_txtSearch_TextBoxWatermarkExtender_ClientState' })
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'share desktop-showhide' },
-              'Follow me on ',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'a',
-                { target: '_blank', href: info.fanpage },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/fa-1.png', alt: '' })
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'hotline desktop-showhide' },
-              'T\u1ED5ng \u0111\xE0i CSKH: ',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'strong',
-                null,
-                info.phone
+                { className: 'header-bottom'
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { id: 'searchbox', className: 'search-form' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'search-input' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'ctl00$ctl00$ctl00$txtSearch', type: 'text', id: 'ctl00_ctl00_ctl00_txtSearch',
+                      className: 'search-text' }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'ctl00$ctl00$ctl00$txtSearch_TextBoxWatermarkExtender_ClientState',
+                      id: 'ctl00_ctl00_ctl00_txtSearch_TextBoxWatermarkExtender_ClientState' })
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'hotline desktop-showhide' },
+                  'T\u1ED5ng \u0111\xE0i CSKH: ',
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'strong',
+                    null,
+                    info.phone
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'share desktop-showhide' },
+                  'Follow me on ',
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'a',
+                    { target: '_blank', href: info.fanpage },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/fa-1.png', alt: '' })
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'clr' })
               )
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'clr' })
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'clr' })
+          )
         )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'header-bgr desktop-showhide' }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'header-bgl desktop-showhide' })
+      )
     );
   }
 }
@@ -4163,6 +4172,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       product.coverUrl2.forEach(el => {
         imgs.push(el);
       });
+      console.log(imgs);
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { id: 'colContent' },
@@ -4198,7 +4208,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
-                product.coverUrl2.map((img, idx) => {
+                imgs.map((img, idx) => {
                   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { key: 'sub' + idx, src: img, style: { height: 60, width: 'auto', maxWidth: 80, margin: '5px 5px 0 0', padding: 3, borderRadius: 3, border: "2px solid " + (this.state.image === idx ? "#005aa8" : "transparent") },
                     onClick: () => {
                       this.setState({ image: idx });

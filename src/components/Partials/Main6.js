@@ -40,6 +40,7 @@ class Main extends React.Component {
       product.coverUrl2.forEach(el => {
         imgs.push(el)
       })
+      console.log(imgs)
       return (
         <div id="colContent">
               <div className="wrapper-details">
@@ -61,7 +62,7 @@ class Main extends React.Component {
                     })}
 
                     <div>
-                      {product.coverUrl2.map((img, idx) => {
+                      {imgs.map((img, idx) => {
                         return (
                           <img key={'sub' + idx} src={img} style={{height: 60, width: 'auto', maxWidth: 80, margin: '5px 5px 0 0', padding: 3, borderRadius: 3, border: "2px solid " + (this.state.image === idx ? "#005aa8" : "transparent")}}
                                  onClick={() => {
