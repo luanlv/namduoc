@@ -3382,7 +3382,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           products.map((el, index) => {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { key: index, className: 'col-xs-3 element-item' },
+              { key: index, className: 'col-md-3 col-xs-6 \t.col-6 element-item' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'product-box' },
