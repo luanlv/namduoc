@@ -10,7 +10,7 @@ class Header extends React.Component {
       <div id="header"
         style={{backgroundColor: '#5CB247'}}
       >
-        <div className="container2">
+        <div className="container">
 
           <div className="header-right">
               <div className="button-menu mobile-showhide">
@@ -22,11 +22,11 @@ class Header extends React.Component {
 
               <div id="logo">
                 <a href="/">
-                  <img src="/logo.png" alt="" />
+                  <img src="/assets/logo_namduoc.png" alt="" />
                 </a>
               </div>
 
-              <ul id="menu" className="desktop-showhide sf-js-enabled" style={{touchAction: 'pan-y', float: 'right'}}>
+              <ul id="menu" className="desktop-showhide sf-js-enabled" style={{touchAction: 'pan-y'}}>
                 <li className="home">
                   <Link to="/">Trang chủ</Link></li>
                 {menu.map((el, idx) => {
@@ -51,7 +51,7 @@ class Header extends React.Component {
           <div
             style={{borderBottom: '1px solid white'}}
           >
-              <div className="container">
+
                 <div className="header-bottom"
                 >
                   <div id="searchbox" className="search-form">
@@ -64,17 +64,17 @@ class Header extends React.Component {
                              id="ctl00_ctl00_ctl00_txtSearch_TextBoxWatermarkExtender_ClientState"/>
                     </div>
                   </div>
-                  <div className="hotline desktop-showhide">
-                    Tổng đài CSKH: <strong>{info.phone}</strong>
-                  </div>
                   <div className="share desktop-showhide">
                     Follow me on <a target="_blank" href={info.fanpage}>
                     <img src="/assets/images/fa-1.png" alt=""/></a>
                   </div>
+                  <div className="hotline desktop-showhide">
+                    Tổng đài CSKH: <strong>{info.phone}</strong>
+                  </div>
                   <div className="clr">
                   </div>
                 </div>
-              </div>
+
             <div className="clr">
             </div>
           </div>

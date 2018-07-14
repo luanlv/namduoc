@@ -744,7 +744,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'container2' },
+        { className: 'container' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'header-right' },
@@ -784,12 +784,12 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'a',
               { href: '/' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/logo.png', alt: '' })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/logo_namduoc.png', alt: '' })
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'ul',
-            { id: 'menu', className: 'desktop-showhide sf-js-enabled', style: { touchAction: 'pan-y', float: 'right' } },
+            { id: 'menu', className: 'desktop-showhide sf-js-enabled', style: { touchAction: 'pan-y' } },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'li',
               { className: 'home' },
@@ -847,45 +847,41 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'container' },
+              { className: 'header-bottom'
+              },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'header-bottom'
-                },
+                { id: 'searchbox', className: 'search-form' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
-                  { id: 'searchbox', className: 'search-form' },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'search-input' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'ctl00$ctl00$ctl00$txtSearch', type: 'text', id: 'ctl00_ctl00_ctl00_txtSearch',
-                      className: 'search-text' }),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'ctl00$ctl00$ctl00$txtSearch_TextBoxWatermarkExtender_ClientState',
-                      id: 'ctl00_ctl00_ctl00_txtSearch_TextBoxWatermarkExtender_ClientState' })
-                  )
-                ),
+                  { className: 'search-input' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'ctl00$ctl00$ctl00$txtSearch', type: 'text', id: 'ctl00_ctl00_ctl00_txtSearch',
+                    className: 'search-text' }),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'ctl00$ctl00$ctl00$txtSearch_TextBoxWatermarkExtender_ClientState',
+                    id: 'ctl00_ctl00_ctl00_txtSearch_TextBoxWatermarkExtender_ClientState' })
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'share desktop-showhide' },
+                'Follow me on ',
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { className: 'hotline desktop-showhide' },
-                  'T\u1ED5ng \u0111\xE0i CSKH: ',
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'strong',
-                    null,
-                    info.phone
-                  )
-                ),
+                  'a',
+                  { target: '_blank', href: info.fanpage },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/fa-1.png', alt: '' })
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'hotline desktop-showhide' },
+                'T\u1ED5ng \u0111\xE0i CSKH: ',
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { className: 'share desktop-showhide' },
-                  'Follow me on ',
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { target: '_blank', href: info.fanpage },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/fa-1.png', alt: '' })
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'clr' })
-              )
+                  'strong',
+                  null,
+                  info.phone
+                )
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'clr' })
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'clr' })
           )

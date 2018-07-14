@@ -827,6 +827,7 @@ hr{
   width:100%
 }
 #header{
+  height: 98px;
   position:relative;
   left:0;
   top:0;
@@ -915,7 +916,7 @@ hr{
   padding-left:35px
 }
 #header .hotline{
-  float: left;
+  float: right;
   line-height:40px;
   padding-right:17px;
   text-align:right
@@ -937,7 +938,7 @@ hr{
   line-height:28px;
   white-space:nowrap;
   text-transform:uppercase;
-  float: left;
+  float: right;
   width:225px
 }
 .share img{
@@ -4073,6 +4074,6 @@ form.gsc-search-box{
 
 .container2 {
   position: relative;
-  width: 90%;
+  width: 970px;
   margin: 0 auto;
 }
