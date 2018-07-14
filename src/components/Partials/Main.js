@@ -8,7 +8,8 @@ class Main extends React.Component {
     const products = this.props.data.products.value
     return (
       <div id="colContent">
-        <h1 className="title text-uppercase">
+
+        <h1 className="title text-uppercase" style={{borderBottom: '1px solid #ddd'}}>
           Nam Dược Quân y
         </h1>
 
@@ -16,7 +17,7 @@ class Main extends React.Component {
           <div className="product-tb pro-tb row">
             {products.map((el, index) => {
               return (
-                <div key={index} className="col-xs-4 element-item">
+                <div key={index} className="col-xs-3 element-item">
                   <div className="product-box">
                     <Link to={'/san-pham/' + el.slug} className="product-img">
                       <img src={el.coverUrl.replace("\/image", "\/image\/small")} alt={el.title} /></Link>

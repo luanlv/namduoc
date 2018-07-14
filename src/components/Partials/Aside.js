@@ -15,7 +15,10 @@ class Aside extends React.Component {
           <div className="col-md-12 col-xs-6">
             <div className="adv">
               <Link to={'/'}>
-                <img src="/assets/images/hotline.jpg" alt="Hotline" /></Link>
+                <img src="/assets/right.jpg" alt="Hotline" /></Link>
+            </div>
+            <div className="adv">
+              <div className="fb-page" data-href="https://www.facebook.com/namduocquany0973318868" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/namduocquany0973318868" className="fb-xfbml-parse-ignore"></blockquote></div>
             </div>
             {/*<div className="adv">*/}
               {/*<Link to={'/'}>*/}
@@ -55,9 +58,9 @@ class Aside extends React.Component {
             {/*</ul>*/}
           </div>
         </div>
-        <FacebookProvider appID="123093138237586">
-          <Page href={info.fanpage} data-numposts="5" />
-        </FacebookProvider>
+        {/*<FacebookProvider appID="123093138237586">*/}
+          {/*<Page href={info.fanpage} data-numposts="5" />*/}
+        {/*</FacebookProvider>*/}
 
       </div>
     )

@@ -466,7 +466,16 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
               { to: '/' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/hotline.jpg', alt: 'Hotline' })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/right.jpg', alt: 'Hotline' })
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'adv' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'fb-page', 'data-href': 'https://www.facebook.com/namduocquany0973318868', 'data-tabs': 'timeline', 'data-small-header': 'false', 'data-adapt-container-width': 'true', 'data-hide-cover': 'false', 'data-show-facepile': 'true' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('blockquote', { cite: 'https://www.facebook.com/namduocquany0973318868', className: 'fb-xfbml-parse-ignore' })
             )
           )
         )
@@ -480,11 +489,6 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           { className: 'col-md-12 col-xs-6' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'wrap-video' })
         )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        __WEBPACK_IMPORTED_MODULE_2_react_facebook___default.a,
-        { appID: '123093138237586' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_facebook__["Page"], { href: info.fanpage, 'data-numposts': '5' })
       )
     );
   }
@@ -2770,7 +2774,8 @@ app.use('/graphql', __WEBPACK_IMPORTED_MODULE_4_express_graphql___default()(req 
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------
 
-app.get('*', routeCache.cacheSeconds(20), (() => {
+// app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
+app.get('*', routeCache.cacheSeconds(0), (() => {
   var _ref = _asyncToGenerator(function* (req, res, next) {
     let routeUrl = req.originalUrl;
     let isAdmin = routeUrl.slice(0, 6) === '/admin';
@@ -3369,7 +3374,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       { id: 'colContent' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h1',
-        { className: 'title text-uppercase' },
+        { className: 'title text-uppercase', style: { borderBottom: '1px solid #ddd' } },
         'Nam D\u01B0\u1EE3c Qu\xE2n y'
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -3381,7 +3386,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           products.map((el, index) => {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { key: index, className: 'col-xs-4 element-item' },
+              { key: index, className: 'col-xs-3 element-item' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'product-box' },
@@ -12503,6 +12508,97 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'container' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { id: 'banner-top', className: 'row' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'left col-md-3' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                {
+                  style: {
+                    border: '2px solid #ddd',
+                    height: '100%'
+                  }
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'header',
+                    style: { backgroundColor: '#5CB247', textAlign: 'center', color: 'white', textWeight: 'bold' }
+                  },
+                  'DANH M\u1EE4C S\u1EA2N PH\u1EA8M'
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'ul',
+                  { id: 'mainMenu', style: { height: 290,
+                      padding: 5,
+                      listStyle: 'none'
+                    } },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    'Ung th\u01B0'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    'S\u1EA3n ph\u1EA9m b\u1ED5 gan'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    '\u0110\u01B0\u1EDDng huy\u1EBFt - Huy\u1EBFt \xE1p'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    'D\u1EA1 d\xE0y'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    'Gi\u1EA3n c\xE2n'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    'L\xE0m \u0111\u1EB9p'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    'X\u01B0\u01A1ng kh\u1EDBp'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    'B\u1ED5 t\u1ED5ng h\u1EE3p'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    'Nano Curcumin'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    'T\u1ECFi \u0111en'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'li',
+                    null,
+                    'S\u1EA3n ph\u1EA9m kh\xE1c'
+                  )
+                )
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'right col-md-9' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/banner.jpg', alt: 'banner 2' })
+            )
+          ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Partials_Main__["a" /* default */], { data: this.props.data }),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Partials_Aside__["a" /* default */], { data: this.props.data })
         )
