@@ -6,16 +6,19 @@ class Main extends React.Component {
     const foodNews = this.props.data.foodNews.value.data.slice(1, 4)
     const news = this.props.data.news.value.data.slice(0, 3)
     const products = this.props.data.products.value
+    const noibat = this.props.data.noibat.value.slice(0, 8)
+    const banchay = this.props.data.banchay.value.slice(0, 8)
+    const khuyenmai = this.props.data.khuyenmai.value.slice(0, 8)
     return (
       <div id="colContent">
 
         <h1 className="title text-uppercase" style={{borderBottom: '1px solid #ddd'}}>
-          Nam Dược Quân y
+          SẢN PHẨM NỔI BẬT
         </h1>
 
-        <div className="wrap-section line-bottom pro-site">
+        <div className="wrap-section pro-site">
           <div className="product-tb pro-tb row">
-            {products.map((el, index) => {
+            {noibat.map((el, index) => {
               return (
                 <div key={index} className="col-md-3 col-xs-6 	.col-6 element-item">
                   <div className="product-box">
@@ -34,6 +37,57 @@ class Main extends React.Component {
           </div>
         </div>
 
+
+        <h1 className="title text-uppercase" style={{borderBottom: '1px solid #ddd'}}>
+          SẢN PHẨM BÁN CHẠY
+        </h1>
+
+        <div className="wrap-section pro-site">
+          <div className="product-tb pro-tb row">
+            {banchay.map((el, index) => {
+              return (
+                <div key={index} className="col-md-3 col-xs-6 	.col-6 element-item">
+                  <div className="product-box">
+                    <Link to={'/san-pham/' + el.slug} className="product-img">
+                      <img src={el.coverUrl.replace("\/image", "\/image\/small")} alt={el.title} /></Link>
+                    <div className="product-content">
+                      <h3 className="product-name">
+                        <Link to={'/san-pham/' + el.slug} >
+                          {el.name}</Link>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+
+        <h1 className="title text-uppercase" style={{borderBottom: '1px solid #ddd'}}>
+          SẢN PHẨM KHUYẾN MẠI
+        </h1>
+
+        <div className="wrap-section pro-site">
+          <div className="product-tb pro-tb row">
+            {khuyenmai.map((el, index) => {
+              return (
+                <div key={index} className="col-md-3 col-xs-6 	.col-6 element-item">
+                  <div className="product-box">
+                    <Link to={'/san-pham/' + el.slug} className="product-img">
+                      <img src={el.coverUrl.replace("\/image", "\/image\/small")} alt={el.title} /></Link>
+                    <div className="product-content">
+                      <h3 className="product-name">
+                        <Link to={'/san-pham/' + el.slug} >
+                          {el.name}</Link>
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
         {/*<div className="head lineh">*/}
           {/*<h2 className="title-2" style={{lineHeight: 37}}>*/}
             {/*Món ngon*/}

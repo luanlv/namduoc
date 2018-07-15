@@ -40,6 +40,15 @@ export default new GraphQLObjectType({
     name: {
       type: new GraphQLNonNull(GraphQLString)
     },
+    category: {
+      type: new GraphQLNonNull(GraphQLString)
+    },
+    unit: {
+      type: new GraphQLNonNull(GraphQLString)
+    },
+    loai: {
+      type: new GraphQLList(GraphQLString)
+    },
     price: {
       type: new GraphQLNonNull(GraphQLInt)
     },

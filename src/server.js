@@ -149,7 +149,19 @@ app.get('*', routeCache.cacheSeconds(0), async (req, res, next) => {
         products: {
           needUpdate: true,
           value: []
-        }
+        },
+        noibat: {
+          needUpdate: true,
+          value: []
+        },
+        khuyenmai: {
+          needUpdate: true,
+          value: []
+        },
+        banchay: {
+          needUpdate: true,
+          value: []
+        },
       },
       user: req.user || null,
     }, {

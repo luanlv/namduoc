@@ -46,7 +46,7 @@ class EditNewsComponent extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        query: '{ getOneProduct(slug: "'+ slug +'"){name, slug, price, newPrice, coverUrl, coverUrl2, coverUrl3, description, saleOff, body, created_at} }',
+        query: '{ getOneProduct(slug: "'+ slug +'"){category, unit, loai, name, slug, price, newPrice, coverUrl, coverUrl2, coverUrl3, description, saleOff, body, created_at} }',
       }),
       credentials: 'include',
     })
@@ -274,50 +274,134 @@ class EditNewsComponent extends React.Component {
                     />
                   </div>
 
+
                   <div style={{ marginBottom: 16 }}>
-                    <label><b>Giá cũ:</b></label>
-                    <br/>
-                    <InputNumber
-                      defaultValue={this.state.data.price || 0}
-                      min={0}
-                      formatter={value => `${value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`}
-                      parser={value => value.replace(/(,*)/g, '')}
-                      style={{minWidth: 200}}
+                    <label><b>Danh mục: </b></label>
+                    <Select
+                      // mode="multiple"
+                      placeholder="chọn danh mục"
+                      defaultValue={this.state.data.category}
                       onChange={(value) => {
                         this.setState(prev => {
                           return {
                             ...prev,
                             data: {
                               ...prev.data,
-                              price: parseInt(value)
+                              category: value
+                            }
+                          }
+                        })
+                      }}
+                      style={{ width: '100%' }}
+                    >
+                      <Option key={'ung-thu'}>Ung thư</Option>
+                      <Option key={'san-pham-bo-gan'}>Sản phẩm bổ gan</Option>
+                      <Option key={'duong-huyet-huyet-app'}>Đường huyết - Huyết áp</Option>
+                      <Option key={'da-day'}>Dạ dày</Option>
+                      <Option key={'giam-can'}>Giảm cân</Option>
+                      <Option key={'lam-dep'}>Làm đẹp</Option>
+                      <Option key={'xuong-khop'}>Xương khớp</Option>
+                      <Option key={'bo-tong-hop'}>Bổ tổng hợp</Option>
+                      <Option key={'nano-curcumin'}>Nano Curcumin</Option>
+                      <Option key={'toi-den'}>Tỏi đen</Option>
+                      <Option key={'san-pham-khac'}>Sản phẩm khác</Option>
+                    </Select>
+                    <br />
+                  </div>
+
+                  <div style={{ marginBottom: 16 }}>
+                    <label><b>Quy cách: </b></label>
+                    <Input
+                      placeholder="Quy cách"
+                      value={this.state.data.unit}
+                      onChange={(e) => {
+                        let value = e.target.value
+                        this.setState(prev => {
+                          return {
+                            ...prev,
+                            data: {
+                              ...prev.data,
+                              unit: value
                             }
                           }
                         })
                       }}
                     />
                   </div>
+
                   <div style={{ marginBottom: 16 }}>
-                    <label><b>Giá mới:</b></label>
-                    <br/>
-                    <InputNumber
-                      defaultValue={this.state.data.newPrice || 0}
-                      min={0}
-                      formatter={value => `${value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`}
-                      parser={value => value.replace(/(,*)/g, '')}
-                      style={{minWidth: 200}}
+                    <label><b>Loại: </b></label>
+                    <Select
+                      mode="multiple"
+                      placeholder="Chọn loại"
+                      defaultValue={this.state.data.loai}
                       onChange={(value) => {
                         this.setState(prev => {
                           return {
                             ...prev,
                             data: {
                               ...prev.data,
-                              newPrice: parseInt(value)
+                              loai: value
                             }
                           }
                         })
                       }}
-                    />
+                      style={{ width: '100%' }}
+                    >
+                      <Option key={'noi-bat'}>Nổi bật</Option>
+                      <Option key={'ban-chay'}>Bán chạy</Option>
+                      <Option key={'khuyen-mai'}>Khuyến mại</Option>
+                    </Select>
                   </div>
+
+                  <div style={{ marginBottom: 16 }}>
+                    <Col sm={12} className="padding-5">
+                      <label><b>Giá cũ:</b></label>
+                      <br/>
+                      <InputNumber
+                        defaultValue={this.state.data.price || 0}
+                        min={0}
+                        formatter={value => `${value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`}
+                        parser={value => value.replace(/(,*)/g, '')}
+                        style={{minWidth: 200}}
+                        onChange={(value) => {
+                          this.setState(prev => {
+                            return {
+                              ...prev,
+                              data: {
+                                ...prev.data,
+                                price: parseInt(value)
+                              }
+                            }
+                          })
+                        }}
+                      />
+                    </Col>
+
+                    <Col sm={12} className="padding-5">
+                      <label><b>Giá mới:</b></label>
+                      <br/>
+                      <InputNumber
+                        defaultValue={this.state.data.newPrice || 0}
+                        min={0}
+                        formatter={value => `${value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`}
+                        parser={value => value.replace(/(,*)/g, '')}
+                        style={{minWidth: 200}}
+                        onChange={(value) => {
+                          this.setState(prev => {
+                            return {
+                              ...prev,
+                              data: {
+                                ...prev.data,
+                                newPrice: parseInt(value)
+                              }
+                            }
+                          })
+                        }}
+                      />
+                    </Col>
+                  </div>
+
 
                   <div style={{ marginBottom: 16 }}>
                     <label><b>Mô tả ( {(this.state.data.description.length >= 140 && this.state.data.description.length <= 150) ? <span style={{color: 'blue'}}>{this.state.data.description.length}</span> : <span style={{color: 'red'}}>{this.state.data.description.length}</span>} /150) :</b></label>
@@ -338,6 +422,7 @@ class EditNewsComponent extends React.Component {
                            }}
                     />
                   </div>
+
                   <div style={{ marginBottom: 16 }}>
                     <Col sm={12} className="padding-5">
                       <label><b>Ảnh khách hàng:</b></label>
@@ -379,7 +464,11 @@ class EditNewsComponent extends React.Component {
                     </Col>
                   </div>
 
+
                 </Col>
+
+
+
                 <Col sm={12} className="padding-5">
                   <div style={{ marginBottom: 16 }}>
                     <label><b>Ảnh đại diện:</b></label>

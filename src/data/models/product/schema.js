@@ -6,6 +6,9 @@ var schema = new mongoose.Schema({
   slug: { type:String, required:true, unique: true, index: true},
   name: String,
   // public: {type: Boolean, default: false},
+  category: { type: String, require: true, default: 'san-pham-khac'},
+  unit: { type: String, require: true, default: 'hộp'},
+  loai: {type: [String], require: true, default: []},
   coverUrl: String,
   coverUrl2: {type: [String], defautl: []},
   coverUrl3: {type: [String], defautl: []},
@@ -41,6 +44,28 @@ module.exports.getOneProduct = (root, {slug}) => {
 module.exports.getProducts = (root, {}) => {
   return new Promise((resolve, reject) => {
     model.find({}).exec((err, res) => {
+      err ? reject(err) : resolve(res);
+    });
+  });
+};
+
+module.exports.getProductsNoiBat = (root, {}) => {
+  return new Promise((resolve, reject) => {
+    model.find({loai: 'noi-bat'}).exec((err, res) => {
+      err ? reject(err) : resolve(res);
+    });
+  });
+};
+module.exports.getProductsBanChay = (root, {}) => {
+  return new Promise((resolve, reject) => {
+    model.find({loai: 'ban-chay'}).exec((err, res) => {
+      err ? reject(err) : resolve(res);
+    });
+  });
+};
+module.exports.getProductsKhuyenMai = (root, {}) => {
+  return new Promise((resolve, reject) => {
+    model.find({loai: 'khuyen-mai'}).exec((err, res) => {
       err ? reject(err) : resolve(res);
     });
   });

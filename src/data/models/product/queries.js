@@ -31,4 +31,18 @@ export default {
     type: new GraphQLList(type),
     resolve: model.getProducts
   },
+
+  getNoiBat: {
+    type: new GraphQLList(type),
+    resolve: model.getProductsNoiBat
+  },
+  getBanChay: {
+    type: new GraphQLList(type),
+    resolve: model.getProductsBanChay
+  },
+  getKhuyenMai: {
+    type: new GraphQLList(type),
+    resolve: model.getProductsKhuyenMai
+  },
+
 };

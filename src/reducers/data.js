@@ -33,6 +33,18 @@ export default function data(state = {}, action) {
         products: {
           ...state.products,
           value : data.getProducts || []
+        },
+        noibat: {
+          ...state.noibat,
+          value : data.getNoiBat || []
+        },
+        khuyenmai: {
+          ...state.khuyenmai,
+          value : data.getKhuyenMai || []
+        },
+        banchay: {
+          ...state.banchay,
+          value : data.getBanChay || []
         }
       };
     default:

@@ -322,6 +322,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   }
 
   render() {
+    // console.log(this.props.data)
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { id: 'wrapper' },
@@ -2710,6 +2711,18 @@ app.get('*', routeCache.cacheSeconds(0), (() => {
           products: {
             needUpdate: true,
             value: []
+          },
+          noibat: {
+            needUpdate: true,
+            value: []
+          },
+          khuyenmai: {
+            needUpdate: true,
+            value: []
+          },
+          banchay: {
+            needUpdate: true,
+            value: []
           }
         },
         user: req.user || null
@@ -3262,21 +3275,106 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     const foodNews = this.props.data.foodNews.value.data.slice(1, 4);
     const news = this.props.data.news.value.data.slice(0, 3);
     const products = this.props.data.products.value;
+    const noibat = this.props.data.noibat.value.slice(0, 8);
+    const banchay = this.props.data.banchay.value.slice(0, 8);
+    const khuyenmai = this.props.data.khuyenmai.value.slice(0, 8);
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { id: 'colContent' },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h1',
         { className: 'title text-uppercase', style: { borderBottom: '1px solid #ddd' } },
-        'Nam D\u01B0\u1EE3c Qu\xE2n y'
+        'S\u1EA2N PH\u1EA8M N\u1ED4I B\u1EACT'
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'wrap-section line-bottom pro-site' },
+        { className: 'wrap-section pro-site' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'product-tb pro-tb row' },
-          products.map((el, index) => {
+          noibat.map((el, index) => {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { key: index, className: 'col-md-3 col-xs-6 \t.col-6 element-item' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'product-box' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_1__components_Link__["a" /* default */],
+                  { to: '/san-pham/' + el.slug, className: 'product-img' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: el.coverUrl.replace("\/image", "\/image\/small"), alt: el.title })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'product-content' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'h3',
+                    { className: 'product-name' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      __WEBPACK_IMPORTED_MODULE_1__components_Link__["a" /* default */],
+                      { to: '/san-pham/' + el.slug },
+                      el.name
+                    )
+                  )
+                )
+              )
+            );
+          })
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h1',
+        { className: 'title text-uppercase', style: { borderBottom: '1px solid #ddd' } },
+        'S\u1EA2N PH\u1EA8M B\xC1N CH\u1EA0Y'
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'wrap-section pro-site' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'product-tb pro-tb row' },
+          banchay.map((el, index) => {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { key: index, className: 'col-md-3 col-xs-6 \t.col-6 element-item' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'product-box' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_1__components_Link__["a" /* default */],
+                  { to: '/san-pham/' + el.slug, className: 'product-img' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: el.coverUrl.replace("\/image", "\/image\/small"), alt: el.title })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'product-content' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'h3',
+                    { className: 'product-name' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      __WEBPACK_IMPORTED_MODULE_1__components_Link__["a" /* default */],
+                      { to: '/san-pham/' + el.slug },
+                      el.name
+                    )
+                  )
+                )
+              )
+            );
+          })
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'h1',
+        { className: 'title text-uppercase', style: { borderBottom: '1px solid #ddd' } },
+        'S\u1EA2N PH\u1EA8M KHUY\u1EBEN M\u1EA0I'
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'wrap-section pro-site' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'product-tb pro-tb row' },
+          khuyenmai.map((el, index) => {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               { key: index, className: 'col-md-3 col-xs-6 \t.col-6 element-item' },
@@ -5373,7 +5471,21 @@ module.exports.getOrders = (root, {}) => {
   getProducts: {
     type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */]),
     resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getProducts
+  },
+
+  getNoiBat: {
+    type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */]),
+    resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getProductsNoiBat
+  },
+  getBanChay: {
+    type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */]),
+    resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getProductsBanChay
+  },
+  getKhuyenMai: {
+    type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */]),
+    resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getProductsKhuyenMai
   }
+
 });
 
 /***/ }),
@@ -5388,6 +5500,9 @@ var schema = new mongoose.Schema({
   slug: { type: String, required: true, unique: true, index: true },
   name: String,
   // public: {type: Boolean, default: false},
+  category: { type: String, require: true, default: 'san-pham-khac' },
+  unit: { type: String, require: true, default: 'hộp' },
+  loai: { type: [String], require: true, default: [] },
   coverUrl: String,
   coverUrl2: { type: [String], defautl: [] },
   coverUrl3: { type: [String], defautl: [] },
@@ -5422,6 +5537,28 @@ module.exports.getOneProduct = (root, { slug }) => {
 module.exports.getProducts = (root, {}) => {
   return new Promise((resolve, reject) => {
     model.find({}).exec((err, res) => {
+      err ? reject(err) : resolve(res);
+    });
+  });
+};
+
+module.exports.getProductsNoiBat = (root, {}) => {
+  return new Promise((resolve, reject) => {
+    model.find({ loai: 'noi-bat' }).exec((err, res) => {
+      err ? reject(err) : resolve(res);
+    });
+  });
+};
+module.exports.getProductsBanChay = (root, {}) => {
+  return new Promise((resolve, reject) => {
+    model.find({ loai: 'ban-chay' }).exec((err, res) => {
+      err ? reject(err) : resolve(res);
+    });
+  });
+};
+module.exports.getProductsKhuyenMai = (root, {}) => {
+  return new Promise((resolve, reject) => {
+    model.find({ loai: 'khuyen-mai' }).exec((err, res) => {
       err ? reject(err) : resolve(res);
     });
   });
@@ -5466,6 +5603,15 @@ module.exports.getProducts = (root, {}) => {
     },
     name: {
       type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+    },
+    category: {
+      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+    },
+    unit: {
+      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+    },
+    loai: {
+      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
     },
     price: {
       type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLInt"])
@@ -5896,7 +6042,7 @@ let { setting } = __WEBPACK_IMPORTED_MODULE_6__models_setting_queries__["a" /* d
 let { info } = __WEBPACK_IMPORTED_MODULE_9__models_info_queries__["a" /* default */];
 let { getOrders } = __WEBPACK_IMPORTED_MODULE_7__models_order_queries__["a" /* default */];
 let { getNews, getOneNews, getFoodNews, getOnePost, getNewsInCategory } = __WEBPACK_IMPORTED_MODULE_3__models_post_queries__["a" /* default */];
-let { getOneProduct, getProducts } = __WEBPACK_IMPORTED_MODULE_4__models_product_queries__["a" /* default */];
+let { getOneProduct, getProducts, getNoiBat, getKhuyenMai, getBanChay } = __WEBPACK_IMPORTED_MODULE_4__models_product_queries__["a" /* default */];
 let { seo, allSeo } = __WEBPACK_IMPORTED_MODULE_8__models_seo_queries__["a" /* default */];
 
 const schema = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLSchema"]({
@@ -5917,7 +6063,10 @@ const schema = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLSchema"]({
       getOrders,
       seo,
       allSeo,
-      info
+      info,
+      getNoiBat,
+      getKhuyenMai,
+      getBanChay
     }
   }),
   mutation: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLObjectType"]({
@@ -6001,6 +6150,15 @@ function data(state = {}, action) {
         }),
         products: _extends({}, state.products, {
           value: data.getProducts || []
+        }),
+        noibat: _extends({}, state.noibat, {
+          value: data.getNoiBat || []
+        }),
+        khuyenmai: _extends({}, state.khuyenmai, {
+          value: data.getKhuyenMai || []
+        }),
+        banchay: _extends({}, state.banchay, {
+          value: data.getBanChay || []
         })
       });
     default:
@@ -9941,7 +10099,7 @@ class EditNewsComponent extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          query: '{ getOneProduct(slug: "' + slug + '"){name, slug, price, newPrice, coverUrl, coverUrl2, coverUrl3, description, saleOff, body, created_at} }'
+          query: '{ getOneProduct(slug: "' + slug + '"){category, unit, loai, name, slug, price, newPrice, coverUrl, coverUrl2, coverUrl3, description, saleOff, body, created_at} }'
         }),
         credentials: 'include'
       });
@@ -10181,21 +10339,105 @@ class EditNewsComponent extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'b',
                       null,
-                      'Gi\xE1 c\u0169:'
+                      'Danh m\u1EE5c: '
                     )
                   ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_antd__["InputNumber"], {
-                    defaultValue: this.state.data.price || 0,
-                    min: 0,
-                    formatter: value => `${value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`,
-                    parser: value => value.replace(/(,*)/g, ''),
-                    style: { minWidth: 200 },
-                    onChange: value => {
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_3_antd__["Select"]
+                    // mode="multiple"
+                    ,
+                    { placeholder: 'ch\u1ECDn danh m\u1EE5c',
+                      defaultValue: this.state.data.category,
+                      onChange: value => {
+                        this.setState(prev => {
+                          return _extends({}, prev, {
+                            data: _extends({}, prev.data, {
+                              category: value
+                            })
+                          });
+                        });
+                      },
+                      style: { width: '100%' }
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'ung-thu' },
+                      'Ung th\u01B0'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'san-pham-bo-gan' },
+                      'S\u1EA3n ph\u1EA9m b\u1ED5 gan'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'duong-huyet-huyet-app' },
+                      '\u0110\u01B0\u1EDDng huy\u1EBFt - Huy\u1EBFt \xE1p'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'da-day' },
+                      'D\u1EA1 d\xE0y'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'giam-can' },
+                      'Gi\u1EA3m c\xE2n'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'lam-dep' },
+                      'L\xE0m \u0111\u1EB9p'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'xuong-khop' },
+                      'X\u01B0\u01A1ng kh\u1EDBp'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'bo-tong-hop' },
+                      'B\u1ED5 t\u1ED5ng h\u1EE3p'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'nano-curcumin' },
+                      'Nano Curcumin'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'toi-den' },
+                      'T\u1ECFi \u0111en'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'san-pham-khac' },
+                      'S\u1EA3n ph\u1EA9m kh\xE1c'
+                    )
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { style: { marginBottom: 16 } },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'label',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'b',
+                      null,
+                      'Quy c\xE1ch: '
+                    )
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_antd__["Input"], {
+                    placeholder: 'Quy c\xE1ch',
+                    value: this.state.data.unit,
+                    onChange: e => {
+                      let value = e.target.value;
                       this.setState(prev => {
                         return _extends({}, prev, {
                           data: _extends({}, prev.data, {
-                            price: parseInt(value)
+                            unit: value
                           })
                         });
                       });
@@ -10211,26 +10453,106 @@ class EditNewsComponent extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'b',
                       null,
-                      'Gi\xE1 m\u1EDBi:'
+                      'Lo\u1EA1i: '
                     )
                   ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_antd__["InputNumber"], {
-                    defaultValue: this.state.data.newPrice || 0,
-                    min: 0,
-                    formatter: value => `${value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`,
-                    parser: value => value.replace(/(,*)/g, ''),
-                    style: { minWidth: 200 },
-                    onChange: value => {
-                      this.setState(prev => {
-                        return _extends({}, prev, {
-                          data: _extends({}, prev.data, {
-                            newPrice: parseInt(value)
-                          })
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_3_antd__["Select"],
+                    {
+                      mode: 'multiple',
+                      placeholder: 'Ch\u1ECDn lo\u1EA1i',
+                      defaultValue: this.state.data.loai,
+                      onChange: value => {
+                        this.setState(prev => {
+                          return _extends({}, prev, {
+                            data: _extends({}, prev.data, {
+                              loai: value
+                            })
+                          });
                         });
-                      });
-                    }
-                  })
+                      },
+                      style: { width: '100%' }
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'noi-bat' },
+                      'N\u1ED5i b\u1EADt'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'ban-chay' },
+                      'B\xE1n ch\u1EA1y'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { key: 'khuyen-mai' },
+                      'Khuy\u1EBFn m\u1EA1i'
+                    )
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { style: { marginBottom: 16 } },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_3_antd__["Col"],
+                    { sm: 12, className: 'padding-5' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'label',
+                      null,
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'b',
+                        null,
+                        'Gi\xE1 c\u0169:'
+                      )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_antd__["InputNumber"], {
+                      defaultValue: this.state.data.price || 0,
+                      min: 0,
+                      formatter: value => `${value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`,
+                      parser: value => value.replace(/(,*)/g, ''),
+                      style: { minWidth: 200 },
+                      onChange: value => {
+                        this.setState(prev => {
+                          return _extends({}, prev, {
+                            data: _extends({}, prev.data, {
+                              price: parseInt(value)
+                            })
+                          });
+                        });
+                      }
+                    })
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_3_antd__["Col"],
+                    { sm: 12, className: 'padding-5' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'label',
+                      null,
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'b',
+                        null,
+                        'Gi\xE1 m\u1EDBi:'
+                      )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_antd__["InputNumber"], {
+                      defaultValue: this.state.data.newPrice || 0,
+                      min: 0,
+                      formatter: value => `${value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`,
+                      parser: value => value.replace(/(,*)/g, ''),
+                      style: { minWidth: 200 },
+                      onChange: value => {
+                        this.setState(prev => {
+                          return _extends({}, prev, {
+                            data: _extends({}, prev.data, {
+                              newPrice: parseInt(value)
+                            })
+                          });
+                        });
+                      }
+                    })
+                  )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
@@ -12678,6 +13000,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
         let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+        let noibat = 'getNoiBat{name, slug, price, coverUrl, description, saleOff, body, created_at}';
+        let khuyenmai = 'getKhuyenMai{name, slug, price, coverUrl, description, saleOff, body, created_at}';
+        let banchay = 'getBanChay{name, slug, price, coverUrl, description, saleOff, body, created_at}';
         const resp = yield __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__core_fetch__["a" /* default */])('/graphql', {
           method: 'post',
           headers: {
@@ -12685,8 +13010,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            query: '{' + info + 'seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, description, saleOff, body, created_at}, getNews(page: 1 ){page,totalPage,data{title, slug, coverUrl, description}}, getFoodNews(page: 1 ){page,totalPage,data{title, slug, coverUrl, description}} }'
+            query: '{' + noibat + khuyenmai + banchay + info + 'seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, description, saleOff, body, created_at}, getNews(page: 1 ){page,totalPage,data{title, slug, coverUrl, description}}, getFoodNews(page: 1 ){page,totalPage,data{title, slug, coverUrl, description}} }'
           }),
+
           credentials: 'include'
         });
 
