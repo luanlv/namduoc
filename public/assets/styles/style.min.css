@@ -827,7 +827,7 @@ hr{
   width:100%
 }
 #header{
-  height: 98px;
+  /*height: 98px;*/
   position:relative;
   left:0;
   top:0;
@@ -835,7 +835,7 @@ hr{
   z-index:100
 }
 #header .container{
-  width:1170px
+  width: 970px
 }
 #header.header-sroll{
   background:#005aa8;
@@ -849,7 +849,7 @@ hr{
 }
 #header.header-sroll #logo{
   top:0px;
-  width:110px
+  /*width:110px*/
 }
 #header.header-sroll .header-bgl{
   display:none!important
@@ -876,12 +876,14 @@ hr{
 }
 
 #header .header-right{
-  /*margin-left:219px;*/
+  margin-left:0px;
   z-index:99
 }
+
 #logo{
+  text-align: right;
   margin:0 auto;
-  height:65px;
+  height:100px;
   width:195px
 }
 .header-bgl{
@@ -1028,16 +1030,16 @@ hr{
   vertical-align:center;
   width:100%
 }
-#menu{
-  list-style:none;
-  padding:0;
-  margin:0;
-  text-align: right;
-  vertical-align:top;
-  font-size:0;
-  position:relative;
-  width:100%;
-  z-index:99;
+#menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  vertical-align: top;
+  font-size: 0;
+  position: relative;
+  /*width: 100%;*/
+  z-index: 99;
 }
 #menu a{
   -webkit-transition:background-color .2s;
@@ -1077,7 +1079,7 @@ hr{
   display:inline-block;
   font-size:14px;
   font-weight:700;
-  line-height:45px;
+  /*line-height:45px;*/
   text-transform:uppercase;
   vertical-align:top;
   padding:0 13px;
@@ -1797,14 +1799,14 @@ hr{
   margin-bottom:30px;
   width:100%
 }
-.wrapper-text h2{
-  color:#005aa8;
-  font-size:24px;
-  font-weight:600;
-  line-height:24px;
-  margin-bottom:10px;
-  font-family:"Times New Roman",Times,serif
-}
+/*.wrapper-text h2{*/
+  /*!*color:#005aa8;*!*/
+  /*font-size:24px;*/
+  /*font-weight:600;*/
+  /*line-height:24px;*/
+  /*margin-bottom:10px;*/
+  /*font-family:"Times New Roman",Times,serif*/
+/*}*/
 #footer{
   width:100%;
   background-color:#014987
@@ -3572,17 +3574,11 @@ form.gsc-search-box{
   }
 }
 @media (min-width: 990px) and (max-width: 1199px){
-  #logo{
-    width:120px
-  }
-  #logo a{
-    margin-top:15px
-  }
   #header.header-sroll #logo a{
     margin:0
   }
   #header .header-right{
-    /*margin-left:130px*/
+    margin-left:130px
   }
   .wrap-section .section-box{
     float:none;
@@ -3674,11 +3670,11 @@ form.gsc-search-box{
 }
 @media (min-width: 768px) and (max-width: 989px){
   #logo{
-    top:25px;
-    width:90px
+    /*top:25px;*/
+    /*width:90px*/
   }
   #header.header-sroll #logo{
-    width:90px
+    /*width:90px*/
   }
   #header .header-right{
     /*margin-left:100px*/
@@ -3756,7 +3752,7 @@ form.gsc-search-box{
     display:block!important
   }
   #header{
-    height: 45px;
+    /*height: 45px;*/
     background:#005aa8
   }
   #header .finda.open{

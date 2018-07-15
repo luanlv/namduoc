@@ -83,6 +83,9 @@
 .fb-comments span, .fb-comments iframe span[style], .fb-like-box span, .fb-like-box iframe span[style] {
   width: 100% !important; }
 
+* {
+  font-family: 'Source Sans Pro', sans-serif !important; }
+
 .lineh .title-2 {
   background-color: transparent;
   line-height: 40px !important;
@@ -357,3 +360,171 @@
 .verify-button {
   opacity: 0;
   transition: all 0.75s 0.75s; }
+
+.linkMenuWr:before {
+  content: '';
+  position: absolute;
+  margin-left: -25px;
+  z-index: 10001; }
+
+.linkMenuWr {
+  position: relative; }
+  .linkMenuWr a {
+    font-size: 14px !important;
+    padding-left: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #666;
+    font-weight: bold;
+    vertical-align: middle; }
+    .linkMenuWr a:hover {
+      text-decoration: none; }
+
+.ungthu:before {
+  background: url("/assets/icon/icon-1.png");
+  background-size: cover;
+  width: 21px;
+  height: 21px; }
+
+.bogan:before {
+  background: url("/assets/icon/icon-2.png");
+  background-size: cover;
+  top: 2px;
+  margin-left: -23px;
+  width: 20px;
+  height: 20px; }
+
+.duonghuyet:before {
+  background: url("/assets/icon/icon-3.png");
+  background-size: cover;
+  margin-left: -26px;
+  top: 2px;
+  width: 20px;
+  height: 20px; }
+
+.daday:before {
+  background: url("/assets/icon/icon-4.png");
+  background-size: cover;
+  margin-left: -26px;
+  top: 2px;
+  width: 20px;
+  height: 20px; }
+
+.giamcan:before {
+  background: url("/assets/icon/icon-5.png");
+  background-size: cover;
+  margin-left: -26px;
+  top: 2px;
+  width: 20px;
+  height: 20px; }
+
+.lamdep:before {
+  background: url("/assets/icon/icon-6.png");
+  background-size: cover;
+  margin-left: -26px;
+  top: 2px;
+  width: 20px;
+  height: 20px; }
+
+.xuongkhop:before {
+  background: url("/assets/icon/icon-7.png");
+  background-size: cover;
+  margin-left: -26px;
+  top: 2px;
+  width: 20px;
+  height: 20px; }
+
+.botonghop:before {
+  background: url("/assets/icon/icon-8.png");
+  background-size: cover;
+  margin-left: -26px;
+  top: 2px;
+  width: 20px;
+  height: 20px; }
+
+.nano:before {
+  background: url("/assets/icon/icon-9.png");
+  background-size: cover;
+  margin-left: -26px;
+  top: 2px;
+  width: 20px;
+  height: 20px; }
+
+.toiden:before {
+  background: url("/assets/icon/icon-10.png");
+  background-size: cover;
+  margin-left: -26px;
+  top: 2px;
+  width: 20px;
+  height: 20px; }
+
+.sanphamkhac:before {
+  background: url("/assets/icon/icon-11.png");
+  background-size: cover;
+  margin-left: -26px;
+  top: 2px;
+  width: 20px;
+  height: 20px; }
+
+#menu2 {
+  display: table;
+  float: right;
+  margin-bottom: 0; }
+  #menu2 li {
+    display: inline-block;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 16px;
+    /* fallback */
+    height: 42px;
+    /* fallback */
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.5); }
+    #menu2 li:last-child {
+      border-right: none; }
+    #menu2 li a {
+      color: white; }
+      #menu2 li a:hover {
+        text-decoration: none; }
+
+.headerTop {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+
+.headerBottom {
+  height: 45px; }
+
+.header-sroll .headerBottom {
+  display: none !important; }
+
+.head-list a {
+  color: #666; }
+
+.clearfix:after {
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both; }
+
+.slider-slide {
+  padding: 10px !important; }
+
+.slider-control-bottomcenter {
+  display: none; }
+
+.wrapper-text h1 {
+  color: #5CB247;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 10px;
+  font-family: "Times New Roman",Times,serif; }

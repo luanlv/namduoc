@@ -8,6 +8,8 @@ class MenuMobile extends React.Component {
     }
   }
   render() {
+    let info = ((this.props.data || {}).info || {}).value
+    let menu = JSON.parse(info.menu)
     return (
       <div id="menumobile" className="mobile-panel mobile-left" style={{transform: 'translate3d(-120%, 0px, 0px)'}}>
         <div className="close-menu">
@@ -19,47 +21,30 @@ class MenuMobile extends React.Component {
               <Link to="/"
                 onClick={this.closeMenu}
               >
-                <img src="/assets/images/main_logo.png" alt="logo com hoa vang" /></Link></div>
+                <img src="/assets/logo_namduoc.png" alt="logo nam duoc quan y" /></Link></div>
+
             <ul className="menu-nav">
-              <li><Link to="/san-pham" onClick={this.closeMenu} >Sản phẩm</Link>
-                <ul>
-                  <li><Link to="/san-pham/com-kho-hoa-vang" onClick={this.closeMenu} >
-                    Cốm khô hoa vàng</Link></li>
-                  <li>
-                    <Link to="/san-pham/cha-com" onClick={this.closeMenu} >
-                    Chả Cốm
-                    </Link></li>
-                  <li>
-                    <Link to="/san-pham/com-non-me-tri" onClick={this.closeMenu} >
-                      Cốm Non Mễ Trì
-                    </Link></li>
-                </ul>
+              <li>
+                <Link to="/" onClick={this.closeMenu} >Trang chủ</Link>
               </li>
-              <li><Link to="/mon-ngon" onClick={this.closeMenu} >MÓN NGON</Link>
-                <ul>
-                  <li><Link to="/danh-muc/mon-ngon-tu-com" onClick={this.closeMenu} >
-                      <span className="icon-chevron-right iconl" />
-                    Món ngon từ Cốm
-                  </Link></li>
-                  <li><Link to="/danh-muc/cach-lam-mon-ngon-tai-nha" onClick={this.closeMenu} >
-                      <span className="icon-chevron-right iconl" />
-                    Cách làm món ngon tài nhà
-                  </Link></li>
-                </ul>
-              </li>
-              <li className="active"><Link to="/tin-tuc" onClick={this.closeMenu} >TIN TỨC</Link>
-                <ul>
-                  <li><Link to="/danh-muc/su-kien" onClick={this.closeMenu} >
-                    <span className="icon-chevron-right iconl" />
-                    Sự kiện
-                  </Link></li>
-                  <li><Link to="/danh-muc/tin-tuc-tong-hop" onClick={this.closeMenu} >
-                    <span className="icon-chevron-right iconl" />
-                    Tin tức tổng hợp
-                  </Link></li>
-                </ul>
-              </li>
-              <li className="last"><Link to="/lien-he-dat-hang" onClick={this.closeMenu} >Liên hệ đặt hàng</Link></li>
+              {menu.map((el, idx) => {
+                  return (
+                    <li key={idx}><Link to={el.url} onClick={this.closeMenu} >{el.title}</Link>
+                      <ul>
+                        {el.children && el.children.map( (el2, idx2) => {
+                          return (
+                            <li key={idx2}>
+                              <Link to={el2.url} onClick={this.closeMenu} >
+                                {el2.title}
+                              </Link></li>
+                          )
+                        })}
+                      </ul>
+                    </li>
+                  )
+                })
+              }
+
             </ul>
             <div className="mo-box">
               <div className="hotline">

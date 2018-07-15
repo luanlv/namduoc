@@ -74,7 +74,7 @@ class Layout extends React.Component {
         {this.props.children}
         <hr />
         <Footer data={this.props.data} />
-        <MenuMobile />
+        <MenuMobile data={this.props.data} />
         {
           process.env.BROWSER && mobilecheck() && <div id="phone">
             <div className="text-phone">

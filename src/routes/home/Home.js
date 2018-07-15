@@ -30,17 +30,18 @@ class Home extends React.Component {
                     padding: 5,
                     listStyle: 'none'
                   }}>
-                    <li>Ung thư</li>
-                    <li>Sản phẩm bổ gan</li>
-                    <li>Đường huyết - Huyết áp</li>
-                    <li>Dạ dày</li>
-                    <li>Giản cân</li>
-                    <li>Làm đẹp</li>
-                    <li>Xương khớp</li>
-                    <li>Bổ tổng hợp</li>
-                    <li>Nano Curcumin</li>
-                    <li>Tỏi đen</li>
-                    <li>Sản phẩm khác</li>
+                    <li className="ungthu linkMenuWr"><a href="/">Ung thư</a></li>
+                    <li className="bogan linkMenuWr"><a href="/">Sản phẩm bổ gan</a></li>
+                    <li className="duonghuyet linkMenuWr"><a
+                      href="/">Đường huyết - Huyết áp</a></li>
+                    <li className="daday linkMenuWr"><a href="/">Dạ dày</a></li>
+                    <li className="giamcan linkMenuWr"><a href="/">Giản cân</a></li>
+                    <li className="lamdep linkMenuWr"><a href="/">Làm đẹp</a></li>
+                    <li className="xuongkhop linkMenuWr"><a href="/">Xương khớp</a></li>
+                    <li className="botonghop linkMenuWr"><a href="/">Bổ tổng hợp</a></li>
+                    <li className="nano linkMenuWr"><a href="/">Nano Curcumin</a></li>
+                    <li className="toiden linkMenuWr"><a href="/">Tỏi đen</a></li>
+                    <li className="sanphamkhac linkMenuWr"><a href="/">Sản phẩm khác</a></li>
                   </ul>
                 </div>
               </div>

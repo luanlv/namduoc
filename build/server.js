@@ -336,7 +336,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       this.props.children,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__Partials_Footer__["a" /* default */], { data: this.props.data }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Partials_MenuMobile__["a" /* default */], null),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__Partials_MenuMobile__["a" /* default */], { data: this.props.data }),
       false && mobilecheck() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { id: 'phone' },
@@ -456,10 +456,10 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'row' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-12 col-xs-6' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-12' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'col-md-12 col-xs-6' },
+          { className: 'col-md-12' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'adv' },
@@ -473,21 +473,11 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             'div',
             { className: 'adv' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'fb-page', 'data-href': 'https://www.facebook.com/namduocquany0973318868', 'data-tabs': 'timeline', 'data-small-header': 'false', 'data-adapt-container-width': 'true', 'data-hide-cover': 'false', 'data-show-facepile': 'true' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('blockquote', { cite: 'https://www.facebook.com/namduocquany0973318868', className: 'fb-xfbml-parse-ignore' })
+              __WEBPACK_IMPORTED_MODULE_2_react_facebook___default.a,
+              { appID: '123093138237586' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_facebook__["Page"], { href: 'https://www.facebook.com/namduocquany0973318868', 'data-numposts': '5' })
             )
           )
-        )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'row' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-12 col-xs-6' }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'col-md-12 col-xs-6' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'wrap-video' })
         )
       )
     );
@@ -744,10 +734,10 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       },
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        { className: 'container' },
+        { className: 'headerTop' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'header-right' },
+          { className: 'container', style: { position: 'relative' } },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'button-menu mobile-showhide' },
@@ -782,23 +772,14 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             'div',
             { id: 'logo' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { href: '/' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/logo_namduoc.png', alt: '' })
+              __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
+              { to: '/' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/logo_namduoc.png', alt: 'logo' })
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'ul',
-            { id: 'menu', className: 'desktop-showhide sf-js-enabled', style: { touchAction: 'pan-y' } },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              { className: 'home' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                { to: '/' },
-                'Trang ch\u1EE7'
-              )
-            ),
+            { id: 'menu2', className: 'desktop-showhide sf-js-enabled', style: { touchAction: 'pan-y' } },
             menu.map((el, idx) => {
               if (el.children && el.children.length > 0) {
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -839,52 +820,48 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 );
               }
             })
+          )
+        )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'desktop-showhide sf-js-enabled headerBottom' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'container' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { id: 'searchbox', className: 'search-form' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'search-input' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'ctl00$ctl00$ctl00$txtSearch', type: 'text', id: 'ctl00_ctl00_ctl00_txtSearch',
+                className: 'search-text' }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'ctl00$ctl00$ctl00$txtSearch_TextBoxWatermarkExtender_ClientState',
+                id: 'ctl00_ctl00_ctl00_txtSearch_TextBoxWatermarkExtender_ClientState' })
+            )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            {
-              style: { borderBottom: '1px solid white' }
-            },
+            { className: 'share desktop-showhide' },
+            'Follow me on ',
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'div',
-              { className: 'header-bottom'
-              },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { id: 'searchbox', className: 'search-form' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { className: 'search-input' },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { name: 'ctl00$ctl00$ctl00$txtSearch', type: 'text', id: 'ctl00_ctl00_ctl00_txtSearch',
-                    className: 'search-text' }),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'hidden', name: 'ctl00$ctl00$ctl00$txtSearch_TextBoxWatermarkExtender_ClientState',
-                    id: 'ctl00_ctl00_ctl00_txtSearch_TextBoxWatermarkExtender_ClientState' })
-                )
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'share desktop-showhide' },
-                'Follow me on ',
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'a',
-                  { target: '_blank', href: info.fanpage },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/fa-1.png', alt: '' })
-                )
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'hotline desktop-showhide' },
-                'T\u1ED5ng \u0111\xE0i CSKH: ',
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'strong',
-                  null,
-                  info.phone
-                )
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'clr' })
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'clr' })
-          )
+              'a',
+              { target: '_blank', href: info.fanpage },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/fa-1.png', alt: '' })
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'hotline desktop-showhide' },
+            'T\u1ED5ng \u0111\xE0i CSKH: ',
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'strong',
+              null,
+              info.phone
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'clr' })
         )
       )
     );
@@ -912,6 +889,8 @@ class MenuMobile extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
     }
   }
   render() {
+    let info = ((this.props.data || {}).info || {}).value;
+    let menu = JSON.parse(info.menu);
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { id: 'menumobile', className: 'mobile-panel mobile-left', style: { transform: 'translate3d(-120%, 0px, 0px)' } },
@@ -934,7 +913,7 @@ class MenuMobile extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
               { to: '/',
                 onClick: this.closeMenu
               },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/images/main_logo.png', alt: 'logo com hoa vang' })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: '/assets/logo_namduoc.png', alt: 'logo nam duoc quan y' })
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -945,116 +924,36 @@ class MenuMobile extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component
               null,
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                { to: '/san-pham', onClick: this.closeMenu },
-                'S\u1EA3n ph\u1EA9m'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'ul',
-                null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                    { to: '/san-pham/com-kho-hoa-vang', onClick: this.closeMenu },
-                    'C\u1ED1m kh\xF4 hoa v\xE0ng'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                    { to: '/san-pham/cha-com', onClick: this.closeMenu },
-                    'Ch\u1EA3 C\u1ED1m'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                    { to: '/san-pham/com-non-me-tri', onClick: this.closeMenu },
-                    'C\u1ED1m Non M\u1EC5 Tr\xEC'
-                  )
-                )
+                { to: '/', onClick: this.closeMenu },
+                'Trang ch\u1EE7'
               )
             ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              null,
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                { to: '/mon-ngon', onClick: this.closeMenu },
-                'M\xD3N NGON'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'ul',
-                null,
+            menu.map((el, idx) => {
+              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'li',
+                { key: idx },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                    { to: '/danh-muc/mon-ngon-tu-com', onClick: this.closeMenu },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon-chevron-right iconl' }),
-                    'M\xF3n ngon t\u1EEB C\u1ED1m'
-                  )
+                  __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
+                  { to: el.url, onClick: this.closeMenu },
+                  el.title
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
+                  'ul',
                   null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                    { to: '/danh-muc/cach-lam-mon-ngon-tai-nha', onClick: this.closeMenu },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon-chevron-right iconl' }),
-                    'C\xE1ch l\xE0m m\xF3n ngon t\xE0i nh\xE0'
-                  )
+                  el.children && el.children.map((el2, idx2) => {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'li',
+                      { key: idx2 },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
+                        { to: el2.url, onClick: this.closeMenu },
+                        el2.title
+                      )
+                    );
+                  })
                 )
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              { className: 'active' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                { to: '/tin-tuc', onClick: this.closeMenu },
-                'TIN T\u1EE8C'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'ul',
-                null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                    { to: '/danh-muc/su-kien', onClick: this.closeMenu },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon-chevron-right iconl' }),
-                    'S\u1EF1 ki\u1EC7n'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'li',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                    { to: '/danh-muc/tin-tuc-tong-hop', onClick: this.closeMenu },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'icon-chevron-right iconl' }),
-                    'Tin t\u1EE9c t\u1ED5ng h\u1EE3p'
-                  )
-                )
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'li',
-              { className: 'last' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                { to: '/lien-he-dat-hang', onClick: this.closeMenu },
-                'Li\xEAn h\u1EC7 \u0111\u1EB7t h\xE0ng'
-              )
-            )
+              );
+            })
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
@@ -3201,9 +3100,7 @@ class Html extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         seo && seo.og_title ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:title', content: seo.og_title }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:title', content: 'C\u01A1 s\u1EDF chuy\xEAn s\u1EA3n xu\u1EA5t v\xE0 cung c\u1EA5p \u0111\u1EB7c s\u1EA3n H\xE0 N\u1ED9i - C\u1ED1m M\u1EC5 Tr\xEC, Ch\u1EA3 C\u1ED1m, C\u1ED1m Kh\xF4 . \u0110\u1ECBa ch\u1EC9 b\xE1n c\u1ED1m M\u1EC5 Tr\xEC uy t\xEDn, ch\u1EA5t l\u01B0\u1EE3ng, gi\xE1 c\u1EA3 h\u1EE3p l\xFD' }),
         seo && seo.url ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:url', content: 'http://comhoavang.com' + seo.url }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:url', content: 'http://comhoavang.com' }),
         seo && seo.og_image ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:image', content: 'http://comhoavang.com' + seo.og_image }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:image', content: 'http://comhoavang.com/image/705cP8xYVH-083610_c1mh.jpg' }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,vietnamese', rel: 'stylesheet', type: 'text/css', async: true }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic&subset=latin,vietnamese', rel: 'stylesheet', type: 'text/css', async: true }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,vietnamese', rel: 'stylesheet', type: 'text/css', async: true }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel: 'stylesheet', type: 'text/css' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', rel: 'stylesheet', type: 'text/css' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', type: 'text/css', charset: 'UTF-8', href: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css' }),
@@ -4226,100 +4123,196 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 { className: 'title-2', style: { textAlign: 'center' } },
                 'Th\xF4ng tin s\u1EA3n ph\u1EA9m'
               ),
-              product.price === product.newPrice && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'price-product', style: { textAlign: 'center' } },
+                {
+                  style: {
+                    position: 'relative',
+                    verticalAlign: 'middle'
+                  }
+                },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'em',
-                  { style: { color: 'red' } },
-                  numberWithCommas(product.price),
-                  ' \u0111/kg'
-                )
-              ),
-              product.price !== product.newPrice && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'price-product', style: { textAlign: 'center' } },
+                  'div',
+                  {
+                    style: {
+                      display: 'inline-table',
+                      width: 90,
+                      height: '100%',
+                      textAlign: 'left',
+                      verticalAlign: 'middle'
+                    }
+                  },
+                  'Gi\xE1:'
+                ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'del',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'em',
-                    { style: { color: '666' } },
-                    numberWithCommas(product.price),
-                    ' \u0111/kg'
+                  'div',
+                  {
+                    style: {
+                      display: 'inline-block',
+                      width: 'calc(100% - 95px)'
+                    }
+                  },
+                  product.price === product.newPrice && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'price-product', style: { textAlign: 'center' } },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'em',
+                      { style: { color: 'red' } },
+                      numberWithCommas(product.price),
+                      ' VN\u0110'
+                    )
+                  ),
+                  product.price !== product.newPrice && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'price-product', style: { textAlign: 'center' } },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'del',
+                      null,
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'em',
+                        { style: { color: '999', fontSize: 16 } },
+                        numberWithCommas(product.price),
+                        ' VN\u0110'
+                      )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'em',
+                      { style: { color: 'red', fontWeight: 'bold' } },
+                      numberWithCommas(product.newPrice),
+                      ' VN\u0110'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'p',
+                      { style: { fontSize: 16 } },
+                      '(Gi\u1EA3m ',
+                      100 - Math.round(product.newPrice / product.price * 100),
+                      '%)'
+                    )
                   )
                 ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'em',
-                  { style: { color: 'red' } },
-                  numberWithCommas(product.newPrice),
-                  ' \u0111/kg'
+                  'div',
+                  {
+                    style: {
+                      display: 'inline-table',
+                      width: 90,
+                      height: '100%',
+                      textAlign: 'left',
+                      verticalAlign: 'middle'
+                    }
+                  },
+                  'Quy c\xE1ch:'
                 ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  { style: { fontSize: 16 } },
-                  '(Gi\u1EA3m ',
-                  100 - Math.round(product.newPrice / product.price * 100),
-                  '%)'
+                  'div',
+                  {
+                    style: {
+                      display: 'inline-block',
+                      width: 'calc(100% - 95px)',
+                      textAlign: 'center',
+                      fontWeight: 'bold'
+                    }
+                  },
+                  '30 vi\xEAn/h\u1ED9p'
                 )
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'product-ship', style: { textAlign: 'center', borderTop: '1px solid #ddd', borderBottom: '1px solid #ddd' } },
+                { className: 'wrap-button', style: { textAlign: 'center', marginTop: 20 } },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
-                  { className: 'centerText', style: { display: 'inline-block', paddingRight: 5 } },
-                  'V\u1EADn chuy\u1EC3n'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { style: { display: 'inline-block', borderLeft: '1px solid #ddd', paddingLeft: 5 } },
+                  {
+                    style: { margin: 10 }
+                  },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    null,
-                    '<20km : 25k/đơn'
+                    {
+                      style: {
+                        display: 'inline-block',
+                        width: 100
+                      }
+                    },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'svg',
+                      { xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 29.41 17.36' },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'defs',
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('style', { dangerouslySetInnerHTML: { __html: ".cls-1{fill:#5cb247;fill-rule:evenodd;}" } })
+                      ),
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'title',
+                        null,
+                        'Asset 2'
+                      ),
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'g',
+                        { id: 'Layer_2', 'data-name': 'Layer 2' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                          'g',
+                          { id: 'Layer_2-2', 'data-name': 'Layer 2' },
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { className: 'cls-1', d: 'M11.87,11.91H6c-.29,0-.39-.12-.39-.41V9.74c0-.15,0-.2-.2-.2q-1.61,0-3.21,0a.78.78,0,0,1-.78-1A.76.76,0,0,1,2.16,8H5.39c.07,0,.18,0,.19-.11s0-.2-.17-.2H3.83a.77.77,0,0,1-.75-.6.79.79,0,0,1,.41-.91.89.89,0,0,1,.36-.07H5.4c.11,0,.18,0,.18-.15s-.07-.15-.18-.15H.83A.75.75,0,0,1,0,5.12a.76.76,0,0,1,.76-.93c1.5,0,3,0,4.51,0a.86.86,0,0,1,.16,0c.09,0,.13,0,.13-.14s0-.18-.12-.18H2.75a.81.81,0,0,1-.58-.17A.8.8,0,0,1,2,2.79a.71.71,0,0,1,.73-.49H5.35c.23,0,.23,0,.23-.23v-1a1,1,0,0,1,.94-1A3.59,3.59,0,0,1,7,0h9.9a2.16,2.16,0,0,1,.51.06,1,1,0,0,1,.75,1V11.51c0,.26-.09.36-.34.4H11.87Zm-6-7.41H.8a.46.46,0,0,0-.46.64c.07.22.23.31.53.31H11a.45.45,0,0,0,.41-.38.46.46,0,0,0-.5-.57ZM8.93,7.34H14a.46.46,0,0,0,.44-.59c-.05-.25-.21-.36-.51-.36H3.8a.45.45,0,0,0-.42.55c.05.28.21.4.53.4ZM7.78,2.61H2.69A.43.43,0,0,0,2.21,3a.46.46,0,0,0,.38.51H12.85a.47.47,0,0,0,.48-.5.46.46,0,0,0-.51-.45C11.14,2.62,9.46,2.61,7.78,2.61ZM7.25,8.27H2.17a.46.46,0,0,0-.43.23.49.49,0,0,0,0,.52.47.47,0,0,0,.45.21H12.39a.48.48,0,0,0-.1-1Z' }),
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { className: 'cls-1', d: 'M13.84,13H19c.24,0,.24,0,.24-.24v-.1c0-3.16,0-6.31,0-9.47,0-.12,0-.24,0-.36a.65.65,0,0,1,.69-.67q1.62,0,3.24,0a2.77,2.77,0,0,1,2.41,1.27l2.09,3.1a2.94,2.94,0,0,1,.5,1.7v4.52c0,.23,0,.24.25.24l.51,0a.4.4,0,0,1,.48.43v.91a.32.32,0,0,1-.31.37,3.23,3.23,0,0,1-.53,0h-2c-.29,0-.32,0-.4-.3a2.78,2.78,0,0,0-2.3-2.15,2.88,2.88,0,0,0-3.33,2.19c-.06.22-.1.26-.33.26H15c-.23,0-.28,0-.33-.24a2.65,2.65,0,0,0-.81-1.42A.1.1,0,0,1,13.84,13Zm9.52-5.76c.69,0,1.37,0,2.06,0a.46.46,0,0,0,.46-.23c.11-.19,0-.34-.1-.48-.5-.72-1-1.44-1.51-2.17a.75.75,0,0,0-.66-.34H21.42a1.33,1.33,0,0,0-.28,0c-.23,0-.34.1-.35.33,0,.81,0,1.62,0,2.43,0,.32.16.42.49.42Z' }),
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { className: 'cls-1', d: 'M23.35,13a2.17,2.17,0,1,1-2.17,2.16A2.15,2.15,0,0,1,23.35,13Zm-1.12,2.16a1.09,1.09,0,0,0,1.1,1.11,1.11,1.11,0,1,0,0-2.22A1.08,1.08,0,0,0,22.23,15.19Z' }),
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { className: 'cls-1', d: 'M14,15.2A2.17,2.17,0,1,1,11.86,13,2.16,2.16,0,0,1,14,15.2Zm-2.16,1.1A1.1,1.1,0,0,0,13,15.18a1.11,1.11,0,1,0-1.11,1.12Z' }),
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { className: 'cls-1', d: 'M9.86,13l-.25.29A2.78,2.78,0,0,0,9,14.62c0,.12-.09.14-.2.14l-1.58,0-1.9,0H5.14c-.4-.07-.44-.15-.43-.49s0-.59,0-.88A.31.31,0,0,1,5,13l.24,0,4.49,0Z' }),
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { className: 'cls-1', d: 'M22.23,15.19a1.08,1.08,0,0,1,1.12-1.11,1.11,1.11,0,1,1,0,2.22A1.09,1.09,0,0,1,22.23,15.19Z' }),
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('path', { className: 'cls-1', d: 'M11.85,16.3a1.09,1.09,0,0,1-1.11-1.12,1.11,1.11,0,0,1,2.22,0A1.1,1.1,0,0,1,11.85,16.3Z' })
+                        )
+                      )
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    null,
-                    '>20km : 25k/kg'
-                  )
-                )
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'wrap-button', style: { textAlign: 'center' } },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { className: 'col-w230 w258', style: { width: 250, float: 'none', textAlign: 'center' } },
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'box-in', style: { margin: '0 auto' } },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
-                      { to: "/lien-he-dat-hang?sp=" + product.slug, className: 'button-btn btn-b corner text-center blink_me2' },
-                      '\u0110\u1EB7t h\xE0ng ngay!'
-                    )
+                    {
+                      style: {
+                        display: 'inline-block',
+                        width: 'calc(100% - 105px);',
+                        float: 'right',
+                        fontSize: 15,
+                        fontWeight: 'bold'
+                      }
+                    },
+                    'Mi\u1EC5n ph\xED v\u1EADn chuy\u1EC3n cho h\xF3a \u0111\u01A1n tr\xEAn 500.000 VN\u0110'
                   )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
-                  { className: 'col-w230 w298', style: { width: 250, float: 'none' } },
+                  {
+                    style: { margin: 10 }
+                  },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'box-in' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'a',
-                      { href: 'tel:0973318868', className: 'button-btn phone corner blink_me', style: { fontSize: 18, fontWeight: 'bold' } },
-                      'T\u01B0 v\u1EA5n: ',
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'b',
-                        null,
-                        '097 331 8868'
-                      )
-                    )
+                    { style: {
+                        width: '40%',
+                        display: 'inline-block',
+                        // borderRadius: '60%',
+                        background: '#5CB247',
+                        borderTopRightRadius: '2em',
+                        borderBottomRightRadius: '2em',
+                        borderTopLeftRadius: '2em',
+                        borderBottomLeftRadius: '2em',
+                        color: 'white',
+                        fontWeight: 'bold'
+                      } },
+                    '\u0110\u1EB7t h\xE0ng'
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { style: {
+                        width: '40%',
+                        borderTopRightRadius: '2em',
+                        borderBottomRightRadius: '2em',
+                        borderTopLeftRadius: '2em',
+                        borderBottomLeftRadius: '2em',
+                        display: 'inline-block',
+                        border: '2px solid #5CB247',
+                        color: '#5CB247',
+                        marginLeft: 5
+                      } },
+                    'T\u01B0 v\u1EA5n'
                   )
                 )
               )
@@ -12533,58 +12526,103 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     } },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    'Ung th\u01B0'
+                    { className: 'ungthu linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: '/' },
+                      'Ung th\u01B0'
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    'S\u1EA3n ph\u1EA9m b\u1ED5 gan'
+                    { className: 'bogan linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: '/' },
+                      'S\u1EA3n ph\u1EA9m b\u1ED5 gan'
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    '\u0110\u01B0\u1EDDng huy\u1EBFt - Huy\u1EBFt \xE1p'
+                    { className: 'duonghuyet linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      {
+                        href: '/' },
+                      '\u0110\u01B0\u1EDDng huy\u1EBFt - Huy\u1EBFt \xE1p'
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    'D\u1EA1 d\xE0y'
+                    { className: 'daday linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: '/' },
+                      'D\u1EA1 d\xE0y'
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    'Gi\u1EA3n c\xE2n'
+                    { className: 'giamcan linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: '/' },
+                      'Gi\u1EA3n c\xE2n'
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    'L\xE0m \u0111\u1EB9p'
+                    { className: 'lamdep linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: '/' },
+                      'L\xE0m \u0111\u1EB9p'
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    'X\u01B0\u01A1ng kh\u1EDBp'
+                    { className: 'xuongkhop linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: '/' },
+                      'X\u01B0\u01A1ng kh\u1EDBp'
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    'B\u1ED5 t\u1ED5ng h\u1EE3p'
+                    { className: 'botonghop linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: '/' },
+                      'B\u1ED5 t\u1ED5ng h\u1EE3p'
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    'Nano Curcumin'
+                    { className: 'nano linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: '/' },
+                      'Nano Curcumin'
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    'T\u1ECFi \u0111en'
+                    { className: 'toiden linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: '/' },
+                      'T\u1ECFi \u0111en'
+                    )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'li',
-                    null,
-                    'S\u1EA3n ph\u1EA9m kh\xE1c'
+                    { className: 'sanphamkhac linkMenuWr' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: '/' },
+                      'S\u1EA3n ph\u1EA9m kh\xE1c'
+                    )
                   )
                 )
               )

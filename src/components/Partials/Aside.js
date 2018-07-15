@@ -10,15 +10,17 @@ class Aside extends React.Component {
     return (
       <div id="colAside">
         <div className="row">
-          <div className="col-md-12 col-xs-6">
+          <div className="col-md-12">
           </div>
-          <div className="col-md-12 col-xs-6">
+          <div className="col-md-12">
             <div className="adv">
               <Link to={'/'}>
                 <img src="/assets/right.jpg" alt="Hotline" /></Link>
             </div>
             <div className="adv">
-              <div className="fb-page" data-href="https://www.facebook.com/namduocquany0973318868" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/namduocquany0973318868" className="fb-xfbml-parse-ignore"></blockquote></div>
+              <FacebookProvider appID="123093138237586">
+                <Page href="https://www.facebook.com/namduocquany0973318868" data-numposts="5" />
+              </FacebookProvider>
             </div>
             {/*<div className="adv">*/}
               {/*<Link to={'/'}>*/}
@@ -27,11 +29,11 @@ class Aside extends React.Component {
           </div>
         </div>
 
-        <div className="row">
-          <div className="col-md-12 col-xs-6">
-          </div>
-          <div className="col-md-12 col-xs-6">
-            <div className="wrap-video">
+        {/*<div className="row">*/}
+          {/*<div className="col-md-12 col-xs-6">*/}
+          {/*</div>*/}
+          {/*<div className="col-md-12 col-xs-6">*/}
+            {/*<div className="wrap-video">*/}
               {/*<a href="https://www.youtube.com/watch?v=L74dhO4i-0w" target="_blank" className="videob">*/}
                 {/*<img src="/assets/images/video-com.jpg"*/}
                      {/*alt="video-com.jpg"/>*/}
@@ -42,7 +44,7 @@ class Aside extends React.Component {
                   {/*<Link to="/">*/}
                     {/*Rộn ràng ngày hội văn hóa Cốm Mễ Trì</Link></h3>*/}
               {/*</div>*/}
-            </div>
+            {/*</div>*/}
             {/*<ul className="list-video">*/}
               {/*<li><Link to="/bai-viet/thuc-don-3-mon-gian-di-ma-ngon-cho-ngay-luoi-vao-bep" className="video-box"><span className="video-img">*/}
                         {/*<img src="/image/small/niolaFMsg1-1492484092-14924837329720-untitled-1.jpg" id="ctl00_ctl00_ctl00_ContentPlaceHolder1_cphAside_lstVideo_ctrl0_lstListVideo_ctrl0_Img3" alt="R8cvtxxu3g-che-com-03.jpg" />*/}
@@ -56,8 +58,8 @@ class Aside extends React.Component {
                           {/*Cốm Mễ Trì thơm ngon được làm công phu thế nào?</span> </span></Link>*/}
               {/*</li>*/}
             {/*</ul>*/}
-          </div>
-        </div>
+          {/*</div>*/}
+        {/*</div>*/}
         {/*<FacebookProvider appID="123093138237586">*/}
           {/*<Page href={info.fanpage} data-numposts="5" />*/}
         {/*</FacebookProvider>*/}
