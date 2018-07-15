@@ -1113,18 +1113,23 @@ hr{
   padding:0;
   width:60px
 }
-#menu ul{
-  display:none;
+
+
+#menu2  ul{
+  display: none;
   list-style:none;
   padding:0;
   margin:0;
   left:0;
   top:100%;
   position:absolute;
-  width:250px
+  width:250px;
+  background: #5CB247;
+  border: 1px solid #45A829;
 }
-#menu ul li a{
-  border-top:solid 1px #004e92;
+
+#menu2 ul li a{
+  border-top:solid 1px #45A829;
   color:#fff;
   display:block;
   font-size:14px;
@@ -1132,9 +1137,11 @@ hr{
   text-align:left;
   padding:8px 16px
 }
-#menu ul li:hover > a,#menu ul li.active > a,#menu ul li > a:hover{
-  background-color:#1c75c3
+
+#menu2 ul li:hover > a,#menu2 ul li.active > a,#menu2 ul li > a:hover{
+  background-color:#A7ED94
 }
+
 #mainContent{
   background-color:#fff;
   padding:30px 0;
@@ -3032,7 +3039,7 @@ hr{
   color: #333;
   font-size:14px;
   overflow:hidden;
-  background-color: rgba(30, 100, 50, 0.3);
+  background-color: rgba(92, 178, 71, 0.6);
   width:100%
 }
 .details-content .title-2 span{

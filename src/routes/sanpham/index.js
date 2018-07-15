@@ -14,6 +14,9 @@ export default {
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())){
       store.dispatch(showLoading())
       let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }'
+      let noibat = 'getNoiBat{name, slug, price, coverUrl, description, saleOff, body, created_at}'
+      let khuyenmai = 'getKhuyenMai{name, slug, price, coverUrl, description, saleOff, body, created_at}'
+      let banchay = 'getBanChay{name, slug, price, coverUrl, description, saleOff, body, created_at}'
       const resp = await fetch('/graphql', {
         method: 'post',
         headers: {
@@ -21,7 +24,7 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{' + info + ' seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, coverUrl2, coverUrl3, newPrice, description, saleOff, body, created_at},getOneProduct(slug: "'+ params.slug +'"){name, slug, price, coverUrl, coverUrl2, coverUrl3, newPrice, description, saleOff, body, created_at} }',
+          query: '{'  + banchay +  info + ' seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, coverUrl2, coverUrl3, newPrice, description, saleOff, body, created_at},getOneProduct(slug: "'+ params.slug +'"){name, slug, price, coverUrl, coverUrl2, coverUrl3, newPrice, description, saleOff, body, created_at} }',
         }),
         credentials: 'include',
       });
@@ -35,7 +38,8 @@ export default {
       title: seo.title || store.getState().data.product.value.name,
       description: seo.description || store.getState().data.product.value.description,
       seo: seo,
-      component: <Layout data={store.getState().data}><Home product={store.getState().data.product.value} products={store.getState().data.products.value} /></Layout>,
+      component: <Layout data={store.getState().data}>
+        <Home banchay={store.getState().data.banchay.value} product={store.getState().data.product.value} products={store.getState().data.products.value} /></Layout>,
     };
   },
 

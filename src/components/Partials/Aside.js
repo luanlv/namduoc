@@ -9,9 +9,43 @@ class Aside extends React.Component {
     // console.log(info)
     return (
       <div id="colAside">
+        {this.props.banchay && <div className="row">
+          {this.props.data.map((el, idx) => {
+            return (
+              <div className="col-md-12" key={idx}
+              >
+                <h3 className="title"
+                  style={{
+                    fontSize: 14
+                  }}
+                >
+                  SẢN PHẨM BÁN CHẠY</h3>
+
+                <div
+                  style={{
+                    padding: '5px 15px'
+                  }}
+                >
+                  <Link to={'/san-pham/' + el.slug}>
+                    <img
+                        style={{width: '100%'}}
+                      src={el.coverUrl.replace("\/image", "\/image\/small")} alt={el.name} />
+                  </Link>
+                  <Link to={'/san-pham/' + el.slug}
+                    style={{
+                      textAlign: 'center',
+                      display: 'block',
+                      color: '#5CB247'
+                    }}
+                  >
+                    {el.name}
+                  </Link>
+                </div>
+              </div>
+            )
+          })}
+        </div>}
         <div className="row">
-          <div className="col-md-12">
-          </div>
           <div className="col-md-12">
             <div className="adv">
               <Link to={'/'}>

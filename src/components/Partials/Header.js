@@ -28,8 +28,6 @@ class Header extends React.Component {
             </div>
 
             <ul id="menu2" className="desktop-showhide sf-js-enabled" style={{touchAction: 'pan-y'}}>
-              {/*<li className="home">*/}
-                {/*<Link to="/">Trang chủ</Link></li>*/}
               {menu.map((el, idx) => {
                 if(el.children && el.children.length > 0) { return (
                   <li key={idx} className="hasSubMenu">

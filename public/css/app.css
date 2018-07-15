@@ -473,11 +473,10 @@
   display: table;
   float: right;
   margin-bottom: 0; }
-  #menu2 li {
+  #menu2 > li {
+    position: relative !important;
     display: inline-block;
     max-width: 100px;
-    overflow: hidden;
-    text-overflow: ellipsis;
     line-height: 16px;
     /* fallback */
     height: 42px;
@@ -489,11 +488,12 @@
     margin: 5px;
     padding: 5px;
     border-right: 1px solid rgba(255, 255, 255, 0.5); }
-    #menu2 li:last-child {
+    #menu2 > li:last-child {
       border-right: none; }
-    #menu2 li a {
+    #menu2 > li a {
+      text-overflow: ellipsis;
       color: white; }
-      #menu2 li a:hover {
+      #menu2 > li a:hover {
         text-decoration: none; }
 
 .headerTop {
@@ -528,3 +528,10 @@
   line-height: 24px;
   margin-bottom: 10px;
   font-family: "Times New Roman",Times,serif; }
+
+.mienphi-right {
+  display: inline-block;
+  width: calc(100% - 105px);
+  float: right;
+  font-size: 15px;
+  font-weight: bold; }

@@ -454,10 +454,55 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { id: 'colAside' },
+      this.props.banchay && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'row' },
+        this.props.data.map((el, idx) => {
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'col-md-12', key: idx
+            },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'h3',
+              { className: 'title',
+                style: {
+                  fontSize: 14
+                }
+              },
+              'S\u1EA2N PH\u1EA8M B\xC1N CH\u1EA0Y'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              {
+                style: {
+                  padding: '5px 15px'
+                }
+              },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
+                { to: '/san-pham/' + el.slug },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', {
+                  style: { width: '100%' },
+                  src: el.coverUrl.replace("\/image", "\/image\/small"), alt: el.name })
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
+                { to: '/san-pham/' + el.slug,
+                  style: {
+                    textAlign: 'center',
+                    display: 'block',
+                    color: '#5CB247'
+                  }
+                },
+                el.name
+              )
+            )
+          );
+        })
+      ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'row' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-12' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'col-md-12' },
@@ -4162,7 +4207,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       );
     } else {
       const product = this.props.product;
-      const products = this.props.products || [];
+      const products = (this.props.products || []).slice(0, 6);
       let imgs = [];
       imgs.push(product.coverUrl);
       product.coverUrl2.forEach(el => {
@@ -4233,14 +4278,22 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   'div',
                   {
                     style: {
-                      display: 'inline-table',
+                      display: 'inline-block',
                       width: 90,
-                      height: '100%',
-                      textAlign: 'left',
-                      verticalAlign: 'middle'
+                      textAlign: 'left'
                     }
                   },
-                  'Gi\xE1:'
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    {
+                      style: {
+                        position: 'absolute',
+                        top: '25%',
+                        left: 0
+                      }
+                    },
+                    'Gi\xE1:'
+                  )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
@@ -4252,7 +4305,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   },
                   product.price === product.newPrice && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'price-product', style: { textAlign: 'center' } },
+                    { className: 'price-product', style: { textAlign: 'left' } },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'em',
                       { style: { color: 'red' } },
@@ -4262,7 +4315,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   ),
                   product.price !== product.newPrice && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'price-product', style: { textAlign: 'center' } },
+                    { className: 'price-product', style: { textAlign: 'left' } },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'del',
                       null,
@@ -4294,7 +4347,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   'div',
                   {
                     style: {
-                      display: 'inline-table',
+                      display: 'inline-block',
                       width: 90,
                       height: '100%',
                       textAlign: 'left',
@@ -4309,7 +4362,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     style: {
                       display: 'inline-block',
                       width: 'calc(100% - 95px)',
-                      textAlign: 'center',
+                      textAlign: 'left',
                       fontWeight: 'bold'
                     }
                   },
@@ -4365,13 +4418,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     {
-                      style: {
-                        display: 'inline-block',
-                        width: 'calc(100% - 105px);',
-                        float: 'right',
-                        fontSize: 15,
-                        fontWeight: 'bold'
-                      }
+                      className: 'mienphi-right'
                     },
                     'Mi\u1EC5n ph\xED v\u1EADn chuy\u1EC3n cho h\xF3a \u0111\u01A1n tr\xEAn 500.000 VN\u0110'
                   )
@@ -14011,7 +14058,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           'div',
           { className: 'container' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Partials_Main6__["a" /* default */], { product: this.props.product, products: this.props.products }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Partials_Aside__["a" /* default */], null)
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Partials_Aside__["a" /* default */], { banchay: true, data: this.props.banchay.slice(0, 3) })
         )
       )
     );
@@ -14054,6 +14101,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
         let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+        let noibat = 'getNoiBat{name, slug, price, coverUrl, description, saleOff, body, created_at}';
+        let khuyenmai = 'getKhuyenMai{name, slug, price, coverUrl, description, saleOff, body, created_at}';
+        let banchay = 'getBanChay{name, slug, price, coverUrl, description, saleOff, body, created_at}';
         const resp = yield __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__core_fetch__["a" /* default */])('/graphql', {
           method: 'post',
           headers: {
@@ -14061,7 +14111,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            query: '{' + info + ' seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, coverUrl2, coverUrl3, newPrice, description, saleOff, body, created_at},getOneProduct(slug: "' + params.slug + '"){name, slug, price, coverUrl, coverUrl2, coverUrl3, newPrice, description, saleOff, body, created_at} }'
+            query: '{' + banchay + info + ' seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, coverUrl2, coverUrl3, newPrice, description, saleOff, body, created_at},getOneProduct(slug: "' + params.slug + '"){name, slug, price, coverUrl, coverUrl2, coverUrl3, newPrice, description, saleOff, body, created_at} }'
           }),
           credentials: 'include'
         });
@@ -14078,7 +14128,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_4__components_Layout__["a" /* default */],
           { data: store.getState().data },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Home__["a" /* default */], { product: store.getState().data.product.value, products: store.getState().data.products.value })
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Home__["a" /* default */], { banchay: store.getState().data.banchay.value, product: store.getState().data.product.value, products: store.getState().data.products.value })
         )
       };
     })();

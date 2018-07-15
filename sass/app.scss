@@ -480,11 +480,10 @@
   display: table;
   float: right;
   margin-bottom: 0;
-  li {
+  > li {
+    position: relative !important;
     display: inline-block;
     max-width: 100px;
-    overflow: hidden;
-    text-overflow: ellipsis;
     line-height: 16px;     /* fallback */
     height: 42px;      /* fallback */
     -webkit-line-clamp: 2; /* number of lines to show */
@@ -497,6 +496,7 @@
       border-right: none;
     }
     a {
+      text-overflow: ellipsis;
       color: white;
       &:hover {
         text-decoration: none;
@@ -549,4 +549,12 @@
   line-height: 24px;
   margin-bottom: 10px;
   font-family: "Times New Roman",Times,serif;
+}
+
+.mienphi-right {
+  display: inline-block;
+  width: calc(100% - 105px);
+  float: right;
+  font-size: 15px;
+  font-weight: bold;
 }

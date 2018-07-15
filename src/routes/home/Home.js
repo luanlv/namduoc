@@ -49,7 +49,7 @@ class Home extends React.Component {
                 <img src="/assets/banner.jpg" alt="banner 2"/>
               </div>
             </div>
-            <Main data={this.props.data} />
+            <Main  data={this.props.data} />
             <Aside data={this.props.data} />
           </div>
         </div>

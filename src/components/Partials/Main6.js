@@ -34,7 +34,7 @@ class Main extends React.Component {
       )
     } else {
       const product = this.props.product
-      const products = this.props.products || []
+      const products = (this.props.products || []).slice(0, 6)
       let imgs = []
       imgs.push(product.coverUrl)
       product.coverUrl2.forEach(el => {
@@ -87,23 +87,32 @@ class Main extends React.Component {
                     >
                       <div
                         style={{
-                          display: 'inline-table',
+                          display: 'inline-block',
                           width: 90,
-                          height: '100%',
                           textAlign: 'left',
-                          verticalAlign: 'middle'
+                          // verticalAlign: 'middle'
                         }}
-                      >Giá:</div>
+                      >
+                        <div
+                          style={{
+                            position: 'absolute',
+                            top: '25%',
+                            left: 0
+                          }}
+                        >
+                          Giá:
+                        </div>
+                      </div>
                       <div
                         style={{
                           display: 'inline-block',
                           width: 'calc(100% - 95px)',
                         }}
                       >
-                        {product.price === product.newPrice && <div className="price-product" style={{textAlign: 'center'}}>
+                        {product.price === product.newPrice && <div className="price-product" style={{textAlign: 'left'}}>
                           <em style={{color: 'red'}}>{numberWithCommas(product.price)} VNĐ</em>
                         </div>}
-                        {product.price !== product.newPrice && <div className="price-product" style={{textAlign: 'center'}}>
+                        {product.price !== product.newPrice && <div className="price-product" style={{textAlign: 'left'}}>
                           <del><em style={{color: '999', fontSize: 16}}>{numberWithCommas(product.price)} VNĐ</em></del>
                           <br/>
                           <em style={{color: 'red', fontWeight: 'bold'}}>{numberWithCommas(product.newPrice)} VNĐ</em>
@@ -114,7 +123,7 @@ class Main extends React.Component {
 
                       <div
                         style={{
-                          display: 'inline-table',
+                          display: 'inline-block',
                           width: 90,
                           height: '100%',
                           textAlign: 'left',
@@ -125,7 +134,7 @@ class Main extends React.Component {
                         style={{
                           display: 'inline-block',
                           width: 'calc(100% - 95px)',
-                          textAlign: 'center',
+                          textAlign: 'left',
                           fontWeight: 'bold'
                         }}
                       >
@@ -187,13 +196,7 @@ class Main extends React.Component {
                         </div>
 
                         <div
-                          style={{
-                            display: 'inline-block',
-                            width: 'calc(100% - 105px);',
-                            float: 'right',
-                            fontSize: 15,
-                            fontWeight: 'bold'
-                          }}
+                          className="mienphi-right"
                         >
                           Miễn phí vận chuyển cho hóa đơn trên 500.000 VNĐ
                         </div>
