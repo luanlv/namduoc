@@ -2034,6 +2034,7 @@ hr{
   padding-left:25px
 }
 .news-big .news-name a{
+  color : #5CB247 !important;
   display:block;
   font-size:22px;
   font-weight:600;

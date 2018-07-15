@@ -112,35 +112,35 @@ class Home extends React.Component {
                         />
                       </div>
                     </div>
-                    <div className="form-group">
-                      <label className="col-md-4 control-label" htmlFor="product_categorie">Sản phẩm:</label>
-                      <div className="col-md-8">
-                        <select id="product_categorie" name="product_categorie" className="form-control"
-                                defaultValue={this.state.data.product}
-                                onChange={(e) => {
-                                  let value = e.target.value
-                                  this.setState(prev => {
-                                    return {
-                                      ...prev,
-                                      data: {
-                                        ...prev.data,
-                                        product: value
-                                      }
-                                    }
-                                  })
-                                }}
-                        >
-                          <option value="com-kho-hoa-vang">Cốm khô hoa vàng</option>
-                          <option value="cha-com">Chả Cốm</option>
-                          <option value="com-non-me-tri">Cốm Non Mễ Trì</option>
-                        </select>
-                      </div>
-                    </div>
+                    {/*<div className="form-group">*/}
+                      {/*<label className="col-md-4 control-label" htmlFor="product_categorie">Sản phẩm:</label>*/}
+                      {/*<div className="col-md-8">*/}
+                        {/*<select id="product_categorie" name="product_categorie" className="form-control"*/}
+                                {/*defaultValue={this.state.data.product}*/}
+                                {/*onChange={(e) => {*/}
+                                  {/*let value = e.target.value*/}
+                                  {/*this.setState(prev => {*/}
+                                    {/*return {*/}
+                                      {/*...prev,*/}
+                                      {/*data: {*/}
+                                        {/*...prev.data,*/}
+                                        {/*product: value*/}
+                                      {/*}*/}
+                                    {/*}*/}
+                                  {/*})*/}
+                                {/*}}*/}
+                        {/*>*/}
+                          {/*<option value="com-kho-hoa-vang">Cốm khô hoa vàng</option>*/}
+                          {/*<option value="cha-com">Chả Cốm</option>*/}
+                          {/*<option value="com-non-me-tri">Cốm Non Mễ Trì</option>*/}
+                        {/*</select>*/}
+                      {/*</div>*/}
+                    {/*</div>*/}
                     {/* Text input*/}
                     <div className="form-group">
-                      <label className="col-md-4 control-label" htmlFor="available_quantity">Số lượng (kg):</label>
+                      <label className="col-md-4 control-label" htmlFor="available_quantity">Số lượng:</label>
                       <div className="col-md-8">
-                        <input id="available_quantity" name="available_quantity" placeholder="VD: 1kg" className="form-control input-md" required type="text"
+                        <input id="available_quantity" name="available_quantity" placeholder="" className="form-control input-md" required type="text"
                                defaultValue={this.state.data.quantity}
                                onChange={(e) => {
                                  let value = e.target.value

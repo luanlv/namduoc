@@ -457,20 +457,20 @@ class Aside extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       this.props.banchay && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         { className: 'row' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h3',
+          { className: 'title',
+            style: {
+              fontSize: 14
+            }
+          },
+          'S\u1EA2N PH\u1EA8M B\xC1N CH\u1EA0Y'
+        ),
         this.props.data.map((el, idx) => {
           return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'col-md-12', key: idx
             },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'h3',
-              { className: 'title',
-                style: {
-                  fontSize: 14
-                }
-              },
-              'S\u1EA2N PH\u1EA8M B\xC1N CH\u1EA0Y'
-            ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
               {
@@ -13300,57 +13300,13 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     { className: 'form-group' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'label',
-                      { className: 'col-md-4 control-label', htmlFor: 'product_categorie' },
-                      'S\u1EA3n ph\u1EA9m:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'div',
-                      { className: 'col-md-8' },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'select',
-                        { id: 'product_categorie', name: 'product_categorie', className: 'form-control',
-                          defaultValue: this.state.data.product,
-                          onChange: e => {
-                            let value = e.target.value;
-                            this.setState(prev => {
-                              return _extends({}, prev, {
-                                data: _extends({}, prev.data, {
-                                  product: value
-                                })
-                              });
-                            });
-                          }
-                        },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                          'option',
-                          { value: 'com-kho-hoa-vang' },
-                          'C\u1ED1m kh\xF4 hoa v\xE0ng'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                          'option',
-                          { value: 'cha-com' },
-                          'Ch\u1EA3 C\u1ED1m'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                          'option',
-                          { value: 'com-non-me-tri' },
-                          'C\u1ED1m Non M\u1EC5 Tr\xEC'
-                        )
-                      )
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'label',
                       { className: 'col-md-4 control-label', htmlFor: 'available_quantity' },
-                      'S\u1ED1 l\u01B0\u1EE3ng (kg):'
+                      'S\u1ED1 l\u01B0\u1EE3ng:'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'div',
                       { className: 'col-md-8' },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { id: 'available_quantity', name: 'available_quantity', placeholder: 'VD: 1kg', className: 'form-control input-md', required: true, type: 'text',
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { id: 'available_quantity', name: 'available_quantity', placeholder: '', className: 'form-control input-md', required: true, type: 'text',
                         defaultValue: this.state.data.quantity,
                         onChange: e => {
                           let value = e.target.value;
@@ -14246,8 +14202,8 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         seo: seo,
         component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_4__components_Layout__["a" /* default */],
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Home__["a" /* default */], { news: store.getState().data.news.value })
+          { data: store.getState().data },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Home__["a" /* default */], { data: store.getState().data, news: store.getState().data.news.value })
         )
       };
     })();

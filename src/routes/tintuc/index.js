@@ -35,7 +35,7 @@ export default {
       title: seo.title || 'Trang tin tức',
       description: seo.description || '',
       seo: seo,
-      component: <Layout><Home news={store.getState().data.news.value} /></Layout>,
+      component: <Layout data={store.getState().data}><Home data={store.getState().data} news={store.getState().data.news.value} /></Layout>,
     };
   },
 
