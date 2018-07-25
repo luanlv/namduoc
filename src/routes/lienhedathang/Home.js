@@ -20,9 +20,19 @@ class Home extends React.Component {
         address: '',
         product: this.props.selectProduct || 'com-kho-hoa-vang',
         quantity: ''
-      }
+      },
+      cart: []
     }
     this.order = this.order.bind(this)
+  }
+
+  componentDidMount(){
+    let that = this;
+    if(process.env.BROWSER) {
+      let sessionStorage = (window && window.sessionStorage) ? window.sessionStorage : {}
+      let cart = JSON.parse(sessionStorage.getItem("cart") || '[]')
+      that.setState({cart: cart})
+    }
   }
 
   order() {
@@ -39,16 +49,128 @@ class Home extends React.Component {
   }
 
   render() {
+    let sum = 0;
+    this.state.cart.forEach(el => {
+      sum += el.number * el.product.newPrice;
+    })
     return (
       <div >
         <div id="mainContent">
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-12">
+                <table className="dathang">
+                <thead>
+                <tr>
+                  <th>Sản phẩm</th>
+                  <th>Giá</th>
+                  <th>Số lượng</th>
+                  <th>Thành tiền</th>
+                </tr>
+                </thead>
+                <tbody style={{fontSize: '18'}}>
+                {
+                  this.state.cart.map((el, idx) => {
+                    return (
+                      <tr key={idx}>
+                        <td>
+                          <div className="" style={{padding: 10}}>
+                            <img src={el.product.coverUrl} alt=""
+                              style={{height: 80, width: 'auto'}}
+                            />
+                            <span style={{paddingLeft: 20}}>{el.product.name}</span>
+                          </div>
+                          </td>
+                        <td>
+                          {el.product.newPrice.toLocaleString()} VNĐ
+                        </td>
+                        <td>
+
+                          <input type="number"
+                            defaultValue={el.number}
+                            onChange={(event) => {
+                              let value = event.target.value
+                              let that = this
+                              if(value > 0){
+                                if(process.env.BROWSER) {
+                                    let sessionStorage = (window && window.sessionStorage) ? window.sessionStorage : {}
+                                    let cart = JSON.parse(sessionStorage.getItem("cart") || '[]')
+                                    let index = idx
+                                    if (index >= 0) {
+                                      cart[index].number = value
+                                      sessionStorage.setItem('cart', JSON.stringify(cart))
+                                      $(".cart-counter").text(cart.length)
+                                    } else {
+                                      cart.push({
+                                        slug: that.state.product.slug,
+                                        number: value,
+                                        product: that.state.product
+                                      })
+                                      sessionStorage.setItem('cart', JSON.stringify(cart))
+                                    }
+                                    // $(".cart-counter").text(cart.length)
+                                    this.setState({cart: cart})
+                                  }
+                              }
+                            }}
+                          />
+
+                        </td>
+                        <td style={{color: '#5CB247', fontWeight: 'bold'}}>
+                          { (el.product.newPrice * el.number).toLocaleString()} VNĐ
+                        </td>
+                      </tr>
+                    )
+                  })
+                }
+
+                </tbody>
+                {this.state.cart.length > 0 && <tfoot style={{marginTop: 20}}>
+                  <tr>
+                    <td>
+                      <div
+                        style={{margin: 10}}
+                      >
+                        <Link
+                          style={{
+                            // width: '40%',
+                            display: 'inline-block',
+                            // borderRadius: '60%',
+                            background: '#5CB247',
+                            padding: '5px 20px',
+                            borderTopRightRadius: '1.5em',
+                            borderBottomRightRadius: '1.5em',
+                            borderTopLeftRadius: '1.5em',
+                            borderBottomLeftRadius: '1.5em',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            cursor: 'pointer'
+                          }}
+                          href="/"
+                          to="/"
+                        >Mua sản phẩm khác</Link>
+                      </div>
+                    </td>
+
+                    <td />
+                    <td style={{textAlign: 'right', paddingRight: 20, fontSize: 22}}>
+                      Tổng tiền :
+                    </td>
+
+                    <td style={{fontSize: 22, fontWeight: 'bold', color: '#5CB247'}}>
+                      {sum.toLocaleString()} VNĐ
+                    </td>
+                  </tr>
+                </tfoot>}
+              </table>
+              </div>
+            </div>
+
+            <div className="row" style={{margin: '10px 0 0 0', fontSize: 20, border: '1px solid #ddd', borderRadius: 10, padding: 20}}>
+              <div className="col-md-6" style={{padding: 0}}>
                 <div className="form-horizontal">
                   <fieldset>
-                    {/* Form Name */}
-                    <legend >Đặt hàng</legend>
+                    <legend style={{color: '#5CB247', fontWeight: 'bold'}}>Thông tin đặt hàng</legend>
                     {/* Text input*/}
                     <div className="form-group">
                       <label className="col-md-4 control-label" htmlFor="product_id">Họ Và Tên:</label>
@@ -112,81 +234,37 @@ class Home extends React.Component {
                         />
                       </div>
                     </div>
-                    {/*<div className="form-group">*/}
-                      {/*<label className="col-md-4 control-label" htmlFor="product_categorie">Sản phẩm:</label>*/}
-                      {/*<div className="col-md-8">*/}
-                        {/*<select id="product_categorie" name="product_categorie" className="form-control"*/}
-                                {/*defaultValue={this.state.data.product}*/}
-                                {/*onChange={(e) => {*/}
-                                  {/*let value = e.target.value*/}
-                                  {/*this.setState(prev => {*/}
-                                    {/*return {*/}
-                                      {/*...prev,*/}
-                                      {/*data: {*/}
-                                        {/*...prev.data,*/}
-                                        {/*product: value*/}
-                                      {/*}*/}
-                                    {/*}*/}
-                                  {/*})*/}
-                                {/*}}*/}
-                        {/*>*/}
-                          {/*<option value="com-kho-hoa-vang">Cốm khô hoa vàng</option>*/}
-                          {/*<option value="cha-com">Chả Cốm</option>*/}
-                          {/*<option value="com-non-me-tri">Cốm Non Mễ Trì</option>*/}
-                        {/*</select>*/}
-                      {/*</div>*/}
-                    {/*</div>*/}
-                    {/* Text input*/}
-                    <div className="form-group">
-                      <label className="col-md-4 control-label" htmlFor="available_quantity">Số lượng:</label>
-                      <div className="col-md-8">
-                        <input id="available_quantity" name="available_quantity" placeholder="" className="form-control input-md" required type="text"
-                               defaultValue={this.state.data.quantity}
-                               onChange={(e) => {
-                                 let value = e.target.value
-                                 this.setState(prev => {
-                                   return {
-                                     ...prev,
-                                     data: {
-                                       ...prev.data,
-                                       quantity: value
-                                     }
-                                   }
-                                 })
-                               }}
-                        />
-                      </div>
-                    </div>
 
                     <div className="form-group">
                       <label className="col-md-4 control-label" htmlFor="singlebutton" />
                       <div className="col-md-8">
-                        <button id="singlebutton" name="singlebutton" className="btn btn-primary"
+                        <a
+                          style={{
+                            display: 'inline-block',
+                            background: '#5CB247',
+                            padding: '5px 20px',
+                            borderTopRightRadius: '1em',
+                            borderBottomRightRadius: '1em',
+                            borderTopLeftRadius: '1em',
+                            borderBottomLeftRadius: '1em',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            cursor: 'pointer'
+                          }}
                           onClick={this.order}
-                        >Đặt hàng</button>
+                        >Đặt hàng</a>
                       </div>
                     </div>
 
-                    <legend>Liên hệ</legend>
-                    <p>Hotline : <b style={{color: 'red'}}>0973.318.868</b></p>
-                    <p>Địa chỉ : 128 – Chợ Mễ Trì – Quận Nam Từ Liêm – Hà Nội</p>
                   </fieldset>
                 </div>
               </div>
               <div className="col-md-6">
-                <fieldset>
-                  <legend>Hình thức thanh toán</legend>
-                  <p>Để thuận lợi hơn cho quí khách mua Cốm, chúng tôi có 2 hình thức thanh toán sau :</p>
-                  <p>Khách hàng ở gần (bán kính 20km) : Quý khách thanh toán bằng chuyển khoản hoặc tiền mặt sau khi nhận cốm .</p>
-                  <p>Khách hàng ở xa (trên 20km) : Quý khách vui lòng thanh toán 100% đơn hàng trước khi nhận hàng.</p>
-                  <p><b>Thông tin tài khoản</b></p>
-                  <p>Chủ tài khoản : <b style={{color: 'red'}}>Nguyễn Hữu Tú</b></p>
-                  <p>Số tài khoản : <b style={{color: 'red'}}>84387487</b></p>
-                  <p>Ngân hàng: <b style={{color: 'red'}}>VPBank chi nhánh Đông Đô</b></p>
-                  <br/>
-                  <p>Hotline : <b style={{color: 'red'}}>0973.318.868</b></p>
-                  <p>Địa chỉ : 128 – Chợ Mễ Trì – Quận Nam Từ Liêm – Hà Nội</p>
-                </fieldset>
+                <h3 style={{color: '#5CB247', fontWeight: 'bold', borderBottom: '1px solid #ddd', marginBottom: 5}}>Liên hệ</h3>
+                <span style={{width: 60}}>Hotline 1:</span> <b style={{color: 'red'}}>0973.318.868</b>
+                <br/>
+                <span style={{width: 60}}>Hotline 2:</span> <b style={{color: 'red'}}>0915.055.951</b>
+                <p>Địa chỉ : 27 – Huỳnh Thúc Kháng – Quận Đống Đa – Hà Nội</p>
               </div>
             </div>
           </div>

@@ -162,6 +162,10 @@ app.get('*', routeCache.cacheSeconds(0), async (req, res, next) => {
           needUpdate: true,
           value: []
         },
+        productInCategory: {
+          needUpdate: true,
+          value: []
+        },
       },
       user: req.user || null,
     }, {

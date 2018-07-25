@@ -59,7 +59,7 @@ export default new GraphQLObjectType({
       type: new GraphQLNonNull(GraphQLString)
     },
     body: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
     view: {
       type: new GraphQLNonNull(GraphQLInt)

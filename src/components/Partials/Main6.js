@@ -205,18 +205,47 @@ class Main extends React.Component {
                       <div
                         style={{margin: 10}}
                       >
-                        <div style={{
-                          width: '40%',
-                          display: 'inline-block',
-                          // borderRadius: '60%',
-                          background: '#5CB247',
-                          borderTopRightRadius: '2em',
-                          borderBottomRightRadius: '2em',
-                          borderTopLeftRadius: '2em',
-                          borderBottomLeftRadius: '2em',
-                          color: 'white',
-                          fontWeight: 'bold'
-                        }}>Đặt hàng</div>
+                        <div
+                          style={{
+                            width: '40%',
+                            display: 'inline-block',
+                            // borderRadius: '60%',
+                            background: '#5CB247',
+                            borderTopRightRadius: '2em',
+                            borderBottomRightRadius: '2em',
+                            borderTopLeftRadius: '2em',
+                            borderBottomLeftRadius: '2em',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            cursor: 'pointer'
+                          }}
+                             onClick={() => {
+                               let that = this
+                               if(process.env.BROWSER) {
+                                 let sessionStorage = (window && window.sessionStorage) ? window.sessionStorage : {}
+                                 let cart = JSON.parse(sessionStorage.getItem("cart") || '[]')
+                                 // console.log(product)
+                                 let index = cart.findIndex(el => {
+                                   return el.slug === product.slug
+                                 })
+                                 if (index >= 0) {
+                                   cart[index].number = parseInt(cart[index].number) + 1
+                                   sessionStorage.setItem('cart', JSON.stringify(cart))
+                                 } else {
+                                   cart.push({
+                                     slug: product.slug,
+                                     number: 1,
+                                     product: product
+                                   })
+                                   sessionStorage.setItem('cart', JSON.stringify(cart))
+                                   // $(".cart-counter").text(cart.length)
+                                 }
+                                 // console.log(cart)
+                                 // $(".cart-counter").text(cart.length)
+                                 document.location.href = '/lien-he-dat-hang'
+                               }
+                             }}
+                        >Đặt hàng</div>
                         <div style={{
                           width: '40%',
                           borderTopRightRadius: '2em',
@@ -275,7 +304,7 @@ class Main extends React.Component {
             <div className="product-tb pro-tb row">
               {products.map((el, index) => {
                 return (
-                  <div key={index} className="col-xs-4 element-item">
+                  <div key={index} className="col-xs-4 col-6 col-sm-6 element-item">
                     <div className="product-box">
                       <Link to={'/san-pham/' + el.slug} className="product-img"
                         // onClick={() => {

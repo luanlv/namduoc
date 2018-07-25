@@ -34,7 +34,7 @@ let { setting } = settingQueries
 let { info } = infoQueries
 let { getOrders } = orderQueries
 let { getNews, getOneNews, getFoodNews, getOnePost, getNewsInCategory} = postQueries
-let { getOneProduct, getProducts, getNoiBat, getKhuyenMai, getBanChay } = productQueries
+let { getOneProduct, getProducts, getNoiBat, getKhuyenMai, getBanChay, getProductsByCategory} = productQueries
 let { seo, allSeo } = seoQueries
 
 const schema = new Schema({
@@ -58,7 +58,8 @@ const schema = new Schema({
       info,
       getNoiBat,
       getKhuyenMai,
-      getBanChay
+      getBanChay,
+      getProductsByCategory,
     },
   }),
   mutation: new ObjectType({

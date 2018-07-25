@@ -2768,6 +2768,10 @@ app.get('*', routeCache.cacheSeconds(0), (() => {
           banchay: {
             needUpdate: true,
             value: []
+          },
+          productInCategory: {
+            needUpdate: true,
+            value: []
           }
         },
         user: req.user || null
@@ -3182,7 +3186,7 @@ class Html extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           dangerouslySetInnerHTML: { __html: `window.APP_STATE=${__WEBPACK_IMPORTED_MODULE_1_serialize_javascript___default()(state, { isJSON: true })}` }
         }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', {
-          dangerouslySetInnerHTML: { __html: `head.load("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")` + `.js("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" )` + `.js("/assets/js/jquery.ui.datepicker-vi-VN.js?v=${v}")` + `.js("/assets/js/jquery.easing.1.3.js?v=${v}")` + `.js("/assets/js/jquery.mb.browser.min.js?v=${v}")` + `.js("/assets/js/jquery.textheight.js?v=${v}")` + `.js("/assets/js/hoverIntent.js?v=${v}")` + `.js("/assets/js/imagesloaded.pkgd.min.js?v=${v}")` + `.js("/assets/js/bootstrap.min.js?v=${v}")` + `.js("/assets/js/jquery.uniform.min.js?v=${v}")` + `.js("/assets/js/isotope.pkgd.min.js")` + `.js("/assets/js/slick.min.js")` + `.js("/assets/js/jquery.panel.mobile.js?v=${v}")` + `.js("/assets/js/jquery.main.js?v=${v}")` + `.js("${scripts[0]}?v=${v}")` + `.js("${scripts[1]}?v=${v}")` }
+          dangerouslySetInnerHTML: { __html: `head.load("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")` + `.js("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" )` + `.js("/assets/js/jquery.ui.datepicker-vi-VN.js?v=${v}")` + `.js("/assets/js/jquery.easing.1.3.js?v=${v}")` + `.js("/assets/js/jquery.mb.browser.min.js?v=${v}")` + `.js("/assets/js/jquery.textheight.js?v=${v}")` + `.js("/assets/js/hoverIntent.js?v=${v}")` + `.js("/assets/js/imagesloaded.pkgd.min.js?v=${v}")` + `.js("/assets/js/bootstrap.min.js?v=${v}")` + `.js("/assets/js/jquery.uniform.min.js?v=${v}")` + `.js("/assets/js/isotope.pkgd.min.js")` + `.js("/assets/js/slick.min.js")` + `.js("/assets/js/jquery.panel.mobile.js?v=${v}")` + `.js("/assets/js/jquery.main.js?v=${v}")` + `.js("https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js?v=${v}")` + `.js("${scripts[0]}?v=${v}")` + `.js("${scripts[1]}?v=${v}")` }
         }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://cdn.onesignal.com/sdks/OneSignalSDK.js', async: 'async' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { dangerouslySetInnerHTML: { __html: this.props.scriptBottom } })
@@ -4430,7 +4434,8 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { style: {
+                    {
+                      style: {
                         width: '40%',
                         display: 'inline-block',
                         // borderRadius: '60%',
@@ -4440,8 +4445,36 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                         borderTopLeftRadius: '2em',
                         borderBottomLeftRadius: '2em',
                         color: 'white',
-                        fontWeight: 'bold'
-                      } },
+                        fontWeight: 'bold',
+                        cursor: 'pointer'
+                      },
+                      onClick: () => {
+                        let that = this;
+                        if (false) {
+                          let sessionStorage = window && window.sessionStorage ? window.sessionStorage : {};
+                          let cart = JSON.parse(sessionStorage.getItem("cart") || '[]');
+                          // console.log(product)
+                          let index = cart.findIndex(el => {
+                            return el.slug === product.slug;
+                          });
+                          if (index >= 0) {
+                            cart[index].number = parseInt(cart[index].number) + 1;
+                            sessionStorage.setItem('cart', JSON.stringify(cart));
+                          } else {
+                            cart.push({
+                              slug: product.slug,
+                              number: 1,
+                              product: product
+                            });
+                            sessionStorage.setItem('cart', JSON.stringify(cart));
+                            // $(".cart-counter").text(cart.length)
+                          }
+                          // console.log(cart)
+                          // $(".cart-counter").text(cart.length)
+                          document.location.href = '/lien-he-dat-hang';
+                        }
+                      }
+                    },
                     '\u0110\u1EB7t h\xE0ng'
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -4515,7 +4548,7 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             products.map((el, index) => {
               return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { key: index, className: 'col-xs-4 element-item' },
+                { key: index, className: 'col-xs-4 col-6 col-sm-6 element-item' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { className: 'product-box' },
@@ -4604,24 +4637,20 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'slider-wrapper' })
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'head-la head-pro' },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'h2',
-            { className: 'title text-uppercase' },
-            's\u1EA3n ph\u1EA9m'
-          )
+          'h2',
+          { className: 'title text-uppercase', style: { borderBottom: '1px solid #ddd', fontSize: 28 } },
+          'UNG TH\u01AF'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
-          { className: 'wrap-section' },
+          { className: 'wrap-section pro-site' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'product-tb row isotopelist listfull' },
+            { className: 'product-tb pro-tb row' },
             products.map((el, index) => {
               return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'col-xs-12 element-item', key: index },
+                { key: index, className: 'col-md-3 col-xs-6 \t.col-6 element-item' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
                   { className: 'product-box' },
@@ -4641,12 +4670,88 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                         { to: '/san-pham/' + el.slug },
                         el.name
                       )
-                    ),
+                    )
+                  )
+                )
+              );
+            })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h2',
+          { className: 'title text-uppercase', style: { borderBottom: '1px solid #ddd', fontSize: 18 } },
+          'S\u1EA2N PH\u1EA8M B\xC1N CH\u1EA0Y'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'wrap-section pro-site' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'product-tb pro-tb row' },
+            products.map((el, index) => {
+              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { key: index, className: 'col-md-3 col-xs-6 \t.col-6 element-item' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'product-box' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
+                    { to: '/san-pham/' + el.slug, className: 'product-img' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: el.coverUrl.replace("\/image", "\/image\/small"), alt: el.title })
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'product-content' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'div',
-                      { className: 'description' },
-                      el.description,
-                      ' ...'
+                      'h3',
+                      { className: 'product-name' },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
+                        { to: '/san-pham/' + el.slug },
+                        el.name
+                      )
+                    )
+                  )
+                )
+              );
+            })
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h2',
+          { className: 'title text-uppercase', style: { borderBottom: '1px solid #ddd', fontSize: 18 } },
+          'S\u1EA2N PH\u1EA8M KHUY\u1EBEN M\xC3I'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'wrap-section pro-site' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'product-tb pro-tb row' },
+            products.map((el, index) => {
+              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { key: index, className: 'col-md-3 col-xs-6 \t.col-6 element-item' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'div',
+                  { className: 'product-box' },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
+                    { to: '/san-pham/' + el.slug, className: 'product-img' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: el.coverUrl.replace("\/image", "\/image\/small"), alt: el.title })
+                  ),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: 'product-content' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'h3',
+                      { className: 'product-name' },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_1__Link__["a" /* default */],
+                        { to: '/san-pham/' + el.slug },
+                        el.name
+                      )
                     )
                   )
                 )
@@ -5520,6 +5625,16 @@ module.exports.getOrders = (root, {}) => {
     resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getProducts
   },
 
+  getProductsByCategory: {
+    type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */]),
+    args: {
+      slug: {
+        type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
+      }
+    },
+    resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getProductsByCategory
+  },
+
   getNoiBat: {
     type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_2__type__["a" /* default */]),
     resolve: __WEBPACK_IMPORTED_MODULE_3__schema___default.a.getProductsNoiBat
@@ -5589,6 +5704,13 @@ module.exports.getProducts = (root, {}) => {
   });
 };
 
+module.exports.getProductsByCategory = (root, { slug }) => {
+  return new Promise((resolve, reject) => {
+    model.find({ category: slug }).exec((err, res) => {
+      err ? reject(err) : resolve(res);
+    });
+  });
+};
 module.exports.getProductsNoiBat = (root, {}) => {
   return new Promise((resolve, reject) => {
     model.find({ loai: 'noi-bat' }).exec((err, res) => {
@@ -5670,7 +5792,7 @@ module.exports.getProductsKhuyenMai = (root, {}) => {
       type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
     },
     body: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     view: {
       type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLInt"])
@@ -6089,7 +6211,7 @@ let { setting } = __WEBPACK_IMPORTED_MODULE_6__models_setting_queries__["a" /* d
 let { info } = __WEBPACK_IMPORTED_MODULE_9__models_info_queries__["a" /* default */];
 let { getOrders } = __WEBPACK_IMPORTED_MODULE_7__models_order_queries__["a" /* default */];
 let { getNews, getOneNews, getFoodNews, getOnePost, getNewsInCategory } = __WEBPACK_IMPORTED_MODULE_3__models_post_queries__["a" /* default */];
-let { getOneProduct, getProducts, getNoiBat, getKhuyenMai, getBanChay } = __WEBPACK_IMPORTED_MODULE_4__models_product_queries__["a" /* default */];
+let { getOneProduct, getProducts, getNoiBat, getKhuyenMai, getBanChay, getProductsByCategory } = __WEBPACK_IMPORTED_MODULE_4__models_product_queries__["a" /* default */];
 let { seo, allSeo } = __WEBPACK_IMPORTED_MODULE_8__models_seo_queries__["a" /* default */];
 
 const schema = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLSchema"]({
@@ -6113,7 +6235,8 @@ const schema = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLSchema"]({
       info,
       getNoiBat,
       getKhuyenMai,
-      getBanChay
+      getBanChay,
+      getProductsByCategory
     }
   }),
   mutation: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLObjectType"]({
@@ -6206,6 +6329,9 @@ function data(state = {}, action) {
         }),
         banchay: _extends({}, state.banchay, {
           value: data.getBanChay || []
+        }),
+        productInCategory: _extends({}, state.productInCategory, {
+          value: data.getProductsByCategory || []
         })
       });
     default:
@@ -12712,13 +12838,14 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  path: '/san-pham',
+  path: '/danh-muc/:slug',
   action({ store, path }) {
     return _asyncToGenerator(function* () {
       let seo = {};
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
         let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+        let productInCategory = 'getProductsByCategory(slug: "ung-thu"){name, price, slug, coverUrl, description, saleOff, body, created_at}';
         const resp = yield __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__core_fetch__["a" /* default */])('/graphql', {
           method: 'post',
           headers: {
@@ -12726,7 +12853,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            query: '{' + info + 'seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},getProducts{name, price, slug, coverUrl, description, saleOff, body, created_at} }'
+            query: '{' + productInCategory + info + 'seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},getProducts{name, price, slug, coverUrl, description, saleOff, body, created_at} }'
           }),
           credentials: 'include'
         });
@@ -12734,16 +12861,17 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         seo = data.seo || {};
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__actions_data__["a" /* setData */])(data));
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["hideLoading"])());
+        console.log(store.getState().data);
       }
 
       return {
-        title: seo.title || 'Trang danh sách sản phẩm',
+        title: seo.title || 'Danh mục sản phẩm',
         description: seo.description || '',
         seo: seo,
         component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           __WEBPACK_IMPORTED_MODULE_4__components_Layout__["a" /* default */],
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Home__["a" /* default */], { products: store.getState().data.products.value })
+          { data: store.getState().data },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Home__["a" /* default */], { data: store.getState().data, products: store.getState().data.products.value })
         )
       };
     })();
@@ -13174,9 +13302,19 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         address: '',
         product: this.props.selectProduct || 'com-kho-hoa-vang',
         quantity: ''
-      }
+      },
+      cart: []
     };
     this.order = this.order.bind(this);
+  }
+
+  componentDidMount() {
+    let that = this;
+    if (false) {
+      let sessionStorage = window && window.sessionStorage ? window.sessionStorage : {};
+      let cart = JSON.parse(sessionStorage.getItem("cart") || '[]');
+      that.setState({ cart: cart });
+    }
   }
 
   order() {
@@ -13191,6 +13329,10 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   }
 
   render() {
+    let sum = 0;
+    this.state.cart.forEach(el => {
+      sum += el.number * el.product.newPrice;
+    });
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       null,
@@ -13205,7 +13347,169 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             { className: 'row' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'col-md-6' },
+              { className: 'col-md-12' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'table',
+                { className: 'dathang' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'thead',
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'tr',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'th',
+                      null,
+                      'S\u1EA3n ph\u1EA9m'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'th',
+                      null,
+                      'Gi\xE1'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'th',
+                      null,
+                      'S\u1ED1 l\u01B0\u1EE3ng'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'th',
+                      null,
+                      'Th\xE0nh ti\u1EC1n'
+                    )
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'tbody',
+                  { style: { fontSize: '18' } },
+                  this.state.cart.map((el, idx) => {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'tr',
+                      { key: idx },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'td',
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                          'div',
+                          { className: '', style: { padding: 10 } },
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: el.product.coverUrl, alt: '',
+                            style: { height: 80, width: 'auto' }
+                          }),
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'span',
+                            { style: { paddingLeft: 20 } },
+                            el.product.name
+                          )
+                        )
+                      ),
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'td',
+                        null,
+                        el.product.newPrice.toLocaleString(),
+                        ' VN\u0110'
+                      ),
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'td',
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number',
+                          defaultValue: el.number,
+                          onChange: event => {
+                            let value = event.target.value;
+                            let that = this;
+                            if (value > 0) {
+                              if (false) {
+                                let sessionStorage = window && window.sessionStorage ? window.sessionStorage : {};
+                                let cart = JSON.parse(sessionStorage.getItem("cart") || '[]');
+                                let index = idx;
+                                if (index >= 0) {
+                                  cart[index].number = value;
+                                  sessionStorage.setItem('cart', JSON.stringify(cart));
+                                  $(".cart-counter").text(cart.length);
+                                } else {
+                                  cart.push({
+                                    slug: that.state.product.slug,
+                                    number: value,
+                                    product: that.state.product
+                                  });
+                                  sessionStorage.setItem('cart', JSON.stringify(cart));
+                                }
+                                // $(".cart-counter").text(cart.length)
+                                this.setState({ cart: cart });
+                              }
+                            }
+                          }
+                        })
+                      ),
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'td',
+                        { style: { color: '#5CB247', fontWeight: 'bold' } },
+                        (el.product.newPrice * el.number).toLocaleString(),
+                        ' VN\u0110'
+                      )
+                    );
+                  })
+                ),
+                this.state.cart.length > 0 && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'tfoot',
+                  { style: { marginTop: 20 } },
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'tr',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'td',
+                      null,
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        {
+                          style: { margin: 10 }
+                        },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                          __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                          {
+                            style: {
+                              // width: '40%',
+                              display: 'inline-block',
+                              // borderRadius: '60%',
+                              background: '#5CB247',
+                              padding: '5px 20px',
+                              borderTopRightRadius: '1.5em',
+                              borderBottomRightRadius: '1.5em',
+                              borderTopLeftRadius: '1.5em',
+                              borderBottomLeftRadius: '1.5em',
+                              color: 'white',
+                              fontWeight: 'bold',
+                              cursor: 'pointer'
+                            },
+                            href: '/',
+                            to: '/'
+                          },
+                          'Mua s\u1EA3n ph\u1EA9m kh\xE1c'
+                        )
+                      )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('td', null),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'td',
+                      { style: { textAlign: 'right', paddingRight: 20, fontSize: 22 } },
+                      'T\u1ED5ng ti\u1EC1n :'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'td',
+                      { style: { fontSize: 22, fontWeight: 'bold', color: '#5CB247' } },
+                      sum.toLocaleString(),
+                      ' VN\u0110'
+                    )
+                  )
+                )
+              )
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'row', style: { margin: '10px 0 0 0', fontSize: 20, border: '1px solid #ddd', borderRadius: 10, padding: 20 } },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'col-md-6', style: { padding: 0 } },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { className: 'form-horizontal' },
@@ -13214,8 +13518,8 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   null,
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'legend',
-                    null,
-                    '\u0110\u1EB7t h\xE0ng'
+                    { style: { color: '#5CB247', fontWeight: 'bold' } },
+                    'Th\xF4ng tin \u0111\u1EB7t h\xE0ng'
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
@@ -13298,64 +13602,30 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: 'form-group' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'label',
-                      { className: 'col-md-4 control-label', htmlFor: 'available_quantity' },
-                      'S\u1ED1 l\u01B0\u1EE3ng:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'div',
-                      { className: 'col-md-8' },
-                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { id: 'available_quantity', name: 'available_quantity', placeholder: '', className: 'form-control input-md', required: true, type: 'text',
-                        defaultValue: this.state.data.quantity,
-                        onChange: e => {
-                          let value = e.target.value;
-                          this.setState(prev => {
-                            return _extends({}, prev, {
-                              data: _extends({}, prev.data, {
-                                quantity: value
-                              })
-                            });
-                          });
-                        }
-                      })
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('label', { className: 'col-md-4 control-label', htmlFor: 'singlebutton' }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       'div',
                       { className: 'col-md-8' },
                       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'button',
-                        { id: 'singlebutton', name: 'singlebutton', className: 'btn btn-primary',
+                        'a',
+                        {
+                          style: {
+                            display: 'inline-block',
+                            background: '#5CB247',
+                            padding: '5px 20px',
+                            borderTopRightRadius: '1em',
+                            borderBottomRightRadius: '1em',
+                            borderTopLeftRadius: '1em',
+                            borderBottomLeftRadius: '1em',
+                            color: 'white',
+                            fontWeight: 'bold',
+                            cursor: 'pointer'
+                          },
                           onClick: this.order
                         },
                         '\u0110\u1EB7t h\xE0ng'
                       )
                     )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'legend',
-                    null,
-                    'Li\xEAn h\u1EC7'
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'p',
-                    null,
-                    'Hotline : ',
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'b',
-                      { style: { color: 'red' } },
-                      '0973.318.868'
-                    )
-                  ),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'p',
-                    null,
-                    '\u0110\u1ECBa ch\u1EC9 : 128 \u2013 Ch\u1EE3 M\u1EC5 Tr\xEC \u2013 Qu\u1EADn Nam T\u1EEB Li\xEAm \u2013 H\xE0 N\u1ED9i'
                   )
                 )
               )
@@ -13364,83 +13634,37 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
               'div',
               { className: 'col-md-6' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'fieldset',
+                'h3',
+                { style: { color: '#5CB247', fontWeight: 'bold', borderBottom: '1px solid #ddd', marginBottom: 5 } },
+                'Li\xEAn h\u1EC7'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'span',
+                { style: { width: 60 } },
+                'Hotline 1:'
+              ),
+              ' ',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'b',
+                { style: { color: 'red' } },
+                '0973.318.868'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'span',
+                { style: { width: 60 } },
+                'Hotline 2:'
+              ),
+              ' ',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'b',
+                { style: { color: 'red' } },
+                '0915.055.951'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'p',
                 null,
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'legend',
-                  null,
-                  'H\xECnh th\u1EE9c thanh to\xE1n'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  '\u0110\u1EC3 thu\u1EADn l\u1EE3i h\u01A1n cho qu\xED kh\xE1ch mua C\u1ED1m, ch\xFAng t\xF4i c\xF3 2 h\xECnh th\u1EE9c thanh to\xE1n sau :'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Kh\xE1ch h\xE0ng \u1EDF g\u1EA7n (b\xE1n k\xEDnh 20km) : Qu\xFD kh\xE1ch thanh to\xE1n b\u1EB1ng chuy\u1EC3n kho\u1EA3n ho\u1EB7c ti\u1EC1n m\u1EB7t sau khi nh\u1EADn c\u1ED1m .'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Kh\xE1ch h\xE0ng \u1EDF xa (tr\xEAn 20km) : Qu\xFD kh\xE1ch vui l\xF2ng thanh to\xE1n 100% \u0111\u01A1n h\xE0ng tr\u01B0\u1EDBc khi nh\u1EADn h\xE0ng.'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'b',
-                    null,
-                    'Th\xF4ng tin t\xE0i kho\u1EA3n'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Ch\u1EE7 t\xE0i kho\u1EA3n : ',
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'b',
-                    { style: { color: 'red' } },
-                    'Nguy\u1EC5n H\u1EEFu T\xFA'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'S\u1ED1 t\xE0i kho\u1EA3n : ',
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'b',
-                    { style: { color: 'red' } },
-                    '84387487'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Ng\xE2n h\xE0ng: ',
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'b',
-                    { style: { color: 'red' } },
-                    'VPBank chi nh\xE1nh \u0110\xF4ng \u0110\xF4'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  'Hotline : ',
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'b',
-                    { style: { color: 'red' } },
-                    '0973.318.868'
-                  )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'p',
-                  null,
-                  '\u0110\u1ECBa ch\u1EC9 : 128 \u2013 Ch\u1EE3 M\u1EC5 Tr\xEC \u2013 Qu\u1EADn Nam T\u1EEB Li\xEAm \u2013 H\xE0 N\u1ED9i'
-                )
+                '\u0110\u1ECBa ch\u1EC9 : 27 \u2013 Hu\u1EF3nh Th\xFAc Kh\xE1ng \u2013 Qu\u1EADn \u0110\u1ED1ng \u0110a \u2013 H\xE0 N\u1ED9i'
               )
             )
           )

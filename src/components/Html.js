@@ -102,6 +102,7 @@ class Html extends React.Component {
                 + `.js("/assets/js/slick.min.js")`
                 + `.js("/assets/js/jquery.panel.mobile.js?v=${v}")`
                 + `.js("/assets/js/jquery.main.js?v=${v}")`
+                + `.js("https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js?v=${v}")`
                 +  `.js("${scripts[0]}?v=${v}")`
                 +  `.js("${scripts[1]}?v=${v}")`}}
           >

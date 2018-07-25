@@ -18,40 +18,82 @@ class Main extends React.Component {
             <div className="slider-wrapper">
             </div>
           </div>
-          <div className="head-la head-pro">
-            <h2 className="title text-uppercase">
-              sản phẩm</h2>
-            {/*<div className="h-link">*/}
-              {/*<a href="nghien-cuu.aspx">*/}
-                {/*Nghiên cứu phát triển</a>*/}
-            {/*</div>*/}
-            {/*<div className="link-nc">*/}
-              {/*<a href="nghien-cuu.aspx">Click me</a>*/}
-            {/*</div>*/}
-          </div>
-          <div className="wrap-section">
-            <div className="product-tb row isotopelist listfull">
+
+          <h2 className="title text-uppercase" style={{borderBottom: '1px solid #ddd', fontSize: 28}}>
+            UNG THƯ
+          </h2>
+
+          <div className="wrap-section pro-site">
+            <div className="product-tb pro-tb row">
               {products.map((el, index) => {
                 return (
-                  <div className="col-xs-12 element-item" key={index}>
+                  <div key={index} className="col-md-3 col-xs-6 	.col-6 element-item">
                     <div className="product-box">
                       <Link to={'/san-pham/' + el.slug} className="product-img">
                         <img src={el.coverUrl.replace("\/image", "\/image\/small")} alt={el.title} /></Link>
                       <div className="product-content">
                         <h3 className="product-name">
                           <Link to={'/san-pham/' + el.slug} >
-                            {el.name}
-                          </Link>
+                            {el.name}</Link>
                         </h3>
-                        <div className="description">
-                          {el.description} ...
-                        </div>
                       </div>
                     </div>
                   </div>
                 )
               })}
+            </div>
+          </div>
 
+
+          <h2 className="title text-uppercase" style={{borderBottom: '1px solid #ddd', fontSize: 18}}>
+            SẢN PHẨM BÁN CHẠY
+          </h2>
+
+          <div className="wrap-section pro-site">
+            <div className="product-tb pro-tb row">
+              {products.map((el, index) => {
+                return (
+                  <div key={index} className="col-md-3 col-xs-6 	.col-6 element-item">
+                    <div className="product-box">
+                      <Link to={'/san-pham/' + el.slug} className="product-img">
+                        <img src={el.coverUrl.replace("\/image", "\/image\/small")} alt={el.title} /></Link>
+                      <div className="product-content">
+                        <h3 className="product-name">
+                          <Link to={'/san-pham/' + el.slug} >
+                            {el.name}</Link>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+
+
+          <h2 className="title text-uppercase" style={{borderBottom: '1px solid #ddd', fontSize: 18}}>
+            SẢN PHẨM KHUYẾN MÃI
+          </h2>
+
+          <div className="wrap-section pro-site">
+            <div className="product-tb pro-tb row">
+              {products.map((el, index) => {
+                return (
+                  <div key={index} className="col-md-3 col-xs-6 	.col-6 element-item">
+                    <div className="product-box">
+                      <Link to={'/san-pham/' + el.slug} className="product-img">
+                        <img src={el.coverUrl.replace("\/image", "\/image\/small")} alt={el.title} /></Link>
+                      <div className="product-content">
+                        <h3 className="product-name">
+                          <Link to={'/san-pham/' + el.slug} >
+                            {el.name}</Link>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
 

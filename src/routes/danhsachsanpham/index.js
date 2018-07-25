@@ -7,12 +7,13 @@ import {setData} from '../../actions/data'
 import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 export default {
-  path: '/san-pham',
+  path: '/danh-muc/:slug',
   async action({ store, path}) {
     let seo = {}
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())){
       store.dispatch(showLoading())
       let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }'
+      let productInCategory = 'getProductsByCategory(slug: "ung-thu"){name, price, slug, coverUrl, description, saleOff, body, created_at}'
       const resp = await fetch('/graphql', {
         method: 'post',
         headers: {
@@ -20,7 +21,7 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{'+ info + 'seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, price, slug, coverUrl, description, saleOff, body, created_at} }',
+          query: '{'+ productInCategory + info + 'seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, price, slug, coverUrl, description, saleOff, body, created_at} }',
         }),
         credentials: 'include',
       });
@@ -28,13 +29,14 @@ export default {
       seo = data.seo || {}
       store.dispatch(setData(data))
       store.dispatch(hideLoading())
+      console.log(store.getState().data)
     }
 
     return {
-      title: seo.title || 'Trang danh sách sản phẩm',
+      title: seo.title || 'Danh mục sản phẩm',
       description: seo.description || '',
       seo: seo,
-      component: <Layout><Home products={store.getState().data.products.value} /></Layout>,
+      component: <Layout data={store.getState().data} ><Home data={store.getState().data} products={store.getState().data.products.value} /></Layout>,
     };
   },
 

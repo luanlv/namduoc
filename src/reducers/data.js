@@ -45,6 +45,10 @@ export default function data(state = {}, action) {
         banchay: {
           ...state.banchay,
           value : data.getBanChay || []
+        },
+        productInCategory: {
+          ...state.productInCategory,
+          value : data.getProductsByCategory || []
         }
       };
     default:
