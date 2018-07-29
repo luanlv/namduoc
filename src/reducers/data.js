@@ -34,6 +34,10 @@ export default function data(state = {}, action) {
           ...state.products,
           value : data.getProducts || []
         },
+        productsInCategory: {
+          ...state.productsInCategory,
+          value : data.getProductsByCategory || []
+        },
         noibat: {
           ...state.noibat,
           value : data.getNoiBat || []
@@ -46,9 +50,9 @@ export default function data(state = {}, action) {
           ...state.banchay,
           value : data.getBanChay || []
         },
-        productInCategory: {
-          ...state.productInCategory,
-          value : data.getProductsByCategory || []
+        productsInCategory: {
+          ...state.productsInCategory,
+          value : data.productsInCategory || []
         }
       };
     default:

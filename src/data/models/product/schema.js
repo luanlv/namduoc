@@ -56,6 +56,19 @@ module.exports.getProductsByCategory = (root, {slug}) => {
     });
   });
 };
+
+module.exports.productsInCategory = (root, { slug2 }) => {
+  console.log('slug2')
+  console.log(slug2)
+  return new Promise((resolve, reject) => {
+    model.find({category: slug2}).exec((err, res) => {
+      console.log('===============')
+      console.log(res)
+      err ? reject(err) : resolve(res);
+    });
+  });
+};
+
 module.exports.getProductsNoiBat = (root, {}) => {
   return new Promise((resolve, reject) => {
     model.find({loai: 'noi-bat'}).exec((err, res) => {

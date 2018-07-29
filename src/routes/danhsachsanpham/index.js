@@ -7,13 +7,15 @@ import {setData} from '../../actions/data'
 import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 export default {
-  path: '/danh-muc/:slug',
-  async action({ store, params, query, path  }) {
+  path: '/danh-muc/:slug2',
+  async action({store, params, path }) {
     let seo = {}
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())){
       store.dispatch(showLoading())
       let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }'
-      let productInCategory = 'getProductsByCategory(slug: "'+ params.slug +'"){name, price, slug, coverUrl, description, saleOff, body, created_at}'
+      // console.log("params.slug")
+      // console.log(params.slug2)
+      let productsInCategory = 'productsInCategory(slug2: "'+ "ung-thu" +'"){name, price, slug, coverUrl, description, saleOff, body, created_at}'
       let khuyenmai = 'getKhuyenMai{name, slug, price, coverUrl, description, saleOff, body, created_at}'
       let banchay = 'getBanChay{name, slug, price, coverUrl, description, saleOff, body, created_at}'
       const resp = await fetch('/graphql', {
@@ -23,22 +25,23 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{'+ productInCategory + khuyenmai + banchay + info + 'seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, price, slug, coverUrl, description, saleOff, body, created_at} }',
+          query: '{'+ productsInCategory + khuyenmai + banchay + info + 'seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description} }',
         }),
         credentials: 'include',
       });
       const { data } = await resp.json();
+      console.log('data')
+      console.log(data)
       seo = data.seo || {}
       store.dispatch(setData(data))
       store.dispatch(hideLoading())
-      console.log(store.getState().data)
     }
 
     return {
       title: seo.title || 'Danh mục sản phẩm',
       description: seo.description || '',
       seo: seo,
-      component: <Layout data={store.getState().data} ><Home data={store.getState().data} products={store.getState().data.products.value} /></Layout>,
+      component: <Layout data={store.getState().data} ><Home data={store.getState().data}  products={store.getState().data.productsInCategory.value} /></Layout>,
     };
   },
 

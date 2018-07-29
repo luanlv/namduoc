@@ -42,6 +42,16 @@ export default {
     resolve: model.getProductsByCategory
   },
 
+  productsInCategory: {
+    type: new GraphQLList(type),
+    args: {
+      slug2: {
+        type: GraphQLString
+      }
+    },
+    resolve: model.productsInCategory
+  },
+
   getNoiBat: {
     type: new GraphQLList(type),
     resolve: model.getProductsNoiBat

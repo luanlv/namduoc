@@ -150,6 +150,7 @@ app.get('*', routeCache.cacheSeconds(0), async (req, res, next) => {
           needUpdate: true,
           value: []
         },
+      
         noibat: {
           needUpdate: true,
           value: []
@@ -162,7 +163,7 @@ app.get('*', routeCache.cacheSeconds(0), async (req, res, next) => {
           needUpdate: true,
           value: []
         },
-        productInCategory: {
+        productsInCategory: {
           needUpdate: true,
           value: []
         },

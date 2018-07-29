@@ -5,6 +5,7 @@ import Main from '../../components/Partials/Main'
 import Aside from '../../components/Partials/Aside'
 import Footer from '../../components/Partials/Footer'
 import MenuMobile from '../../components/Partials/MenuMobile'
+import Link from '../../components/Link'
 
 class Home extends React.Component {
 
@@ -30,18 +31,17 @@ class Home extends React.Component {
                     padding: 5,
                     listStyle: 'none'
                   }}>
-                    <li className="ungthu linkMenuWr"><a href="/">Ung thư</a></li>
-                    <li className="bogan linkMenuWr"><a href="/">Sản phẩm bổ gan</a></li>
-                    <li className="duonghuyet linkMenuWr"><a
-                      href="/">Đường huyết - Huyết áp</a></li>
-                    <li className="daday linkMenuWr"><a href="/">Dạ dày</a></li>
-                    <li className="giamcan linkMenuWr"><a href="/">Giản cân</a></li>
-                    <li className="lamdep linkMenuWr"><a href="/">Làm đẹp</a></li>
-                    <li className="xuongkhop linkMenuWr"><a href="/">Xương khớp</a></li>
-                    <li className="botonghop linkMenuWr"><a href="/">Bổ tổng hợp</a></li>
-                    <li className="nano linkMenuWr"><a href="/">Nano Curcumin</a></li>
-                    <li className="toiden linkMenuWr"><a href="/">Tỏi đen</a></li>
-                    <li className="sanphamkhac linkMenuWr"><a href="/">Sản phẩm khác</a></li>
+                    <li className="ungthu linkMenuWr"><Link to="/danh-muc/ung-thu">Ung thư</Link></li>
+                    <li className="bogan linkMenuWr"><Link to="/danh-muc/san-pham-bo-gan">Sản phẩm bổ gan</Link></li>
+                    <li className="duonghuyet linkMenuWr"><Link to="/danh-muc/duong-huyet-huyet-ap">Đường huyết - Huyết áp</Link></li>
+                    <li className="daday linkMenuWr"><Link to="/danh-muc/da-day">Dạ dày</Link></li>
+                    <li className="giamcan linkMenuWr"><Link to="/danh-muc/giam-can">Giản cân</Link></li>
+                    <li className="lamdep linkMenuWr"><Link to="/danh-muc/lam-dep">Làm đẹp</Link></li>
+                    <li className="xuongkhop linkMenuWr"><Link to="/danh-muc/xuong-khop">Xương khớp</Link></li>
+                    <li className="botonghop linkMenuWr"><Link to="/danh-muc/bo-tong-hop">Bổ tổng hợp</Link></li>
+                    <li className="nano linkMenuWr"><Link to="/danh-muc/nano-curcumin">Nano Curcumin</Link></li>
+                    <li className="toiden linkMenuWr"><Link to="/danh-muc/toi-den">Tỏi đen</Link></li>
+                    <li className="sanphamkhac linkMenuWr"><Link to="/danh-muc/san-pham-khac">Sản phẩm khác</Link> </li>
                   </ul>
                 </div>
               </div>
