@@ -134,18 +134,16 @@ router.post('/order/new', bodyParser.json() ,async (req, res) => {
   let setting = await Setting.findOne({})
   let adminId = setting.adminId
   let emailAdmin = setting.emailAdmin
-  Order.create(req.body, (err, resData) => {
+  console.log(req.body)
+  let order = {
+    name: req.body.data.name,
+    phone: req.body.data.phone,
+    address: req.body.data.address,
+    cart: req.body.cart,
+  }
+  Order.create(order, (err, resData) => {
     if(err) return res.sendStatus(400)
-    Mailer.sendNewOrderMail(emailAdmin, resData.name, resData.phone)
-    // Mailer.sendNewOrderMail('luanlv2591@gmail.com', resData.name, resData.phone)
-    axios.post('https://graph.facebook.com/' + adminId + '/notifications?access_token=123093138237586|FEx3yoFukySO_rviU4Wl6MJxyRA&href=admin&template=Co_don_hang_moi')
-      .then(res => {
-        console.log(res.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-
+    console.log(resData)
     return res.send(resData)
   })
 })

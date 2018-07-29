@@ -304,7 +304,7 @@ class Main extends React.Component {
             <div className="product-tb pro-tb row">
               {products.map((el, index) => {
                 return (
-                  <div key={index} className="col-xs-4 col-6 col-sm-6 element-item">
+                  <div key={index} className="col-xs-4 col-6  element-item">
                     <div className="product-box">
                       <Link to={'/san-pham/' + el.slug} className="product-img"
                         // onClick={() => {

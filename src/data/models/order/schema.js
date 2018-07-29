@@ -5,8 +5,7 @@ var schema = new mongoose.Schema({
   name: {type: String, default: ''},
   phone: {type: String, default: ''},
   address: {type: String, default: ''},
-  product: {type: String, default: ''},
-  quantity: {type: String, default: ''},
+  cart: {type: [Schema.Types.Mixed], default: []},
   done: {type: Boolean, default: false},
   created_at: {type: Date, default: Date.now},
 });

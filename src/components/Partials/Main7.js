@@ -3,7 +3,9 @@ import Link from '../Link'
 import FacebookProvider, { Comments } from 'react-facebook';
 
 class Main extends React.Component {
+
   render() {
+    
     if (this.props.products.length < 1) {
       return (
         <div id="mainContent">
@@ -12,6 +14,8 @@ class Main extends React.Component {
       )
     } else {
       const products = this.props.products
+      const banchay = this.props.data.banchay.value.slice(0, 6)
+      const khuyenmai = this.props.data.khuyenmai.value.slice(0, 6)
       return (
         <div id="colContent">
           <div id="bannerSub">
@@ -51,7 +55,7 @@ class Main extends React.Component {
 
           <div className="wrap-section pro-site">
             <div className="product-tb pro-tb row">
-              {products.map((el, index) => {
+              {banchay.map((el, index) => {
                 return (
                   <div key={index} className="col-md-3 col-xs-6 	.col-6 element-item">
                     <div className="product-box">
@@ -78,7 +82,7 @@ class Main extends React.Component {
 
           <div className="wrap-section pro-site">
             <div className="product-tb pro-tb row">
-              {products.map((el, index) => {
+              {khuyenmai.map((el, index) => {
                 return (
                   <div key={index} className="col-md-3 col-xs-6 	.col-6 element-item">
                     <div className="product-box">

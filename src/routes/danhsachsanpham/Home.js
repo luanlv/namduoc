@@ -18,8 +18,8 @@ class Home extends React.Component {
       <div >
         <div id="mainContent">
           <div className="container">
-            <Main7 products={this.props.products} />
-            <Aside />
+            <Main7 products={this.props.products} data={this.props.data} />
+            <Aside banchay={true} data={this.props.data.banchay.value.slice(0, 3)} />
           </div>
         </div>
       </div>

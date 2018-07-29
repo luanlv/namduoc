@@ -17,9 +17,7 @@ class Home extends React.Component {
       data: {
         name: '',
         phone: '',
-        address: '',
-        product: this.props.selectProduct || 'com-kho-hoa-vang',
-        quantity: ''
+        address: ''
       },
       cart: []
     }
@@ -36,7 +34,7 @@ class Home extends React.Component {
   }
 
   order() {
-    axios.post('/api/order/new', this.state.data)
+    axios.post('/api/order/new', this.state)
       .then(res => {
         $('#myModal').modal({
           show: true
@@ -75,18 +73,19 @@ class Home extends React.Component {
                       <tr key={idx}>
                         <td>
                           <div className="" style={{padding: 10}}>
-                            <img src={el.product.coverUrl} alt=""
+                            <img className="dt-img" src={el.product.coverUrl} alt=""
                               style={{height: 80, width: 'auto'}}
                             />
-                            <span style={{paddingLeft: 20}}>{el.product.name}</span>
+                              <span className="dt-name" style={{paddingLeft: 20}}>{el.product.name}</span>
                           </div>
                           </td>
                         <td>
-                          {el.product.newPrice.toLocaleString()} VNĐ
+                          <span className="dt-price" > {el.product.newPrice.toLocaleString()} VNĐ </span>
                         </td>
                         <td>
 
                           <input type="number"
+                            className="dt-numberWr" 
                             defaultValue={el.number}
                             onChange={(event) => {
                               let value = event.target.value
@@ -133,7 +132,7 @@ class Home extends React.Component {
                       >
                         <Link
                           style={{
-                            // width: '40%',
+                            // width: '100%',
                             display: 'inline-block',
                             // borderRadius: '60%',
                             background: '#5CB247',
@@ -148,7 +147,7 @@ class Home extends React.Component {
                           }}
                           href="/"
                           to="/"
-                        >Mua sản phẩm khác</Link>
+                        >Mua thêm</Link>
                       </div>
                     </td>
 
@@ -192,7 +191,7 @@ class Home extends React.Component {
                         />
                       </div>
                     </div>
-                    {/* Text input*/}
+                    
                     <div className="form-group">
                       <label className="col-md-4 control-label" htmlFor="product_name">Số điện thoại:</label>
                       <div className="col-md-8">

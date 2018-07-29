@@ -8,12 +8,14 @@ import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 export default {
   path: '/danh-muc/:slug',
-  async action({ store, path}) {
+  async action({ store, params, query, path  }) {
     let seo = {}
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())){
       store.dispatch(showLoading())
       let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }'
-      let productInCategory = 'getProductsByCategory(slug: "ung-thu"){name, price, slug, coverUrl, description, saleOff, body, created_at}'
+      let productInCategory = 'getProductsByCategory(slug: "'+ params.slug +'"){name, price, slug, coverUrl, description, saleOff, body, created_at}'
+      let khuyenmai = 'getKhuyenMai{name, slug, price, coverUrl, description, saleOff, body, created_at}'
+      let banchay = 'getBanChay{name, slug, price, coverUrl, description, saleOff, body, created_at}'
       const resp = await fetch('/graphql', {
         method: 'post',
         headers: {
@@ -21,7 +23,7 @@ export default {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          query: '{'+ productInCategory + info + 'seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, price, slug, coverUrl, description, saleOff, body, created_at} }',
+          query: '{'+ productInCategory + khuyenmai + banchay + info + 'seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, price, slug, coverUrl, description, saleOff, body, created_at} }',
         }),
         credentials: 'include',
       });
