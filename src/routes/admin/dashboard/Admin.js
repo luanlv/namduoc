@@ -23,7 +23,7 @@ class Admin extends React.Component {
   render() {
     return (
         <div>
-          <Row className="padding-5">
+          {/* <Row className="padding-5">
             <Table>
               <Thead>
               <Tr>
@@ -66,7 +66,7 @@ class Admin extends React.Component {
 
               </Tbody>
             </Table>
-          </Row>
+          </Row> */}
         </div>
     );
   }
