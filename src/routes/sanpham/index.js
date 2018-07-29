@@ -33,7 +33,6 @@ export default {
       store.dispatch(setData(data))
       store.dispatch(hideLoading())
     }
-
     return {
       title: seo.title || store.getState().data.product.value.name,
       description: seo.description || store.getState().data.product.value.description,

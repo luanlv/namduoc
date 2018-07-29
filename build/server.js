@@ -12724,7 +12724,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'ul',
                   { id: 'mainMenu', style: { height: 290,
-                      padding: 5,
+                      padding: 3,
                       listStyle: 'none'
                     } },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -12893,12 +12893,10 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
           body: JSON.stringify({
             query: '{' + noibat + khuyenmai + banchay + info + 'seo(url: "' + path + '"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, description, saleOff, body, created_at}, getNews(page: 1 ){page,totalPage,data{title, slug, coverUrl, description}}, getFoodNews(page: 1 ){page,totalPage,data{title, slug, coverUrl, description}} }'
           }),
-
           credentials: 'include'
         });
 
         const { data } = yield resp.json();
-        // console.log(data)
         seo = data.seo || {};
         if (!data) throw new Error('Failed to load the news feed.');
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__actions_data__["a" /* setData */])(data));
@@ -14010,7 +14008,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__actions_data__["a" /* setData */])(data));
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["hideLoading"])());
       }
-
       return {
         title: seo.title || store.getState().data.product.value.name,
         description: seo.description || store.getState().data.product.value.description,

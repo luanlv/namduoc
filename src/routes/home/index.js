@@ -27,12 +27,10 @@ export default {
         body: JSON.stringify({
           query: '{' + noibat + khuyenmai + banchay + info  + 'seo(url: "'+ path +'"){url,title,description,og_title,og_image,og_description},getProducts{name, slug, price, coverUrl, description, saleOff, body, created_at}, getNews(page: 1 ){page,totalPage,data{title, slug, coverUrl, description}}, getFoodNews(page: 1 ){page,totalPage,data{title, slug, coverUrl, description}} }',
         }),
-
         credentials: 'include',
       });
 
       const {data} = await resp.json();
-      // console.log(data)
       seo = data.seo || {}
       if (!data) throw new Error('Failed to load the news feed.');
       store.dispatch(setData(data))

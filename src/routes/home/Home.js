@@ -28,7 +28,7 @@ class Home extends React.Component {
                     DANH MỤC SẢN PHẨM
                   </div>
                   <ul id="mainMenu" style={{height: 290,
-                    padding: 5,
+                    padding: 3,
                     listStyle: 'none'
                   }}>
                     <li className="ungthu linkMenuWr"><Link to="/danh-muc/ung-thu">Ung thư</Link></li>
