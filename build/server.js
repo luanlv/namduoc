@@ -361,7 +361,12 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           { href: 'tel:0973318868' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { id: 'phone-image', className: 'vibrate', src: '/assets/images/phone.png', alt: 'call phone' })
         )
-      )
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_messenger_customer_chat___default.a, {
+        pageId: '181757592661149',
+        appId: '<APP_ID>',
+        htmlRef: '<REF_STRING>'
+      })
     );
   }
 }
@@ -3120,7 +3125,8 @@ class Html extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           dangerouslySetInnerHTML: { __html: `head.load("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")` + `.js("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" )` + `.js("/assets/js/jquery.ui.datepicker-vi-VN.js?v=${v}")` + `.js("/assets/js/jquery.easing.1.3.js?v=${v}")` + `.js("/assets/js/jquery.mb.browser.min.js?v=${v}")` + `.js("/assets/js/jquery.textheight.js?v=${v}")` + `.js("/assets/js/hoverIntent.js?v=${v}")` + `.js("/assets/js/imagesloaded.pkgd.min.js?v=${v}")` + `.js("/assets/js/bootstrap.min.js?v=${v}")` + `.js("/assets/js/jquery.uniform.min.js?v=${v}")` + `.js("/assets/js/isotope.pkgd.min.js")` + `.js("/assets/js/slick.min.js")` + `.js("/assets/js/jquery.panel.mobile.js?v=${v}")` + `.js("/assets/js/jquery.main.js?v=${v}")` + `.js("https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js?v=${v}")` + `.js("${scripts[0]}?v=${v}")` + `.js("${scripts[1]}?v=${v}")` }
         }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://cdn.onesignal.com/sdks/OneSignalSDK.js', async: 'async' }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { dangerouslySetInnerHTML: { __html: this.props.scriptBottom } })
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { dangerouslySetInnerHTML: { __html: this.props.scriptBottom } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'fb-customerchat', attribution: 'setup_tool', page_id: 181757592661149, theme_color: '#0084ff', logged_in_greeting: 'Ch\xE0o b\u1EA1n ! B\u1EA1n c\u1EA7n ch\xFAng t\xF4i h\u1ED7 tr\u1EE3 v\u1EA5n \u0111\u1EC1 g\xEC ? Vui l\xF2ng CHAT v\u1EDBi ch\xFAng t\xF4i nh\xE9 ', logged_out_greeting: 'Ch\xE0o b\u1EA1n ! B\u1EA1n c\u1EA7n ch\xFAng t\xF4i h\u1ED7 tr\u1EE3 v\u1EA5n \u0111\u1EC1 g\xEC ? Vui l\xF2ng CHAT v\u1EDBi ch\xFAng t\xF4i nh\xE9 ' })
       )
     );
   }

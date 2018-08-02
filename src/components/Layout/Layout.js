@@ -89,7 +89,11 @@ class Layout extends React.Component {
           </div>
         }
 
-
+        <MessengerCustomerChat
+          pageId="181757592661149"
+          appId="<APP_ID>"
+          htmlRef="<REF_STRING>"
+        />
       {/*<div>*/}
         {/*<audio id="audio" controls autoPlay onPlay={() => {*/}
           {/*alert('play')*/}
@@ -104,6 +108,7 @@ class Layout extends React.Component {
           {/*}}*/}
         {/*>play</button>*/}
       {/*</div>*/}
+    
       </div>
     );
   }

@@ -112,6 +112,8 @@ class Html extends React.Component {
 
           <script dangerouslySetInnerHTML={{ __html: this.props.scriptBottom }} />
 
+          <div className="fb-customerchat" attribution="setup_tool" page_id={181757592661149} theme_color="#0084ff" logged_in_greeting="Chào bạn ! Bạn cần chúng tôi hỗ trợ vấn đề gì ? Vui lòng CHAT với chúng tôi nhé " logged_out_greeting="Chào bạn ! Bạn cần chúng tôi hỗ trợ vấn đề gì ? Vui lòng CHAT với chúng tôi nhé ">
+          </div>
 
         </body>
       </html>
