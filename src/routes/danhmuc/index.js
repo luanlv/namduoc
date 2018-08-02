@@ -7,7 +7,7 @@ import { setData } from '../../actions/data';
 import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 export default {
-  path: '/danh-muc/:slug',
+  path: '/category/:slug',
   async action({ store, params, query, path }) {
     let page = query.p || 1
     let seo = {}

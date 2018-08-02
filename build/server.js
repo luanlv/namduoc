@@ -3397,17 +3397,17 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           { className: 'head-list' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1__components_Link__["a" /* default */],
-            { to: '/danh-muc/su-kien' },
+            { to: '/category/su-kien' },
             'S\u1EF1 ki\u1EC7n'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1__components_Link__["a" /* default */],
-            { to: '/danh-muc/tin-tuc-tong-hop' },
+            { to: '/category/tin-tuc-tong-hop' },
             'Tin t\u1EE9c t\u1ED5ng h\u1EE3p'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_1__components_Link__["a" /* default */],
-            { to: '/danh-muc/khuyen-mai' },
+            { to: '/category/khuyen-mai' },
             'Khuy\u1EBFn m\xE3i'
           )
         )
@@ -12468,7 +12468,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  path: '/danh-muc/:slug',
+  path: '/category/:slug',
   action({ store, params, query, path }) {
     return _asyncToGenerator(function* () {
       let page = query.p || 1;

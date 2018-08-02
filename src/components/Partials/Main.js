@@ -145,11 +145,11 @@ class Main extends React.Component {
             Tin tức
           </h2>
           <div className="head-list">
-            <Link to="/danh-muc/su-kien">
+            <Link to="/category/su-kien">
               Sự kiện</Link>
-            <Link to="/danh-muc/tin-tuc-tong-hop">
+            <Link to="/category/tin-tuc-tong-hop">
               Tin tức tổng hợp</Link>
-            <Link to="/danh-muc/khuyen-mai">
+            <Link to="/category/khuyen-mai">
               Khuyến mãi</Link>
           </div>
         </div>
