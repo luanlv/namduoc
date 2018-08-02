@@ -6,10 +6,10 @@ class Main extends React.Component {
 
   render() {
     
-    if (this.props.products.length < 1) {
+    if (this.props.products.length < 0) {
       return (
         <div id="mainContent">
-          Loading...
+          ...
         </div>
       )
     } else {
@@ -29,6 +29,7 @@ class Main extends React.Component {
 
           <div className="wrap-section pro-site">
             <div className="product-tb pro-tb row">
+              {products.length === 0 &&  <div style={{textAlign: 'center'}}>Hiện chưa có sản phẩm nào</div>}
               {products.map((el, index) => {
                 return (
                   <div key={index} className="col-md-3 col-xs-6 	.col-6 element-item">
