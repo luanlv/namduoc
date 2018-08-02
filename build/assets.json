@@ -1,12 +1,12 @@
 {
   "client": {
-    "js": "/assets/client.9865c09b.js"
+    "js": "/assets/client.js"
   },
   "vendor": {
-    "js": "/assets/vendor.0c2648ba.js"
+    "js": "/assets/vendor.js"
   },
   "": {
-    "mp3": "/assets/c215d49f.mp3",
-    "js": "/assets/0.cfb855b0.chunk.js"
+    "mp3": "/assets/src/components/Layout/tuy_hong_nhan.mp3?c215d49f",
+    "js": "/assets/0.chunk.js"
   }
 }

@@ -15,7 +15,7 @@ export default {
       let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }'
       // console.log("params.slug")
       // console.log(params.slug2)
-      let productsInCategory = 'productsInCategory(slug2: "'+ "ung-thu" +'"){name, price, slug, coverUrl, description, saleOff, body, created_at}'
+      let productsInCategory = 'productsInCategory(slug2: "'+ params.slug2 +'"){name, price, slug, coverUrl, description, saleOff, body, created_at}'
       let khuyenmai = 'getKhuyenMai{name, slug, price, coverUrl, description, saleOff, body, created_at}'
       let banchay = 'getBanChay{name, slug, price, coverUrl, description, saleOff, body, created_at}'
       const resp = await fetch('/graphql', {
