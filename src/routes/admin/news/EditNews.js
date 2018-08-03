@@ -232,7 +232,20 @@ class EditNewsComponent extends React.Component {
                     >
                       <Option value="su-kien">Sự kiện</Option>
                       <Option value="tin-tuc-tong-hop">Tin tức tổng hợp</Option>
-                      <Option value="khuyen-mai">Khuyến mãi</Option>
+                      <Option value="mgg-aeonshop">Mã giảm giá Aeonshop</Option>
+                      <Option value="mgg-alotrip">Mã giảm giá Alotrip</Option>
+                      <Option value="mgg-fptshop">Mã giảm giá FPT Shop</Option>
+                      <Option value="mgg-ivivu">Mã giảm giá IVIVU</Option>
+                      <Option value="mgg-lazada">Mã giảm giá Lazada</Option>
+                      <Option value="mgg-leflair">Mã giảm giá Leflair</Option>
+                      <Option value="mgg-Lotte">Mã giảm giá Lotte</Option>
+                      <Option value="mgg-shopee">Mã giảm giá Shopee</Option>
+                      <Option value="mgg-tiki">Mã giảm giá Tiki</Option>
+                      <Option value="mgg-viettralvel">Mã giảm giá VietTravel</Option>
+                      <Option value="mgg-vinabook">Mã giảm giá VinaBook</Option>
+                      <Option value="mgg-vntrip">Mã giảm giá VnTrip</Option>
+                      <Option value="mgg-vuivui">Mã giảm giá VuiVui</Option>
+                      <Option value="mgg-yes24">Mã giảm giá Yes24</Option>
                     </Select>
                   </div>
                   <div style={{ marginBottom: 16 }}>

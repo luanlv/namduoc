@@ -3099,9 +3099,54 @@ class Html extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'body',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { id: 'fb-root' }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { dangerouslySetInnerHTML: { __html: `(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));` } }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'fb-customerchat', attribution: 'setup_tool', page_id: 1452281691662340, logged_in_greeting: 'Xin ch\xE0o! Ch\xFAng t\xF4i c\xF3 th\u1EC3 gi\xFAp g\xEC cho b\u1EA1n?', logged_out_greeting: 'Xin ch\xE0o! Ch\xFAng t\xF4i c\xF3 th\u1EC3 gi\xFAp g\xEC cho b\u1EA1n?' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('style', { dangerouslySetInnerHTML: { __html: ".fb-livechat, .fb-widget{display: none}.ctrlq.fb-button, .ctrlq.fb-close{position: fixed; right: 24px; cursor: pointer}.ctrlq.fb-button{z-index: 999; background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEyOCAxMjgiIGhlaWdodD0iMTI4cHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB3aWR0aD0iMTI4cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxyZWN0IGZpbGw9IiMwMDg0RkYiIGhlaWdodD0iMTI4IiB3aWR0aD0iMTI4Ii8+PC9nPjxwYXRoIGQ9Ik02NCwxNy41MzFjLTI1LjQwNSwwLTQ2LDE5LjI1OS00Niw0My4wMTVjMCwxMy41MTUsNi42NjUsMjUuNTc0LDE3LjA4OSwzMy40NnYxNi40NjIgIGwxNS42OTgtOC43MDdjNC4xODYsMS4xNzEsOC42MjEsMS44LDEzLjIxMywxLjhjMjUuNDA1LDAsNDYtMTkuMjU4LDQ2LTQzLjAxNUMxMTAsMzYuNzksODkuNDA1LDE3LjUzMSw2NCwxNy41MzF6IE02OC44NDUsNzUuMjE0ICBMNTYuOTQ3LDYyLjg1NUwzNC4wMzUsNzUuNTI0bDI1LjEyLTI2LjY1N2wxMS44OTgsMTIuMzU5bDIyLjkxLTEyLjY3TDY4Ljg0NSw3NS4yMTR6IiBmaWxsPSIjRkZGRkZGIiBpZD0iQnViYmxlX1NoYXBlIi8+PC9zdmc+) center no-repeat #0084ff; width: 60px; height: 60px; text-align: center; bottom: 50px; border: 0; outline: 0; border-radius: 60px; -webkit-border-radius: 60px; -moz-border-radius: 60px; -ms-border-radius: 60px; -o-border-radius: 60px; box-shadow: 0 1px 6px rgba(0, 0, 0, .06), 0 2px 32px rgba(0, 0, 0, .16); -webkit-transition: box-shadow .2s ease; background-size: 80%; transition: all .2s ease-in-out}.ctrlq.fb-button:focus, .ctrlq.fb-button:hover{transform: scale(1.1); box-shadow: 0 2px 8px rgba(0, 0, 0, .09), 0 4px 40px rgba(0, 0, 0, .24)}.fb-widget{background: #fff; z-index: 1000; position: fixed; width: 360px; height: 435px; overflow: hidden; opacity: 0; bottom: 0; right: 24px; border-radius: 6px; -o-border-radius: 6px; -webkit-border-radius: 6px; box-shadow: 0 5px 40px rgba(0, 0, 0, .16); -webkit-box-shadow: 0 5px 40px rgba(0, 0, 0, .16); -moz-box-shadow: 0 5px 40px rgba(0, 0, 0, .16); -o-box-shadow: 0 5px 40px rgba(0, 0, 0, .16)}.fb-credit{text-align: center; margin-top: 8px}.fb-credit a{transition: none; color: #bec2c9; font-family: Helvetica, Arial, sans-serif; font-size: 12px; text-decoration: none; border: 0; font-weight: 400}.ctrlq.fb-overlay{z-index: 0; position: fixed; height: 100vh; width: 100vw; -webkit-transition: opacity .4s, visibility .4s; transition: opacity .4s, visibility .4s; top: 0; left: 0; background: rgba(0, 0, 0, .05); display: none}.ctrlq.fb-close{z-index: 4; padding: 0 6px; background: #365899; font-weight: 700; font-size: 11px; color: #fff; margin: 8px; border-radius: 3px}.ctrlq.fb-close::after{content: \"X\"; font-family: sans-serif}.bubble{width: 20px; height: 20px; background: #c00; color: #fff; position: absolute; z-index: 999999999; text-align: center; vertical-align: middle; top: -2px; left: -5px; border-radius: 50%;}.bubble-msg{width: 120px; left: -140px; top: 5px; position: relative; background: rgba(59, 89, 152, .8); color: #fff; padding: 5px 8px; border-radius: 8px; text-align: center; font-size: 13px;}" } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          { className: 'fb-livechat' },
+          ' ',
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'ctrlq fb-overlay' }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'fb-widget' },
+            ' ',
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'ctrlq fb-close' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'fb-page', 'data-href': 'https://www.facebook.com/namduocquany0973318868/', 'data-tabs': 'messages', 'data-width': 360, 'data-height': 400, 'data-small-header': 'true', 'data-hide-cover': 'true', 'data-show-facepile': 'false' },
+              ' '
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'fb-credit' },
+              ' ',
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'a',
+                { href: 'https://chanhtuoi.com', target: '_blank' },
+                'Powered by Chanhtuoi'
+              ),
+              ' '
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { id: 'fb-root' })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'a',
+            { href: 'https://m.me/namduocquany0973318868', title: 'G\u1EEDi tin nh\u1EAFn cho ch\xFAng t\xF4i qua Facebook', className: 'ctrlq fb-button' },
+            ' ',
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'bubble' },
+              '1'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'div',
+              { className: 'bubble-msg' },
+              'B\u1EA1n c\u1EA7n h\u1ED7 tr\u1EE3?'
+            )
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { dangerouslySetInnerHTML: { __html: `$(document).ready(function(){function detectmob(){if( navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i) ){return true;}else{return false;}}var t={delay: 125, overlay: $(".fb-overlay"), widget: $(".fb-widget"), button: $(".fb-button")}; setTimeout(function(){$("div.fb-livechat").fadeIn()}, 8 * t.delay); if(!detectmob()){$(".ctrlq").on("click", function(e){e.preventDefault(), t.overlay.is(":visible") ? (t.overlay.fadeOut(t.delay), t.widget.stop().animate({bottom: 0, opacity: 0}, 2 * t.delay, function(){$(this).hide("slow"), t.button.show()})) : t.button.fadeOut("medium", function(){t.widget.stop().show().animate({bottom: "30px", opacity: 1}, 2 * t.delay), t.overlay.fadeIn(t.delay)})})}});` } }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', {
           id: 'app'
           // eslint-disable-next-line react/no-danger
@@ -9492,8 +9537,73 @@ class EditNewsComponent extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       Option,
-                      { value: 'khuyen-mai' },
-                      'Khuy\u1EBFn m\xE3i'
+                      { value: 'mgg-aeonshop' },
+                      'M\xE3 gi\u1EA3m gi\xE1 Aeonshop'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-alotrip' },
+                      'M\xE3 gi\u1EA3m gi\xE1 Alotrip'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-fptshop' },
+                      'M\xE3 gi\u1EA3m gi\xE1 FPT Shop'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-ivivu' },
+                      'M\xE3 gi\u1EA3m gi\xE1 IVIVU'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-lazada' },
+                      'M\xE3 gi\u1EA3m gi\xE1 Lazada'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-leflair' },
+                      'M\xE3 gi\u1EA3m gi\xE1 Leflair'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-Lotte' },
+                      'M\xE3 gi\u1EA3m gi\xE1 Lotte'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-shopee' },
+                      'M\xE3 gi\u1EA3m gi\xE1 Shopee'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-tiki' },
+                      'M\xE3 gi\u1EA3m gi\xE1 Tiki'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-viettralvel' },
+                      'M\xE3 gi\u1EA3m gi\xE1 VietTravel'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-vinabook' },
+                      'M\xE3 gi\u1EA3m gi\xE1 VinaBook'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-vntrip' },
+                      'M\xE3 gi\u1EA3m gi\xE1 VnTrip'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-vuivui' },
+                      'M\xE3 gi\u1EA3m gi\xE1 VuiVui'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      Option,
+                      { value: 'mgg-yes24' },
+                      'M\xE3 gi\u1EA3m gi\xE1 Yes24'
                     )
                   )
                 ),
@@ -14336,7 +14446,7 @@ router.post('/order/new', bodyParser.json(), (() => {
     let setting = yield Setting.findOne({});
     let adminId = setting.adminId;
     let emailAdmin = setting.emailAdmin;
-    console.log(req.body);
+    // console.log(req.body)
     let order = {
       name: req.body.data.name,
       phone: req.body.data.phone,
@@ -14345,7 +14455,29 @@ router.post('/order/new', bodyParser.json(), (() => {
     };
     Order.create(order, function (err, resData) {
       if (err) return res.sendStatus(400);
-      console.log(resData);
+      let donhang = ``;
+      let tongtien = 0;
+      order.cart.forEach(function (el) {
+        donhang += `
+            Tên sản phẩm: ${el.product.name}
+            Số lượng: ${el.number}
+      `;
+        tongtien += el.number * el.product.newPrice;
+      });
+      axios.post("https://api.pushover.net/1/messages.json", {
+        token: "afzpmsy47oheeeo36um4og8i1vj6jo",
+        user: "ur3xgjnunfsr2fc1gqpu6fnce2s4dw",
+        title: "namduocquany.com",
+        message: `
+        Họ tên: ${resData.name}
+        SDT: ${resData.phone}
+        Địa chỉ: ${resData.address}
+        Tổng tiền: ${tongtien.toLocaleString()}
+        Chi tiết đơn hàng: 
+        ${donhang}
+        `
+      });
+
       return res.send(resData);
     });
   });
