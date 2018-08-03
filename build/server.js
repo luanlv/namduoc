@@ -65,7 +65,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/assets/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 213);
+/******/ 	return __webpack_require__(__webpack_require__.s = 212);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -263,10 +263,8 @@ function needFetch() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Partials_Header__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Partials_Footer__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Partials_MenuMobile__ = __webpack_require__(19);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_messenger_customer_chat__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_messenger_customer_chat___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_messenger_customer_chat__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tuy_hong_nhan_mp3__ = __webpack_require__(175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__tuy_hong_nhan_mp3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__tuy_hong_nhan_mp3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tuy_hong_nhan_mp3__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tuy_hong_nhan_mp3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__tuy_hong_nhan_mp3__);
 /*global
  $, jQuery
  */
@@ -284,9 +282,8 @@ function needFetch() {
 
 
 
-
 const AudioPlayer = function (props) {
-  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('audio', { src: __WEBPACK_IMPORTED_MODULE_6__tuy_hong_nhan_mp3___default.a, controls: true, autoPlay: true, autoplay: true });
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('audio', { src: __WEBPACK_IMPORTED_MODULE_5__tuy_hong_nhan_mp3___default.a, controls: true, autoPlay: true, autoplay: true });
 };
 
 class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
@@ -326,11 +323,6 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
       { id: 'wrapper' },
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_messenger_customer_chat___default.a, {
-        pageId: '<PAGE_ID>',
-        appId: '<APP_ID>',
-        htmlRef: '<REF_STRING>'
-      }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_redux_loading_bar___default.a, { showFastActions: true, maxProgress: 80, progressIncrease: 40, style: { backgroundColor: 'red', zIndex: 1000, height: '2px' } }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Partials_Header__["a" /* default */], { data: this.props.data }),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
@@ -361,12 +353,7 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           { href: 'tel:0973318868' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { id: 'phone-image', className: 'vibrate', src: '/assets/images/phone.png', alt: 'call phone' })
         )
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_messenger_customer_chat___default.a, {
-        pageId: '181757592661149',
-        appId: '<APP_ID>',
-        htmlRef: '<REF_STRING>'
-      })
+      )
     );
   }
 }
@@ -1735,9 +1722,9 @@ module.exports = require("universal-router");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_resize_detector__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_resize_detector__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_resize_detector___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_resize_detector__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_visibility_sensor__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_visibility_sensor__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_visibility_sensor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_visibility_sensor__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ImageSelect__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Coupon__ = __webpack_require__(103);
@@ -1959,7 +1946,7 @@ class CKEditor extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_slug__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_slug__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_slug___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_slug__);
 
 
@@ -2078,7 +2065,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends2 = __webpack_require__(214);
+var _extends2 = __webpack_require__(213);
 
 var _extends3 = _interopRequireDefault(_extends2);
 
@@ -2576,7 +2563,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 const session = __webpack_require__(186);
 const MongoStore = __webpack_require__(181)(session);
-var routeCache = __webpack_require__(208);
+var routeCache = __webpack_require__(207);
 
 //mongoose
 
@@ -3112,6 +3099,9 @@ class Html extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'body',
         null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { id: 'fb-root' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { dangerouslySetInnerHTML: { __html: `(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));` } }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'fb-customerchat', attribution: 'setup_tool', page_id: 1452281691662340, logged_in_greeting: 'Xin ch\xE0o! Ch\xFAng t\xF4i c\xF3 th\u1EC3 gi\xFAp g\xEC cho b\u1EA1n?', logged_out_greeting: 'Xin ch\xE0o! Ch\xFAng t\xF4i c\xF3 th\u1EC3 gi\xFAp g\xEC cho b\u1EA1n?' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', {
           id: 'app'
           // eslint-disable-next-line react/no-danger
@@ -3125,8 +3115,7 @@ class Html extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           dangerouslySetInnerHTML: { __html: `head.load("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")` + `.js("https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" )` + `.js("/assets/js/jquery.ui.datepicker-vi-VN.js?v=${v}")` + `.js("/assets/js/jquery.easing.1.3.js?v=${v}")` + `.js("/assets/js/jquery.mb.browser.min.js?v=${v}")` + `.js("/assets/js/jquery.textheight.js?v=${v}")` + `.js("/assets/js/hoverIntent.js?v=${v}")` + `.js("/assets/js/imagesloaded.pkgd.min.js?v=${v}")` + `.js("/assets/js/bootstrap.min.js?v=${v}")` + `.js("/assets/js/jquery.uniform.min.js?v=${v}")` + `.js("/assets/js/isotope.pkgd.min.js")` + `.js("/assets/js/slick.min.js")` + `.js("/assets/js/jquery.panel.mobile.js?v=${v}")` + `.js("/assets/js/jquery.main.js?v=${v}")` + `.js("https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js?v=${v}")` + `.js("${scripts[0]}?v=${v}")` + `.js("${scripts[1]}?v=${v}")` }
         }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://cdn.onesignal.com/sdks/OneSignalSDK.js', async: 'async' }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { dangerouslySetInnerHTML: { __html: this.props.scriptBottom } }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'fb-customerchat', attribution: 'setup_tool', page_id: 181757592661149, theme_color: '#0084ff', logged_in_greeting: 'Ch\xE0o b\u1EA1n ! B\u1EA1n c\u1EA7n ch\xFAng t\xF4i h\u1ED7 tr\u1EE3 v\u1EA5n \u0111\u1EC1 g\xEC ? Vui l\xF2ng CHAT v\u1EDBi ch\xFAng t\xF4i nh\xE9 ', logged_out_greeting: 'Ch\xE0o b\u1EA1n ! B\u1EA1n c\u1EA7n ch\xFAng t\xF4i h\u1ED7 tr\u1EE3 v\u1EA5n \u0111\u1EC1 g\xEC ? Vui l\xF2ng CHAT v\u1EDBi ch\xFAng t\xF4i nh\xE9 ' })
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { dangerouslySetInnerHTML: { __html: this.props.scriptBottom } })
       )
     );
   }
@@ -6071,7 +6060,7 @@ const schema = new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLSchema"]({
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sequelize__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sequelize__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sequelize___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_sequelize__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config__ = __webpack_require__(20);
 /**
@@ -6280,7 +6269,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_Link__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_antd_lib_locale_provider_en_US__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_antd_lib_locale_provider_en_US___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_antd_lib_locale_provider_en_US__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_sticky__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_sticky__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_sticky___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_react_sticky__);
 
 
@@ -6769,7 +6758,7 @@ class Coupon extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_fetch__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_avatar_editor__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_avatar_editor__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_avatar_editor___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_avatar_editor__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_axios__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_axios__);
@@ -7199,7 +7188,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_antd___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_antd__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__ = __webpack_require__(217);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_moment__);
@@ -7420,7 +7409,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // import {Tag, Input, Tooltip, Button, DatePicker, Select} from 'antd';
 // import ColorPic from '../Components/ColorPicker'
 // import axios from 'axios';
-var slug = __webpack_require__(210);
+var slug = __webpack_require__(209);
 class EditorComponent extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   constructor(props) {
     super(props);
@@ -14547,9 +14536,9 @@ var express = __webpack_require__(26);
 var router = express.Router();
 const path = __webpack_require__(31);
 const fs = __webpack_require__(43);
-var request = __webpack_require__(207);
+var request = __webpack_require__(206);
 var Gm = __webpack_require__(44);
-var utf8 = __webpack_require__(211);
+var utf8 = __webpack_require__(210);
 var iconv = __webpack_require__(188);
 const mongoose = __webpack_require__(7);
 const Image = mongoose.model('Image');
@@ -14861,7 +14850,7 @@ function randomString(len, charSet) {
 /* harmony export (immutable) */ __webpack_exports__["a"] = configureStore;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_redux_thunk__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__reducers__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createHelpers__ = __webpack_require__(160);
@@ -14981,7 +14970,7 @@ function createHelpers(config) {
 
 "use strict";
 /* unused harmony export default */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_util__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_util__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_util__);
 
 
@@ -15550,52 +15539,46 @@ module.exports = require("react-image-zoom");
 /* 205 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-messenger-customer-chat");
+module.exports = require("redux-thunk");
 
 /***/ }),
 /* 206 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux-thunk");
+module.exports = require("request");
 
 /***/ }),
 /* 207 */
 /***/ (function(module, exports) {
 
-module.exports = require("request");
+module.exports = require("route-cache");
 
 /***/ }),
 /* 208 */
 /***/ (function(module, exports) {
 
-module.exports = require("route-cache");
+module.exports = require("sequelize");
 
 /***/ }),
 /* 209 */
 /***/ (function(module, exports) {
 
-module.exports = require("sequelize");
+module.exports = require("slug");
 
 /***/ }),
 /* 210 */
 /***/ (function(module, exports) {
 
-module.exports = require("slug");
+module.exports = require("utf8");
 
 /***/ }),
 /* 211 */
 /***/ (function(module, exports) {
 
-module.exports = require("utf8");
-
-/***/ }),
-/* 212 */
-/***/ (function(module, exports) {
-
 module.exports = require("util");
 
 /***/ }),
-/* 213 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(53);
@@ -15603,37 +15586,37 @@ module.exports = __webpack_require__(52);
 
 
 /***/ }),
-/* 214 */
+/* 213 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-runtime/helpers/extends");
 
 /***/ }),
-/* 215 */
+/* 214 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-avatar-editor");
 
 /***/ }),
-/* 216 */
+/* 215 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-resize-detector");
 
 /***/ }),
-/* 217 */
+/* 216 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-sticky");
 
 /***/ }),
-/* 218 */
+/* 217 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-super-responsive-table");
 
 /***/ }),
-/* 219 */
+/* 218 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-visibility-sensor");

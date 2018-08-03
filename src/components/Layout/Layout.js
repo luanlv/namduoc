@@ -12,7 +12,6 @@ import LoadingBar from 'react-redux-loading-bar';
 import Header from '../Partials/Header'
 import Footer from '../Partials/Footer'
 import MenuMobile from '../Partials/MenuMobile'
-import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 import mp3_file from './tuy_hong_nhan.mp3';
 
@@ -64,11 +63,6 @@ class Layout extends React.Component {
     // console.log(this.props.data)
     return (
       <div id="wrapper">
-        <MessengerCustomerChat
-          pageId="<PAGE_ID>"
-          appId="<APP_ID>"
-          htmlRef="<REF_STRING>"
-        />
         <LoadingBar showFastActions  maxProgress={80} progressIncrease={40} style={{ backgroundColor: 'red', zIndex: 1000, height: '2px' }} />
         <Header data={this.props.data} />
         <hr />
@@ -88,27 +82,7 @@ class Layout extends React.Component {
             </a>
           </div>
         }
-
-        <MessengerCustomerChat
-          pageId="181757592661149"
-          appId="<APP_ID>"
-          htmlRef="<REF_STRING>"
-        />
-      {/*<div>*/}
-        {/*<audio id="audio" controls autoPlay onPlay={() => {*/}
-          {/*alert('play')*/}
-        {/*}}>*/}
-          {/*/!*<source src="horse.ogg" type="audio/ogg" />*!/*/}
-          {/*<source  src="/tuy_hong_nhan.mp3" type="audio/mpeg" />*/}
-        {/*</audio>*/}
-        {/*<button id="play_audio"*/}
-          {/*onClick={() => {*/}
-            {/*alert('ok')*/}
-            {/*document.getElementById("audio").play();*/}
-          {/*}}*/}
-        {/*>play</button>*/}
-      {/*</div>*/}
-    
+        {/* <div className="fb-customerchat" attribution="setup_tool" page_id={1452281691662340} /> */}
       </div>
     );
   }
