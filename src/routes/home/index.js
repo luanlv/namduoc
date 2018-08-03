@@ -14,7 +14,7 @@ export default {
 
     if(!process.env.BROWSER || !store.getState().setting.ssr || (process.env.BROWSER && needFetch())) {
       store.dispatch(showLoading())
-      let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }'
+      let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan, email}'
       let noibat = 'getNoiBat{name, slug, price, coverUrl, description, saleOff, body, created_at}'
       let khuyenmai = 'getKhuyenMai{name, slug, price, coverUrl, description, saleOff, body, created_at}'
       let banchay = 'getBanChay{name, slug, price, coverUrl, description, saleOff, body, created_at}'

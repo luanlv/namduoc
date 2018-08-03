@@ -5088,7 +5088,7 @@ var Schema = new mongoose.Schema({
   fanpage: { type: mongoose.Schema.Types.Mixed },
   phone: { type: mongoose.Schema.Types.Mixed },
   diachi: { type: mongoose.Schema.Types.Mixed },
-  thanhtoan: { type: mongoose.Schema.Types.Mixed }
+  email: { type: mongoose.Schema.Types.Mixed }
 }, { collection: 'info' });
 
 // Schema.plugin(autoIncrement.plugin, 'Place');
@@ -5135,7 +5135,8 @@ module.exports.info = (root, {}) => {
     fanpage: { type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"] },
     phone: { type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"] },
     diachi: { type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"] },
-    thanhtoan: { type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"] }
+    thanhtoan: { type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"] },
+    email: { type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"] }
   })
 }));
 
@@ -6507,24 +6508,6 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
-              { key: 'thongtin' },
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
-                { to: '/admin/menuBottom' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'span',
-                  null,
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], { type: 'appstore-o' }),
-                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'span',
-                    { className: 'nav-text' },
-                    'Th\xF4ng tin'
-                  )
-                )
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
               { key: 'menubottom' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
@@ -6537,6 +6520,24 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     'span',
                     { className: 'nav-text' },
                     'Menu Bottom'
+                  )
+                )
+              )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_1_antd__["Menu"].Item,
+              { key: 'thongtin' },
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
+                { to: '/admin/thongtin' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  'span',
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], { type: 'appstore-o' }),
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    { className: 'nav-text' },
+                    'Th\xF4ng tin'
                   )
                 )
               )
@@ -11962,7 +11963,7 @@ class Menu extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         fanpage: that.state.fanpage,
         phone: that.state.phone,
         diachi: that.state.diachi,
-        thanhtoan: that.state.thanhtoan
+        email: that.state.email
       }).then(res => {
         console.log(res.data);
       });
@@ -11989,7 +11990,7 @@ class Menu extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         fanpage: thongtin.data.fanpage || '',
         phone: thongtin.data.phone || '',
         diachi: thongtin.data.diachi || '',
-        thanhtoan: thongtin.data.thanhtoan || '',
+        email: thongtin.data.email || '',
         init: true
       });
     })();
@@ -12058,12 +12059,12 @@ class Menu extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'b',
           null,
-          'Thanh To\xE1n: '
+          'Email: '
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Input"], { size: 'large', defaultValue: this.state.thanhtoan, onChange: e => {
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Input"], { size: 'large', defaultValue: this.state.email, onChange: e => {
             let value = e.target.value;
-            this.setState({ thanhtoan: value });
+            this.setState({ email: value });
           } })
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
@@ -12215,7 +12216,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
       let seo = {};
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
-        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan, email}';
         const resp = yield __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__core_fetch__["a" /* default */])('/graphql', {
           method: 'post',
           headers: {
@@ -12462,7 +12463,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
     return _asyncToGenerator(function* () {
       let seo = {};
       if (true) {
-        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan, email}';
         const resp = yield __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__core_fetch__["a" /* default */])('/graphql', {
           method: 'post',
           headers: {
@@ -12580,7 +12581,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
       let seo = {};
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
-        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan, email}';
         const resp = yield __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__core_fetch__["a" /* default */])('/graphql', {
           method: 'post',
           headers: {
@@ -12707,7 +12708,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
       let seo = {};
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
-        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan, email}';
         // console.log("params.slug")
         // console.log(params.slug2)
         let productsInCategory = 'productsInCategory(slug2: "' + params.slug2 + '"){name, price, slug, coverUrl, description, saleOff, body, created_at}';
@@ -13044,7 +13045,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
-        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan, email}';
         let noibat = 'getNoiBat{name, slug, price, coverUrl, description, saleOff, body, created_at}';
         let khuyenmai = 'getKhuyenMai{name, slug, price, coverUrl, description, saleOff, body, created_at}';
         let banchay = 'getBanChay{name, slug, price, coverUrl, description, saleOff, body, created_at}';
@@ -13639,7 +13640,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
-        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan, email}';
         const resp = yield __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__core_fetch__["a" /* default */])('/graphql', {
           method: 'post',
           headers: {
@@ -14152,7 +14153,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
-        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+        let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan, email}';
         let noibat = 'getNoiBat{name, slug, price, coverUrl, description, saleOff, body, created_at}';
         let khuyenmai = 'getKhuyenMai{name, slug, price, coverUrl, description, saleOff, body, created_at}';
         let banchay = 'getBanChay{name, slug, price, coverUrl, description, saleOff, body, created_at}';
@@ -14271,7 +14272,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
     return _asyncToGenerator(function* () {
       let page = 1;
       let seo = {};
-      let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan }';
+      let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan, email}';
       if (query.p) page = query.p;
       if (true) {
         store.dispatch(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6_react_redux_loading_bar__["showLoading"])());
@@ -14370,11 +14371,12 @@ router.get('/menu/get', (req, res) => {
 router.post('/thongtin', bodyParser.json(), (req, res) => {
   // console.log(req.body)
   // console.log(req.body.phone)
+  console.log(req.body);
   Info.update({}, { $set: {
       phone: req.body.phone,
       fanpage: req.body.fanpage,
       diachi: req.body.diachi,
-      thanhtoan: req.body.thanhtoan
+      email: req.body.email
     } }, function (err, resData) {
     if (err) {
       console.log(err);

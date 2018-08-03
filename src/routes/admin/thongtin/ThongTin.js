@@ -38,7 +38,7 @@ class Menu extends React.Component {
       fanpage: thongtin.data.fanpage || '',
       phone: thongtin.data.phone || '',
       diachi: thongtin.data.diachi || '',
-      thanhtoan: thongtin.data.thanhtoan || '',
+      email: thongtin.data.email || '',
       init: true
     })
   }
@@ -53,7 +53,7 @@ class Menu extends React.Component {
       fanpage: that.state.fanpage,
       phone: that.state.phone,
       diachi: that.state.diachi,
-      thanhtoan: that.state.thanhtoan,
+      email: that.state.email,
     })
       .then(res => {
         console.log(res.data)
@@ -93,11 +93,11 @@ class Menu extends React.Component {
             }} />
           </Row>
           <Row className="padding-5">
-            <b>Thanh Toán: </b>
+            <b>Email: </b>
             <br/>
-            <Input size="large"  defaultValue={this.state.thanhtoan} onChange={(e) => {
+            <Input size="large"  defaultValue={this.state.email} onChange={(e) => {
               let value = e.target.value
-              this.setState({thanhtoan: value})
+              this.setState({email: value})
             }} />
           </Row>
           <hr/>

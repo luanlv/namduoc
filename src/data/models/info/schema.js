@@ -8,7 +8,7 @@ var Schema = new mongoose.Schema({
   fanpage: {type: mongoose.Schema.Types.Mixed},
   phone: {type: mongoose.Schema.Types.Mixed},
   diachi: {type: mongoose.Schema.Types.Mixed},
-  thanhtoan: {type: mongoose.Schema.Types.Mixed},
+  email: {type: mongoose.Schema.Types.Mixed},
 }, { collection: 'info' });
 
 // Schema.plugin(autoIncrement.plugin, 'Place');

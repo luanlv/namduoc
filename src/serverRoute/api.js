@@ -57,11 +57,12 @@ router.get('/menu/get', (req, res) => {
 router.post('/thongtin', bodyParser.json() ,(req, res) => {
   // console.log(req.body)
   // console.log(req.body.phone)
+  console.log(req.body)
   Info.update( {}, {$set: {
     phone:  req.body.phone,
     fanpage: req.body.fanpage,
     diachi: req.body.diachi,
-    thanhtoan: req.body.thanhtoan
+    email: req.body.email
   }}, function(err, resData){
     if(err) {
       console.log(err)

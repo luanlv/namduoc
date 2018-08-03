@@ -25,6 +25,7 @@ export default new GraphQLObjectType({
     fanpage: {type: GraphQLString},
     phone: {type: GraphQLString},
     diachi: {type: GraphQLString},
-    thanhtoan: {type: GraphQLString}
+    thanhtoan: {type: GraphQLString},
+    email: {type: GraphQLString}
   })
 })
