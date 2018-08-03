@@ -3066,6 +3066,7 @@ class Html extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'head',
         null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('base', { href: 'http://namduocquany.com' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { charSet: 'utf-8' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { httpEquiv: 'x-ua-compatible', content: 'ie=edge' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -3083,8 +3084,8 @@ class Html extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'fb:admins', content: '100004231235930' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'fb:admins', content: '100008346038178' }),
         seo && seo.og_title ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:title', content: seo.og_title }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:title', content: 'C\u01A1 s\u1EDF chuy\xEAn s\u1EA3n xu\u1EA5t v\xE0 cung c\u1EA5p \u0111\u1EB7c s\u1EA3n H\xE0 N\u1ED9i - C\u1ED1m M\u1EC5 Tr\xEC, Ch\u1EA3 C\u1ED1m, C\u1ED1m Kh\xF4 . \u0110\u1ECBa ch\u1EC9 b\xE1n c\u1ED1m M\u1EC5 Tr\xEC uy t\xEDn, ch\u1EA5t l\u01B0\u1EE3ng, gi\xE1 c\u1EA3 h\u1EE3p l\xFD' }),
-        seo && seo.url ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:url', content: 'http://comhoavang.com' + seo.url }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:url', content: 'http://comhoavang.com' }),
-        seo && seo.og_image ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:image', content: 'http://comhoavang.com' + seo.og_image }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:image', content: 'http://comhoavang.com/image/705cP8xYVH-083610_c1mh.jpg' }),
+        seo && seo.url ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:url', content: 'http://namduocquany.com' + seo.url }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:url', content: 'http://namduocquany.com' }),
+        seo && seo.og_image ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:image', content: 'http://namduocquany.com' + seo.og_image }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('meta', { property: 'og:image', content: 'http://namduocquany.com/image/m5bZaSxOJG-banner.jpg' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro', rel: 'stylesheet', type: 'text/css' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', rel: 'stylesheet', type: 'text/css' }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('link', { rel: 'stylesheet', type: 'text/css', charset: 'UTF-8', href: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css' }),

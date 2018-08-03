@@ -36,7 +36,7 @@ class Html extends React.Component {
     return (
       <html className="no-js" lang="vi">
         <head>
-          {/*<base href="http://comhoavang.com" />*/}
+          <base href="http://namduocquany.com" />
           {/*<base href="http://localhost:3000" />*/}
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -52,8 +52,8 @@ class Html extends React.Component {
           <meta property='fb:admins' content='100004231235930' />
           <meta property='fb:admins' content='100008346038178' />
           {(seo && seo.og_title) ? (<meta property="og:title" content={seo.og_title} />) : (<meta property="og:title" content='Cơ sở chuyên sản xuất và cung cấp đặc sản Hà Nội - Cốm Mễ Trì, Chả Cốm, Cốm Khô . Địa chỉ bán cốm Mễ Trì uy tín, chất lượng, giá cả hợp lý' />) }
-          {(seo && seo.url) ? (<meta property="og:url" content={'http://comhoavang.com' + seo.url} />) : (<meta property="og:url" content={'http://comhoavang.com'} />) }
-          {(seo && seo.og_image) ? (<meta property="og:image" content={'http://comhoavang.com' + seo.og_image} />) : (<meta property="og:image" content='http://comhoavang.com/image/705cP8xYVH-083610_c1mh.jpg' />)}
+          {(seo && seo.url) ? (<meta property="og:url" content={'http://namduocquany.com' + seo.url} />) : (<meta property="og:url" content={'http://namduocquany.com'} />) }
+          {(seo && seo.og_image) ? (<meta property="og:image" content={'http://namduocquany.com' + seo.og_image} />) : (<meta property="og:image" content='http://namduocquany.com/image/m5bZaSxOJG-banner.jpg' />)}
 
           <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css' />
           {/*<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css" async />*/}
