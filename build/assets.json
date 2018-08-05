@@ -1,12 +1,12 @@
 {
   "client": {
-    "js": "/assets/client.93320ef6.js"
+    "js": "/assets/client.044b09c9.js"
   },
   "vendor": {
-    "js": "/assets/vendor.dc93764f.js"
+    "js": "/assets/vendor.0b516acd.js"
   },
   "": {
     "mp3": "/assets/c215d49f.mp3",
-    "js": "/assets/0.217ca038.chunk.js"
+    "js": "/assets/0.205152fe.chunk.js"
   }
 }

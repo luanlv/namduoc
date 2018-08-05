@@ -5270,11 +5270,8 @@ module.exports.getOrders = (root, {}) => {
     address: {
       type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
     },
-    product: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
-    },
-    quantity: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+    cart: {
+      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_2_graphql_type_json___default.a)
     },
     done: {
       type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLBoolean"])
@@ -7300,7 +7297,152 @@ class Admin extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
   }
 
   render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', null);
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        __WEBPACK_IMPORTED_MODULE_1_antd__["Row"],
+        { className: 'padding-5' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Table"],
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Thead"],
+            null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Tr"],
+              null,
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Th"],
+                null,
+                'Th\u1EDDi gian \u0111\u1EB7t h\xE0ng'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Th"],
+                null,
+                'T\xEAn'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Th"],
+                null,
+                'S\u1ED1 \u0111i\u1EC7n tho\u1EA1i'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Th"],
+                null,
+                '\u0110\u01A1n h\xE0ng'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Th"],
+                null,
+                'T\u1ED5ng ti\u1EC1n'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Th"],
+                null,
+                '\u0110\u1ECBa ch\u1EC9'
+              )
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Tbody"],
+            null,
+            this.props.orders.map((el, key) => {
+              let donhang = ``;
+              let tongtien = 0;
+              console.log(el);
+              el.cart.forEach(el2 => {
+                if (donhang.length > 0) {
+                  donhang += ' | ';
+                }
+                donhang += `${el2.product.name} x ${el2.number}`;
+                tongtien += el2.number * el2.product.newPrice;
+              });
+              return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Tr"],
+                { key: key
+                },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Td"],
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'span',
+                      { style: { color: 'blue' } },
+                      __WEBPACK_IMPORTED_MODULE_3_moment___default()(el.created_at).format('LT')
+                    ),
+                    ', ',
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'b',
+                      null,
+                      __WEBPACK_IMPORTED_MODULE_3_moment___default()(el.created_at).format('L')
+                    )
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Td"],
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    null,
+                    el.name
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Td"],
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    null,
+                    mobilecheck() && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                      'a',
+                      { href: "tel:" + el.phone },
+                      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_1_antd__["Button"],
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_antd__["Icon"], { type: 'phone' }),
+                        el.phone
+                      )
+                    ),
+                    !mobilecheck() && el.phone
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Td"],
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    null,
+                    donhang
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Td"],
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    null,
+                    tongtien.toLocaleString(),
+                    ' \u0111'
+                  )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                  __WEBPACK_IMPORTED_MODULE_2_react_super_responsive_table__["Td"],
+                  null,
+                  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'span',
+                    null,
+                    el.address
+                  )
+                )
+              );
+            })
+          )
+        )
+      )
+    );
   }
 }
 
@@ -7446,7 +7588,7 @@ const title = 'Dashboard';
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          query: '{ getOrders{name, phone, address, product, quantity, done, created_at} }'
+          query: '{ getOrders{name, phone, address, cart, done, created_at} }'
         }),
         credentials: 'include'
       });
@@ -13223,12 +13365,6 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       console.log('browser');
       let sessionStorage = window && window.sessionStorage ? window.sessionStorage : {};
       let cart = JSON.parse(sessionStorage.getItem("cart") || '[]');
-      if (cart.length === 0) {
-        history.push({
-          pathname: "/",
-          search: ""
-        });
-      }
       that.setState({ cart: cart });
     }
   }
@@ -13640,12 +13776,12 @@ const Modal = () => {
           { className: 'modal-footer' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             __WEBPACK_IMPORTED_MODULE_2__components_Link__["a" /* default */],
-            { to: '/san-pham', className: 'btn btn-primary' },
+            { to: '/', className: 'btn btn-primary' },
             'Trang s\u1EA3n ph\u1EA9m'
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'button',
-            { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal' },
+            { type: 'button', className: 'btn btn-default', 'data-dismiss': 'modal', style: { background: '#5CB247 !impotant' } },
             '\u0110\xF3ng c\u1EEDa s\u1ED5'
           )
         )
@@ -14516,8 +14652,8 @@ router.post('/order/new', bodyParser.json(), (() => {
         tongtien += el.number * el.product.newPrice;
       });
       axios.post("https://api.pushover.net/1/messages.json", {
-        token: "afzpmsy47oheeeo36um4og8i1vj6jo",
-        user: "ur3xgjnunfsr2fc1gqpu6fnce2s4dw",
+        token: "a8czo1z9hyibk6dqvjcz69ht2kfwo1",
+        user: "urjjxg4efo6grfikn65gpqcgqv5nr2",
         title: "namduocquany.com",
         message: `
         Họ tên: ${resData.name}

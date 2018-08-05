@@ -31,12 +31,6 @@ class Home extends React.Component {
       console.log('browser')
       let sessionStorage = (window && window.sessionStorage) ? window.sessionStorage : {}
       let cart = JSON.parse(sessionStorage.getItem("cart") || '[]')
-      if(cart.length === 0){
-        history.push({
-          pathname: "/",
-          search: "",
-        });
-      }
       that.setState({cart: cart})
     }
   }
@@ -299,8 +293,8 @@ const Modal = () => {
             </p>
           </div>
           <div className="modal-footer">
-            <Link to={'/san-pham'} className="btn btn-primary">Trang sản phẩm</Link>
-            <button type="button" className="btn btn-default" data-dismiss="modal">Đóng cửa sổ</button>
+            <Link to={'/'} className="btn btn-primary">Trang sản phẩm</Link>
+            <button type="button" className="btn btn-default" data-dismiss="modal" style={{background: '#5CB247 !impotant'}}>Đóng cửa sổ</button>
           </div>
         </div>
       </div>

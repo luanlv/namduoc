@@ -155,8 +155,8 @@ router.post('/order/new', bodyParser.json() ,async (req, res) => {
     })
     axios.post("https://api.pushover.net/1/messages.json",
       {
-        token : "afzpmsy47oheeeo36um4og8i1vj6jo",
-        user : "ur3xgjnunfsr2fc1gqpu6fnce2s4dw",
+        token : "a8czo1z9hyibk6dqvjcz69ht2kfwo1",
+        user : "urjjxg4efo6grfikn65gpqcgqv5nr2",
         title : "namduocquany.com",
         message : `
         Họ tên: ${resData.name}

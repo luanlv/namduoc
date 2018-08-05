@@ -26,7 +26,7 @@ export default {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        query: '{ getOrders{name, phone, address, product, quantity, done, created_at} }',
+        query: '{ getOrders{name, phone, address, cart, done, created_at} }',
       }),
       credentials: 'include',
     });

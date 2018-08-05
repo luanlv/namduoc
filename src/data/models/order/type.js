@@ -34,11 +34,8 @@ export default new GraphQLObjectType({
     address: {
       type: new GraphQLNonNull(GraphQLString)
     },
-    product: {
-      type: new GraphQLNonNull(GraphQLString)
-    },
-    quantity: {
-      type: new GraphQLNonNull(GraphQLString)
+    cart: {
+      type: new GraphQLList(GraphQLJSON)
     },
     done: {
       type: new GraphQLNonNull(GraphQLBoolean)

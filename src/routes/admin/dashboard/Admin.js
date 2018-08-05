@@ -23,20 +23,28 @@ class Admin extends React.Component {
   render() {
     return (
         <div>
-          {/* <Row className="padding-5">
+          <Row className="padding-5">
             <Table>
               <Thead>
               <Tr>
                 <Th>Thời gian đặt hàng</Th>
                 <Th>Tên</Th>
                 <Th>Số điện thoại</Th>
-                <Th>Số lượng (kg)</Th>
-                <Th>Sản phẩm</Th>
+                <Th>Đơn hàng</Th>
+                <Th>Tổng tiền</Th>
                 <Th>Địa chỉ</Th>
               </Tr>
               </Thead>
               <Tbody>
               {this.props.orders.map((el, key) => {
+                let donhang = ``
+                let tongtien = 0
+                console.log(el)
+                el.cart.forEach(el2 => {
+                  if( donhang.length > 0 ){ donhang += ' | '}
+                  donhang+= `${el2.product.name} x ${el2.number}`
+                  tongtien += el2.number * el2.product.newPrice
+                })
                 return (
                   <Tr key={key}
                   >
@@ -53,10 +61,14 @@ class Admin extends React.Component {
                         {!mobilecheck() && el.phone}
                       </span>
                     </Td>
-                    <Td><span>{el.quantity}</span></Td>
                     <Td>
                       <span>
-                        {mapProduct(el.product)}
+                        {donhang}
+                      </span>
+                    </Td>
+                    <Td>
+                      <span>
+                        {tongtien.toLocaleString()} đ
                       </span>
                     </Td>
                     <Td><span>{el.address}</span></Td>
@@ -66,7 +78,7 @@ class Admin extends React.Component {
 
               </Tbody>
             </Table>
-          </Row> */}
+          </Row>
         </div>
     );
   }
