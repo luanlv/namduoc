@@ -14,11 +14,12 @@ import Aside from '../../components/Partials/Aside'
 class Home extends React.Component {
 
   render() {
+    console.log(this.props.slug)
     return (
       <div >
         <div id="mainContent">
           <div className="container">
-            <Main7 products={this.props.products} data={this.props.data} />
+            <Main7 slug={this.props.slug} products={this.props.products} data={this.props.data} />
             <Aside banchay={true} data={this.props.data.banchay.value.slice(0, 3)} />
           </div>
         </div>

@@ -10,6 +10,7 @@
 import React, { PropTypes } from 'react';
 import axios from 'axios';
 import Link from '../../components/Link'
+import history from '../../core/history'
 class Home extends React.Component {
   constructor(props){
     super(props)
@@ -27,8 +28,15 @@ class Home extends React.Component {
   componentDidMount(){
     let that = this;
     if(process.env.BROWSER) {
+      console.log('browser')
       let sessionStorage = (window && window.sessionStorage) ? window.sessionStorage : {}
       let cart = JSON.parse(sessionStorage.getItem("cart") || '[]')
+      if(cart.length === 0){
+        history.push({
+          pathname: "/",
+          search: "",
+        });
+      }
       that.setState({cart: cart})
     }
   }

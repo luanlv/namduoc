@@ -5,7 +5,7 @@ import FacebookProvider, { Comments } from 'react-facebook';
 class Main extends React.Component {
 
   render() {
-    
+    // console.log(this.props.slug)
     if (this.props.products.length < 0) {
       return (
         <div id="mainContent">
@@ -24,7 +24,7 @@ class Main extends React.Component {
           </div>
 
           <h2 className="title text-uppercase" style={{borderBottom: '1px solid #ddd', fontSize: 28}}>
-            UNG THƯ
+            {mapCategory(this.props.slug)}
           </h2>
 
           <div className="wrap-section pro-site">
@@ -112,3 +112,44 @@ class Main extends React.Component {
 }
 
 export { Main as default }
+
+
+function mapCategory(slug){
+  console.log("slug!!")
+  console.log(slug)
+  switch(slug) {
+    case 'ung-thu':
+        return "Ung thư"
+        break;
+    case 'san-pham-bo-gan':
+        return "Sản phẩm bổ gan"
+        break;
+    case 'duong-huyet-huyet-app':
+        return "Đường huyết - Huyết áp"
+        break;
+    case 'da-day':
+        return "Dạ dày"
+        break;
+    case 'giam-can':
+        return "Giảm cân"
+        break;
+    case 'lam-dep':
+        return "Làm đẹp"
+        break;
+    case 'xuong-khop':
+        return "Xương khớp"
+        break;
+    case 'bo-tong-hop':
+      return "Bổ tổng hợp"
+      break;
+    case 'nano-curcumin':
+        return "Nano Curcumin"
+        break;
+    case 'toi-den':
+        return "Tỏi đen"
+        break;
+    default:
+        return "Sản phẩm khác"
+}
+
+}

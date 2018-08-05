@@ -30,8 +30,8 @@ export default {
         credentials: 'include',
       });
       const { data } = await resp.json();
-      console.log('data')
-      console.log(data)
+      // console.log('data')
+      // console.log(data)
       seo = data.seo || {}
       store.dispatch(setData(data))
       store.dispatch(hideLoading())
@@ -41,7 +41,7 @@ export default {
       title: seo.title || 'Danh mục sản phẩm',
       description: seo.description || '',
       seo: seo,
-      component: <Layout data={store.getState().data} ><Home data={store.getState().data}  products={store.getState().data.productsInCategory.value} /></Layout>,
+      component: <Layout data={store.getState().data} ><Home slug={params.slug2} data={store.getState().data}  products={store.getState().data.productsInCategory.value} /></Layout>,
     };
   },
 

@@ -36,7 +36,7 @@ class Html extends React.Component {
     return (
       <html className="no-js" lang="vi">
         <head>
-          <base href="http://namduocquany.com" />
+          {/* <base href="http://namduocquany.com" /> */}
           {/*<base href="http://localhost:3000" />*/}
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
