@@ -3482,11 +3482,6 @@ class Main extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             __WEBPACK_IMPORTED_MODULE_1__components_Link__["a" /* default */],
             { to: '/category/tin-tuc-tong-hop' },
             'Tin t\u1EE9c t\u1ED5ng h\u1EE3p'
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            __WEBPACK_IMPORTED_MODULE_1__components_Link__["a" /* default */],
-            { to: '/category/khuyen-mai' },
-            'Khuy\u1EBFn m\xE3i'
           )
         )
       ),

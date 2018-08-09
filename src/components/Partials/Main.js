@@ -149,8 +149,7 @@ class Main extends React.Component {
               Sự kiện</Link>
             <Link to="/category/tin-tuc-tong-hop">
               Tin tức tổng hợp</Link>
-            <Link to="/category/khuyen-mai">
-              Khuyến mãi</Link>
+            
           </div>
         </div>
 
