@@ -19,6 +19,7 @@ export default {
   path: '/login',
 
   action({store}) {
+    let info = 'info{ menu, menuBottom, phone, fanpage, diachi, thanhtoan, email}'
     needFetch()
     let user = store.getState().user
     if(user && user.username){
@@ -26,7 +27,7 @@ export default {
     }
     return {
       title,
-      component: <Layout><Login title={title} /></Layout>,
+      component: <Login title={title} />
     };
   },
 

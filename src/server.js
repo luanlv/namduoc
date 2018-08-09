@@ -113,11 +113,12 @@ app.use('/graphql',  expressGraphQL(req => ({
 app.get('*', routeCache.cacheSeconds(0), async (req, res, next) => {
   let routeUrl = req.originalUrl
   let isAdmin = (routeUrl.slice(0,6) === '/admin')
-  // if(isAdmin){
-  //   if(!req.user || !req.user.isAdmin){
-  //     return res.redirect('/login')
-  //   }
-  // }
+  if(isAdmin){
+    if(!req.user || !req.user.isAdmin){
+      console.log('admin')
+      return res.redirect('/login')
+    }
+  }
   try {
     let setting = await Setting.findOne({})
     const store = configureStore({

@@ -97,7 +97,10 @@ class App extends React.Component {
                   <Link to="/admin/news?v=list" >Danh sách</Link>
                 </Menu.Item>
                 <Menu.Item key="tintuc2">
-                  <Link to="/admin/news?v=add" >Thêm mới</Link>
+                  <Link to="/admin/news?v=add" >Thêm mới bài viết</Link>
+                </Menu.Item>
+                <Menu.Item key="tintuc3">
+                  <Link to="/admin/news?v=add2" >Thêm mới mã khuyến mãi</Link>
                 </Menu.Item>
               </SubMenu>
 

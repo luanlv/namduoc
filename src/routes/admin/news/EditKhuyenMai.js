@@ -140,7 +140,7 @@ class EditNewsComponent extends React.Component {
     if(this.props.loading){
       return (<div>loading...</div>)
     }
-  
+    alert("ok")
     return (
       !this.state.loading && <div className="admin-editor">
         <Row className="padding-5" style={{marginBottom: 15}}>
@@ -216,7 +216,7 @@ class EditNewsComponent extends React.Component {
                   </div>
                   <div style={{ marginBottom: 16 }}>
                     <label><b>Danh mục:</b></label>
-                    {!this.props.km && <Select
+                    <Select
                       defaultValue={this.state.data.category}
                       style={{ width: '100%' }}
                       onChange={(value) => {
@@ -233,23 +233,6 @@ class EditNewsComponent extends React.Component {
                     >
                       <Option value="su-kien">Sự kiện</Option>
                       <Option value="tin-tuc-tong-hop">Tin tức tổng hợp</Option>
-                    </Select>}
-
-                    {this.props.km && <Select
-                      defaultValue={this.state.data.category}
-                      style={{ width: '100%' }}
-                      onChange={(value) => {
-                        this.setState(prev => {
-                          return {
-                            ...prev,
-                            data: {
-                            ...prev.data,
-                            category: value
-                          }
-                        }
-                        })
-                      }}
-                    >
                       <Option value="mgg-aeonshop">Mã giảm giá Aeonshop</Option>
                       <Option value="mgg-alotrip">Mã giảm giá Alotrip</Option>
                       <Option value="mgg-fptshop">Mã giảm giá FPT Shop</Option>
@@ -264,8 +247,7 @@ class EditNewsComponent extends React.Component {
                       <Option value="mgg-vntrip">Mã giảm giá VnTrip</Option>
                       <Option value="mgg-vuivui">Mã giảm giá VuiVui</Option>
                       <Option value="mgg-yes24">Mã giảm giá Yes24</Option>
-                    </Select>}
-
+                    </Select>
                   </div>
                   <div style={{ marginBottom: 16 }}>
                     <label><b>Tags:</b></label>

@@ -19,8 +19,10 @@ export default {
     if(!query.v){
       return { redirect: '/admin/news?v=list' };
     }
-    const {App, EditNews , ListNews } = await require('../AdminRequire')
+    const {App, EditNews , ListNews, EditKhuyenMai } = await require('../AdminRequire')
     let component = {}
+
+    console.log(query)
 
     if(query.v === 'list'){
       component = <App
@@ -32,7 +34,13 @@ export default {
       component = <App
         name={title}
       >
-        <EditNews mode="add" isEdit={false} />
+        <EditNews mode="add" isEdit={false} km={false}/>
+      </App>
+    } else if(query.v === 'add2'){
+      component = <App
+        name={title}
+      >
+        <EditNews mode="add" isEdit={false} km={true}/>
       </App>
     } else if(query.slug && query.v === 'edit'){
       component = <App

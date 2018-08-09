@@ -124,7 +124,7 @@ function mapCategory(slug){
     case 'san-pham-bo-gan':
         return "Sản phẩm bổ gan"
         break;
-    case 'duong-huyet-huyet-app':
+    case 'duong-huyet-huyet-ap':
         return "Đường huyết - Huyết áp"
         break;
     case 'da-day':
