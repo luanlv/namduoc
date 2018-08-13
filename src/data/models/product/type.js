@@ -32,10 +32,10 @@ export default new GraphQLObjectType({
       type: GraphQLString
     },
     coverUrl2: {
-      type: GraphQLString
+      type: new GraphQLList(GraphQLString)
     },
     coverUrl3: {
-      type: GraphQLString
+      type: new GraphQLList(GraphQLString)
     },
     name: {
       type: GraphQLString
