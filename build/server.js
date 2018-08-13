@@ -5674,49 +5674,49 @@ module.exports.getProductsKhuyenMai = (root, {}) => {
       type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLID"])
     },
     slug: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     coverUrl: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     coverUrl2: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     coverUrl3: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     name: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     category: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     unit: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     loai: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     price: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLInt"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLInt"]
     },
     newPrice: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLInt"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLInt"]
     },
     description: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     body: {
       type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     view: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLInt"])
+      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLInt"]
     },
     saleOff: {
       type: __WEBPACK_IMPORTED_MODULE_2_graphql_type_json___default.a
     },
     created_at: {
-      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLNonNull"](__WEBPACK_IMPORTED_MODULE_1_graphql_iso_date__["GraphQLDateTime"])
+      type: __WEBPACK_IMPORTED_MODULE_1_graphql_iso_date__["GraphQLDateTime"]
     }
   })
 }));

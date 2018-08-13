@@ -26,49 +26,49 @@ export default new GraphQLObjectType({
       type: new GraphQLNonNull(GraphQLID)
     },
     slug: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
     coverUrl: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
     coverUrl2: {
-      type: new GraphQLList(GraphQLString)
+      type: GraphQLString
     },
     coverUrl3: {
-      type: new GraphQLList(GraphQLString)
+      type: GraphQLString
     },
     name: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
     category: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
     unit: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
     loai: {
-      type: new GraphQLList(GraphQLString)
+      type: GraphQLString
     },
     price: {
-      type: new GraphQLNonNull(GraphQLInt)
+      type: GraphQLInt
     },
     newPrice: {
-      type: new GraphQLNonNull(GraphQLInt)
+      type: GraphQLInt
     },
     description: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLString
     },
     body: {
       type: GraphQLString
     },
     view: {
-      type: new GraphQLNonNull(GraphQLInt)
+      type: GraphQLInt
     },
     saleOff: {
       type: GraphQLJSON
     },
     created_at: {
-      type: new GraphQLNonNull(GraphQLDateTime)
+      type: GraphQLDateTime
     },
   })
 });
