@@ -47,7 +47,7 @@ export default new GraphQLObjectType({
       type: GraphQLString
     },
     loai: {
-      type: GraphQLString
+      type: new GraphQLList(GraphQLString)
     },
     price: {
       type: GraphQLInt

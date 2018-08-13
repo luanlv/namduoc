@@ -5695,7 +5695,7 @@ module.exports.getProductsKhuyenMai = (root, {}) => {
       type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
     },
     loai: {
-      type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"]
+      type: new __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLList"](__WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLString"])
     },
     price: {
       type: __WEBPACK_IMPORTED_MODULE_0_graphql__["GraphQLInt"]
