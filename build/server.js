@@ -13783,7 +13783,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       __WEBPACK_IMPORTED_MODULE_7__components_Link__["a" /* default */],
                       { to: '/danh-muc/giam-can' },
-                      'Gi\u1EA3n c\xE2n'
+                      'Gi\u1EA3m c\xE2n'
                     )
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

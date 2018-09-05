@@ -35,7 +35,7 @@ class Home extends React.Component {
                     <li className="bogan linkMenuWr"><Link to="/danh-muc/san-pham-bo-gan">Sản phẩm bổ gan</Link></li>
                     <li className="duonghuyet linkMenuWr"><Link to="/danh-muc/duong-huyet-huyet-ap">Đường huyết - Huyết áp</Link></li>
                     <li className="daday linkMenuWr"><Link to="/danh-muc/da-day">Dạ dày</Link></li>
-                    <li className="giamcan linkMenuWr"><Link to="/danh-muc/giam-can">Giản cân</Link></li>
+                    <li className="giamcan linkMenuWr"><Link to="/danh-muc/giam-can">Giảm cân</Link></li>
                     <li className="lamdep linkMenuWr"><Link to="/danh-muc/lam-dep">Làm đẹp</Link></li>
                     <li className="xuongkhop linkMenuWr"><Link to="/danh-muc/xuong-khop">Xương khớp</Link></li>
                     <li className="botonghop linkMenuWr"><Link to="/danh-muc/bo-tong-hop">Bổ tổng hợp</Link></li>
