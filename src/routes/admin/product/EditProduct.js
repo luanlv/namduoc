@@ -296,7 +296,7 @@ class EditNewsComponent extends React.Component {
                     >
                       <Option key={'ung-thu'}>Ung thư</Option>
                       <Option key={'san-pham-bo-gan'}>Sản phẩm bổ gan</Option>
-                      <Option key={'duong-huyet-huyet-app'}>Đường huyết - Huyết áp</Option>
+                      <Option key={'duong-huyet-huyet-ap'}>Đường huyết - Huyết áp</Option>
                       <Option key={'da-day'}>Dạ dày</Option>
                       <Option key={'giam-can'}>Giảm cân</Option>
                       <Option key={'lam-dep'}>Làm đẹp</Option>

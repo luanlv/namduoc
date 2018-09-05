@@ -11256,7 +11256,7 @@ class EditNewsComponent extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                       Option,
-                      { key: 'duong-huyet-huyet-app' },
+                      { key: 'duong-huyet-huyet-ap' },
                       '\u0110\u01B0\u1EDDng huy\u1EBFt - Huy\u1EBFt \xE1p'
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
