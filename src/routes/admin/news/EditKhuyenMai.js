@@ -113,6 +113,7 @@ class EditNewsComponent extends React.Component {
   }
 
   addNews(post){
+    if(post.coverUrl){
     axios.post('/api/post/new', post)
       .then(res => {
         message.success('Thêm mới thành công!')
@@ -124,9 +125,13 @@ class EditNewsComponent extends React.Component {
       .catch(err => {
         console.log(err)
       })
+    } else {
+      alert("Chưa có ảnh đại diện")
+    }
   }
 
   updateNews(post){
+    if(post.coverUrl){
     axios.post('/api/post/update', post)
       .then(res => {
         message.success('Cập nhập thành công!')
@@ -134,6 +139,9 @@ class EditNewsComponent extends React.Component {
       .catch(err => {
         message.error('Cập nhập thất bại')
       })
+    } else {
+      alert("Chưa có ảnh đại diện")
+    }
   }
 
   render() {

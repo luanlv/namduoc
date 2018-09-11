@@ -113,6 +113,7 @@ class EditNewsComponent extends React.Component {
   }
 
   addNews(post){
+    if(post.coverUrl){
     axios.post('/api/post/new', post)
       .then(res => {
         message.success('Thêm mới thành công!')
@@ -124,6 +125,9 @@ class EditNewsComponent extends React.Component {
       .catch(err => {
         console.log(err)
       })
+    } else {
+      alert("Chưa có ảnh đại diện")
+    }
   }
 
   updateNews(post){
