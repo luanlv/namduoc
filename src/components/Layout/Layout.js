@@ -75,9 +75,9 @@ class Layout extends React.Component {
             <div className="text-phone">
               <br/>
               <span>Gọi ngay</span>
-              <b>0973.318.868</b>
+              <b>0915.055.951</b>
             </div>
-            <a href="tel:0973318868">
+            <a href="tel:0915055951">
               <img id="phone-image" className="vibrate" src="/assets/images/phone.png" alt="call phone"/>
             </a>
           </div>

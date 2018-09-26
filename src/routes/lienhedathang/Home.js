@@ -262,9 +262,8 @@ class Home extends React.Component {
               </div>
               <div className="col-md-6">
                 <h3 style={{color: '#5CB247', fontWeight: 'bold', borderBottom: '1px solid #ddd', marginBottom: 5}}>Liên hệ</h3>
-                <span style={{width: 60}}>Hotline 1:</span> <b style={{color: 'red'}}>0973.318.868</b>
-                <br/>
-                <span style={{width: 60}}>Hotline 2:</span> <b style={{color: 'red'}}>0915.055.951</b>
+                
+                <span style={{width: 60}}>Hotline:</span> <b style={{color: 'red'}}>0915.055.951</b>
                 <p>Địa chỉ : 27 – Huỳnh Thúc Kháng – Quận Đống Đa – Hà Nội</p>
               </div>
             </div>

@@ -343,12 +343,12 @@ class Layout extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'b',
             null,
-            '0973.318.868'
+            '0915.055.951'
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'a',
-          { href: 'tel:0973318868' },
+          { href: 'tel:0915055951' },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { id: 'phone-image', className: 'vibrate', src: '/assets/images/phone.png', alt: 'call phone' })
         )
       )
@@ -14359,19 +14359,7 @@ class Home extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'span',
                 { style: { width: 60 } },
-                'Hotline 1:'
-              ),
-              ' ',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'b',
-                { style: { color: 'red' } },
-                '0973.318.868'
-              ),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'span',
-                { style: { width: 60 } },
-                'Hotline 2:'
+                'Hotline:'
               ),
               ' ',
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
