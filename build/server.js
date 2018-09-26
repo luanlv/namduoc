@@ -3144,8 +3144,13 @@ class Html extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'body',
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9' }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { id: 'fb-root' }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('script', {
+          dangerouslySetInnerHTML: { __html: `(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));` }
+        }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', {
+          dangerouslySetInnerHTML: { __html: `<div class="fb-customerchat" attribution=setup_tool page_id="181757592661149" logged_in_greeting="Chúng tôi có thể giúp gì được cho bạn?" logged_out_greeting="Chúng tôi có thể giúp gì được cho bạn?"> </div>` }
+        }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', {
           id: 'app'
           // eslint-disable-next-line react/no-danger
