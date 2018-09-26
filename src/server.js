@@ -234,14 +234,13 @@ app.get('*', routeCache.cacheSeconds(0), async (req, res, next) => {
       res.status(route.status || 200);
       res.send(`<!doctype html>${html}`);
     } else {
-      let facebook = `<div id="fb-root"></div> <script> (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script> <!-- Your customer chat code --> <div class="fb-customerchat" attribution=setup_tool page_id="181757592661149" logged_in_greeting="Chúng tôi có thể giúp gì được cho bạn?" logged_out_greeting="Chúng tôi có thể giúp gì được cho bạn?"> </div>`
-      const html = ReactDOM.renderToStaticMarkup(<Html v={version}
+      let html = ReactDOM.renderToStaticMarkup(<Html v={version}
          {...data} isAdmin={isAdmin}  scriptTop={setting.scriptTop || ''} 
          scriptBottom={setting.scriptBottom || ''} 
          css={setting.css || ''} 
-         facebook={facebook}
          />);
       res.status(route.status || 200);
+      html = html.replace('<body>', `<body><!-- Load Facebook SDK for JavaScript --> <div id="fb-root"></div> <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script> <!-- Your customer chat code --> <div class="fb-customerchat" attribution=setup_tool page_id="181757592661149" logged_in_greeting="Chúng tôi có thể giúp gì được cho bạn?" logged_out_greeting="Chúng tôi có thể giúp gì được cho bạn?"> </div>`)
       res.send(`<!doctype html>${html}`);
     }
   } catch (err) {

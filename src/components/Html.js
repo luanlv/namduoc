@@ -11,7 +11,14 @@ import React, { PropTypes } from 'react';
 import serialize from 'serialize-javascript';
 import { analytics } from '../config';
 import Parser from 'html-react-parser';
-var thisIsMyCopy = '<p>copy copy copy <strong>strong copy</strong></p>';
+const facebook = `<div id="fb-root"></div> <script> (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script> <!-- Your customer chat code --> <div class="fb-customerchat" attribution=setup_tool page_id="181757592661149" logged_in_greeting="Chúng tôi có thể giúp gì được cho bạn?" logged_out_greeting="Chúng tôi có thể giúp gì được cho bạn?"> </div>`
+
+let myAttr = {
+  attribution: "setup_tool",
+  page_id : "181757592661149",
+  logged_in_greeting : "Chúng tôi có thể giúp gì được cho bạn?",
+  logged_out_greeting : "Chúng tôi có thể giúp gì được cho bạn?"
+}
 
 class Html extends React.Component {
   static propTypes = {
@@ -33,8 +40,12 @@ class Html extends React.Component {
     state: null,
   };
 
+  componentDidMount(){
+
+  }
+
   render() {
-    const { title, description, styles, scripts, state, children, v, seo, facebook } = this.props;
+    const { title, description, styles, scripts, state, children, v, seo } = this.props;
     return (
       <html className="no-js" lang="vi">
         <head>
@@ -73,8 +84,9 @@ class Html extends React.Component {
         </head>
 
         <body>
-          {Parser(facebook)}
-
+          {/* {Parser(`<div id="fb-root"></div> <script> (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>`)}
+          
+          <Facebook /> */}
           <div
             id="app"
             // eslint-disable-next-line react/no-danger
@@ -120,4 +132,18 @@ class Html extends React.Component {
   }
 }
 
+var Facebook = React.createClass({
+  componentDidMount: function() {
+      this.refs.facebook.getDOMNode().setAttribute('attribution', 'setup_tool');
+  },
+  render: function() {
+      return <div ref="facebook" className="fb-customerchat">
+      </div>;
+  }
+});
+
 export default Html;
+// attribution: "setup_tool",
+//   page_id : "181757592661149",
+//   logged_in_greeting : "Chúng tôi có thể giúp gì được cho bạn?",
+//   logged_out_greeting : "Chúng tôi có thể giúp gì được cho bạn?"
