@@ -14,6 +14,7 @@ import Footer from '../Partials/Footer'
 import MenuMobile from '../Partials/MenuMobile'
 
 import mp3_file from './tuy_hong_nhan.mp3';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const AudioPlayer = function(props) {
   return (
@@ -83,6 +84,11 @@ class Layout extends React.Component {
           </div>
         }
         {/* <div className="fb-customerchat" attribution="setup_tool" page_id={1452281691662340} /> */}
+        <MessengerCustomerChat
+          pageId="181757592661149"
+          appId="1054383868055783"
+          htmlRef="<REF_STRING>"
+        />
       </div>
     );
   }

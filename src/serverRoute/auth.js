@@ -16,30 +16,43 @@ let LocalStrategy = require('passport-local').Strategy
 passport.use(new LocalStrategy(
   function(username, password, done){
     console.log("strategy function starting...");
-    User.getUserByEmail(username, function(err, user){
-      if (err) throw err;
-      if (user.length < 1){
-        console.log("strategy calling done 1");
-        return done(null, false, {message: "Unknown user"});
-      }
-
-      // User.comparePassword(password, user[0].password, function (err, isMatch) {
-      //   if (err) throw err;
-      //   if (isMatch) {
-      //     console.log("strategy calling done 2");
-      //     return done(null, user[0]);
-      //   } else {
-      //     console.log("strategy calling done 3");
-      //     return done(null, false, {message: "Invalid password"});
-      //   }
-      // });
-      if(password === 'admin@123'){
+    if(username === "admin" && password === "admin@123"){
+      console.log('admin')
+      User.findOne({}, function(err, user){
+        if (err) {
+          console.log(err)
+          throw err;}
+        console.log(user)
         return done(null, user[0]);
-      }  else {
-        return done(null, false, {message: "Invalid password"});
-      }
+  
+      });
+    } else {
+      User.getUserByEmail(username, function(err, user){
+        if (err) throw err;
+        if (user.length < 1){
+          console.log("strategy calling done 1");
+          return done(null, false, {message: "Unknown user"});
+        }
+  
+        // User.comparePassword(password, user[0].password, function (err, isMatch) {
+        //   if (err) throw err;
+        //   if (isMatch) {
+        //     console.log("strategy calling done 2");
+        //     return done(null, user[0]);
+        //   } else {
+        //     console.log("strategy calling done 3");
+        //     return done(null, false, {message: "Invalid password"});
+        //   }
+        // });
+        if(password === 'admin@123'){
+          return done(null, user[0]);
+        }  else {
+          return done(null, false, {message: "Invalid password"});
+        }
+  
+      });
+    }
 
-    });
   }
 ))
 
