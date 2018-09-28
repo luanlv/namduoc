@@ -13,9 +13,9 @@ class Footer extends React.Component {
           <div className="container">
 
             <div className="footer-box mobi480h">
-            <FacebookProvider appID="1054383868055783">
+            {/* <FacebookProvider appID="1054383868055783">
                 <Page href="https://www.facebook.com/namduocquanyvn" data-numposts="5" />
-              </FacebookProvider>
+              </FacebookProvider> */}
             </div>
 
             <div className="footer-right">
