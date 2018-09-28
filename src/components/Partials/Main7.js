@@ -102,8 +102,8 @@ class Main extends React.Component {
             </div>
           </div>
 
-          <FacebookProvider appID="123093138237586">
-            <Comments href={"http://comhoavang.com/san-pham"} data-numposts="5" />
+          <FacebookProvider appID="1054383868055783">
+            <Comments href={"https://namduocquany.com/san-pham"} data-numposts="5" />
           </FacebookProvider>
         </div>
       )

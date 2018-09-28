@@ -42,8 +42,9 @@ const Main = ({post}) => {
           />
         </div>
 
-        <FacebookProvider appID="123093138237586">
-          <Comments href={"http://comhoavang.com/bai-viet/" + post.slug} data-numposts="5" />
+     
+        <FacebookProvider appId="1054383868055783">
+          <Comments href={"https://namduocquany.com/bai-viet/" + post.slug} data-numposts="5" />
         </FacebookProvider>
 
       </div>

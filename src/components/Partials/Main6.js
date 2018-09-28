@@ -294,6 +294,10 @@ class Main extends React.Component {
             </div>
           </div>
 
+          <FacebookProvider appID="1054383868055783">
+            <Comments href={"https://namduocquany.com/san-pham/" + product.slug} data-numposts="5" />
+          </FacebookProvider>
+
 
               <div className="headno headpo">
                 <h2 className="title">
@@ -325,9 +329,7 @@ class Main extends React.Component {
           </div>
 
 
-          <FacebookProvider appID="123093138237586">
-            <Comments href={"http://comhoavang.com/san-pham/" + product.slug} data-numposts="5" />
-          </FacebookProvider>
+          
       </div>
       )
     }
@@ -338,7 +340,7 @@ export { Main as default }
 
 
 function numberWithCommas(x = 0) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return (x||0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 

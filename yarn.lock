@@ -8417,17 +8417,17 @@ qs@6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.1.tgz#ce03c5ff0935bc1d9d69a9f14cbd18e568d67625"
 
-qs@6.4.0, "qs@>= 0.4.0", qs@^6.4.0, qs@~6.4.0:
+qs@6.4.0, "qs@>= 0.4.0", qs@~6.4.0:
   version "6.4.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
+
+qs@^6.4.0, qs@~6.5.1, qs@~6.5.2:
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
 qs@~6.3.0:
   version "6.3.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.2.tgz#e75bd5f6e268122a2a0e0bda630b2550c166502c"
-
-qs@~6.5.1, qs@~6.5.2:
-  version "6.5.2"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
 
 query-string@^4.1.0, query-string@^4.3.2:
   version "4.3.2"
@@ -8852,11 +8852,12 @@ react-draft-wysiwyg@^1.9.1:
     immutable "^4.0.0-rc.1"
 
 react-facebook@^2.2.10:
-  version "2.2.10"
-  resolved "https://registry.yarnpkg.com/react-facebook/-/react-facebook-2.2.10.tgz#ea92937e14609aa0697f0c49f017ed3d9478ce85"
+  version "2.2.12"
+  resolved "https://registry.yarnpkg.com/react-facebook/-/react-facebook-2.2.12.tgz#322b679d9941f11035ecd6c4bc7f55d32e920b2c"
   dependencies:
     can-use-dom "^0.1.0"
     keymirror "^0.1.1"
+    prop-types "^15.5.4"
     qs "^6.4.0"
     react-spinner-children "^1.0.5"
 
@@ -8978,9 +8979,10 @@ react-sound@^1.2.0:
     soundmanager2 "^2.97.20170602"
 
 react-spinner-children@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/react-spinner-children/-/react-spinner-children-1.0.5.tgz#22326add38b88581681d2b775d02170b81124f3a"
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-spinner-children/-/react-spinner-children-1.0.8.tgz#6fdd6a89593c5f233bb56f4deccb812382e6ca74"
   dependencies:
+    prop-types "^15.6.0"
     spin.js "^2.3.2"
 
 react-sticky-el@^1.0.3:

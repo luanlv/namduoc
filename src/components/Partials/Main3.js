@@ -67,8 +67,9 @@ class Main extends React.Component {
           </div>
         </div>
 
-        <FacebookProvider appID="123093138237586">
-          <Comments href={"http://comhoavang.com/tin-tuc"} data-numposts="5" />
+    
+        <FacebookProvider appId="1054383868055783">
+          <Comments href={"https://namduocquany.com/tin-tuc"} data-numposts="5" />
         </FacebookProvider>
       </div>
     );

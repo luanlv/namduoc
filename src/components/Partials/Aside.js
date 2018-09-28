@@ -51,9 +51,9 @@ class Aside extends React.Component {
                 <img src="/assets/right.jpg" alt="Hotline" /></Link>
             </div>
             <div className="adv">
-              <FacebookProvider appID="123093138237586">
-                <Page href="https://www.facebook.com/namduocquany0973318868" data-numposts="5" />
-              </FacebookProvider>
+              {/* <FacebookProvider appID="1054383868055783">
+                <Page href="https://www.facebook.com/namduocquanyvn" data-numposts="5" />
+              </FacebookProvider> */}
             </div>
             {/*<div className="adv">*/}
               {/*<Link to={'/'}>*/}

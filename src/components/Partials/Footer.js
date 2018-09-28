@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from '../Link'
+import FacebookProvider, { Page } from 'react-facebook';
 
 class Footer extends React.Component {
   render () {
@@ -12,8 +13,9 @@ class Footer extends React.Component {
           <div className="container">
 
             <div className="footer-box mobi480h">
-              <div className="dangky">
-                <a href="http://online.gov.vn/CustomWebsiteDisplay.aspx?DocId=27183" target="_blank"><img src="/assets/images/dangky.png" alt="img" /></a></div>
+            <FacebookProvider appID="1054383868055783">
+                <Page href="https://www.facebook.com/namduocquanyvn" data-numposts="5" />
+              </FacebookProvider>
             </div>
 
             <div className="footer-right">
@@ -46,6 +48,7 @@ class Footer extends React.Component {
                       Liên hệ đặt hàng
                       <span className="icona-left icon-chevron-right" /></Link></li>
                   </ul>
+
                 </div>
                 <div className="col-md-4 col-sm-12 col-xs-12">
                   <div className="botHeading">THÔNG TIN LIÊN HỆ</div>
@@ -59,8 +62,6 @@ class Footer extends React.Component {
             </div>
             <div className="footer-box mobi480s">
 
-              <div className="dangky">
-                <a href="http://online.gov.vn/CustomWebsiteDisplay.aspx" target="_blank"><img src="/assets/images/dangky.png" alt="img" /></a></div>
             </div>
           </div>
         </div>
