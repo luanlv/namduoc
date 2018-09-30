@@ -6,6 +6,8 @@ import Aside from '../../components/Partials/Aside'
 import Footer from '../../components/Partials/Footer'
 import MenuMobile from '../../components/Partials/MenuMobile'
 import Link from '../../components/Link'
+// import IronImage from 'react-image-lazy-load-component';
+import ProgressiveImage from 'react-progressive-image';
 
 class Home extends React.Component {
 
@@ -46,7 +48,17 @@ class Home extends React.Component {
                 </div>
               </div>
               <div className="right col-md-9">
-                <img src="/assets/banner.jpg" alt="banner 2"/>
+                {/* <img src="/assets/banner.jpg" alt="banner 2"/> */}
+                {/* <a href="/assets/banner.jpg" class="progressive replace">
+                  <img src="https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?&container=focus&resize_w=50&url=https://namduocquany.com/assets/banner.jpg" class="preview" alt="image" alt="banner" />
+                </a> */}
+                {/* <IronImage placeholder="https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?&container=focus&resize_w=50&url=https://namduocquany.com/assets/banner.jpg"//#endregion
+                   src="/assets/banner.jpg"
+                   alt="1998 SEO goes here" 
+                   /> */}
+                   <ProgressiveImage src="/assets/banner.jpg" placeholder="https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?&container=focus&resize_w=21&url=https://namduocquany.com/assets/banner.jpg">
+                    {src => <img src={src} alt="an image" />}
+                  </ProgressiveImage>
               </div>
             </div>
             <Main  data={this.props.data} />

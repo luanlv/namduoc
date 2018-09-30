@@ -12,6 +12,7 @@ import LoadingBar from 'react-redux-loading-bar';
 import Header from '../Partials/Header'
 import Footer from '../Partials/Footer'
 import MenuMobile from '../Partials/MenuMobile'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // import mp3_file from './tuy_hong_nhan.mp3';
 
@@ -35,7 +36,6 @@ class Layout extends React.Component {
   componentDidMount(){
     if(process.env.BROWSER) {
       window.myfunload()
-
       window.addEventListener('load', () => {
         // noinspection JSUnresolvedVariable
         let audioCtx = new (window.AudioContext || window.webkitAudioContext)();

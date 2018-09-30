@@ -67,7 +67,7 @@ class Html extends React.Component {
           {(seo && seo.url) ? (<meta property="og:url" content={'http://namduocquany.com' + seo.url} />) : (<meta property="og:url" content={'http://namduocquany.com'} />) }
           {(seo && seo.og_image) ? (<meta property="og:image" content={'http://namduocquany.com' + seo.og_image} />) : (<meta property="og:image" content='http://namduocquany.com/image/m5bZaSxOJG-banner.jpg' />)}
 
-          <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css' />
+          {/* <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css' /> */}
           {/*<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css" async />*/}
           {/*<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css" async />*/}
           {/*<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&amp;subset=latin,vietnamese" rel="stylesheet" type="text/css" async />*/}
@@ -121,7 +121,22 @@ class Html extends React.Component {
 
           <script dangerouslySetInnerHTML={{ __html: this.props.scriptBottom }} />
 
-
+          <script 
+            dangerouslySetInnerHTML={{ __html:
+              `WebFontConfig = {
+                google: { families: [ 'Roboto+Condensed:400,700:latin', 'Source+Sans+Pro:400,600,400italic,700italic,700:latin' ] }
+              };
+              (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                  '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+              })();`
+            }}
+          ></script>
         </body>
       </html>
     );
