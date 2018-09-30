@@ -2653,9 +2653,9 @@ app.use('/graphql', __WEBPACK_IMPORTED_MODULE_4_express_graphql___default()(req 
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------
 
-// app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
-app.get('*', routeCache.cacheSeconds(0), (() => {
+app.get('*', routeCache.cacheSeconds(30), (() => {
   var _ref = _asyncToGenerator(function* (req, res, next) {
+    // app.get('*', routeCache.cacheSeconds(0), async (req, res, next) => {
     let routeUrl = req.originalUrl;
     let isAdmin = routeUrl.slice(0, 6) === '/admin';
     if (isAdmin) {

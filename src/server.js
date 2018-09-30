@@ -109,8 +109,8 @@ app.use('/graphql',  expressGraphQL(req => ({
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------
 
-// app.get('*', routeCache.cacheSeconds(20), async (req, res, next) => {
-app.get('*', routeCache.cacheSeconds(0), async (req, res, next) => {
+app.get('*', routeCache.cacheSeconds(30), async (req, res, next) => {
+// app.get('*', routeCache.cacheSeconds(0), async (req, res, next) => {
   let routeUrl = req.originalUrl
   let isAdmin = (routeUrl.slice(0,6) === '/admin')
   if(isAdmin){
