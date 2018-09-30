@@ -7,7 +7,7 @@
       "exec_mode": "fork",
       "env": {
         "NODE_ENV": "production",
-        "WEBSITE_HOSTNAME": "namduocquany.com",
+        "WEBSITE_HOSTNAME": "https://namduocquany.com",
         "PORT": 3909
       },
     }
