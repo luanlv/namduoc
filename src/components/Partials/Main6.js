@@ -138,7 +138,7 @@ class Main extends React.Component {
                           fontWeight: 'bold'
                         }}
                       >
-                        30 viên/hộp
+                        {product.unit}
                       </div>
                     </div>
 
