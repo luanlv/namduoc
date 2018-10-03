@@ -109,6 +109,10 @@ app.use('/graphql',  expressGraphQL(req => ({
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------
 
+app.get('/google1d90e7cebb1addc5.html', (req, res, next) => {
+  res.send('google-site-verification: google1d90e7cebb1addc5.html')
+})
+
 app.get('*', routeCache.cacheSeconds(30), async (req, res, next) => {
 // app.get('*', routeCache.cacheSeconds(0), async (req, res, next) => {
   let routeUrl = req.originalUrl
